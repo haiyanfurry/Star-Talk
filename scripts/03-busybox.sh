@@ -13,13 +13,24 @@ VER="1.37.0"
 
 step "Phase ${PHASE}: Building ${PKG} ${VER}"
 
-ARCHIVE="$SOURCES_DIR/${PKG}-${VER}.tar.bz2"
+# Use local source if available, otherwise use work/sources/
+ARCHIVE="$PROJECT_ROOT/src/tarballs/${PKG}-${VER}.tar.bz2"
+[ ! -f "$ARCHIVE" ] && ARCHIVE="$SOURCES_DIR/${PKG}-${VER}.tar.bz2"
+
 BUILD="$BUILD_DIR/${PKG}-${VER}"
 
-# ── Extract ──────────────────────────────────────────────────────
+# ── Extract (or use pre-extracted src/) ────────────────────────
 if [ ! -d "$BUILD" ]; then
     substep "Extracting ${PKG}..."
-    extract_to "$ARCHIVE" "$(dirname "$BUILD")"
+    # Use pre-extracted source if available
+    if [ -d "$PROJECT_ROOT/src/${PKG}-${VER}" ]; then
+        cp -a "$PROJECT_ROOT/src/${PKG}-${VER}" "$BUILD_DIR/"
+        success "Using pre-extracted source"
+    elif [ -f "$ARCHIVE" ]; then
+        extract_to "$ARCHIVE" "$(dirname "$BUILD")"
+    else
+        die "BusyBox source not found. Download to src/tarballs/ or work/sources/"
+    fi
 fi
 
 # ── Create BusyBox config files if they don't exist ──────────────

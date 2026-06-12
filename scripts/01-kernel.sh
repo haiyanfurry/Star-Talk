@@ -17,14 +17,28 @@ KERNEL_CONFIG="$CONFIGS_DIR/kernel/star-talk.config"
 
 step "Phase ${PHASE}: Downloading & compiling Linux ${KERNEL_VER}"
 
-# ── Download kernel source ──────────────────────────────────────
+# ── Get kernel source ────────────────────────────────────────
 if [ ! -d "$KERNEL_DIR" ]; then
-    step "Downloading Linux kernel ${KERNEL_VER}..."
-    KERNEL_URL="https://cdn.kernel.org/pub/linux/kernel/v${KERNEL_MAJOR}/linux-${KERNEL_VER}.tar.xz"
-    download "$KERNEL_URL" "$KERNEL_SRC"
+    KERNEL_TARBALL="$PROJECT_ROOT/src/tarballs/linux-${KERNEL_VER}.tar.xz"
 
-    substep "Extracting kernel source..."
-    extract_to "$KERNEL_SRC" "$(dirname "$KERNEL_DIR")"
+    # Reassemble from chunks if needed
+    if [ ! -f "$KERNEL_TARBALL" ]; then
+        step "Reassembling kernel source from chunks..."
+        cd "$PROJECT_ROOT/src/tarballs"
+        ./merge-kernel.sh
+        cd "$PROJECT_ROOT"
+    fi
+
+    if [ -f "$KERNEL_TARBALL" ]; then
+        substep "Extracting kernel source (local tarball)..."
+        extract_to "$KERNEL_TARBALL" "$(dirname "$KERNEL_DIR")"
+    else
+        # Fallback: download from kernel.org
+        step "Downloading Linux kernel ${KERNEL_VER}..."
+        KERNEL_URL="https://cdn.kernel.org/pub/linux/kernel/v${KERNEL_MAJOR}/linux-${KERNEL_VER}.tar.xz"
+        download "$KERNEL_URL" "$KERNEL_SRC"
+        extract_to "$KERNEL_SRC" "$(dirname "$KERNEL_DIR")"
+    fi
 fi
 success "Kernel source: $KERNEL_DIR"
 

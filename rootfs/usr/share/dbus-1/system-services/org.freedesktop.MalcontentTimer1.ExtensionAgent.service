@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# SPDX-FileCopyrightText: 2025 GNOME Foundation, Inc.
+
+[D-BUS Service]
+Name=org.freedesktop.MalcontentTimer1.ExtensionAgent
+Exec=/usr/lib/malcontent-timer-extension-agent
+User=malcontent-timer-ext-agent
+SystemdService=malcontent-timer-extension-agent.service

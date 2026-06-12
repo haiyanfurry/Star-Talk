@@ -1,25 +1,5 @@
-# ╔══════════════════════════════════════════════════════════════╗
-# ║     Star-Talk / 星语 — /etc/inittab (BusyBox init)         ║
-# ╚══════════════════════════════════════════════════════════════╝
-#
-# BusyBox init reads this file to determine what to do.
-# Format: <id>:<runlevels>:<action>:<process>
-
-# System initialization script (runs once at boot)
 ::sysinit:/etc/init.d/rcS
-
-# TTY login prompts (auto-login on tty1, standard on tty2)
-tty1::respawn:/sbin/getty -a startalk 38400 tty1
-tty2::respawn:/sbin/getty 38400 tty2
-tty3::respawn:/sbin/getty 38400 tty3
-tty4::respawn:/sbin/getty 38400 tty4
-
-# Shutdown/reboot actions
-::shutdown:/etc/init.d/rcK
-::restart:/sbin/init
-
-# Ctrl-Alt-Del handler
+tty1::respawn:/usr/sbin/getty -n -l /bin/login 38400 tty1
+tty2::respawn:/usr/sbin/getty 38400 tty2
 ::ctrlaltdel:/sbin/reboot
-
-# Power fail handling
-::powerfail:/sbin/poweroff -f
+::shutdown:/etc/init.d/rcK

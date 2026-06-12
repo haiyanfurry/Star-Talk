@@ -8,7 +8,7 @@
 
 ## ✨ 特性 Features
 
-- **AIX 风格启动屏** — 硬件检测 + ASCII 艺术欢迎界面
+- **风格启动屏** — 硬件检测 + ASCII 艺术欢迎界面
 - **Niri 合成器** — 滚动平铺 Wayland 桌面，Catppuccin Mocha 主题
 - **Gentoo 基础** — OpenRC 初始化系统，Portage 包管理
 - **匿名工具** — Tor + obfs4proxy + i2pd 开箱即用

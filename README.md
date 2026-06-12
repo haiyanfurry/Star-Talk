@@ -1,8 +1,8 @@
 # Star-Talk / 星語
 
-> A Gentoo-based Linux Live Distribution with Niri compositor, AIX-style boot splash, built-in anonymity tools, and gaming support.
+> A Gentoo-based Linux Live Distribution with Niri compositor, style boot splash, built-in anonymity tools, and gaming support.
 
-基于 Gentoo 的 Linux Live 发行版，集成 Niri 滚动平铺 Wayland 合成器、AIX 风格启动欢迎屏、内置匿名工具和游戏支持。
+基于 Gentoo 的 Linux Live 发行版，集成 Niri 滚动平铺 Wayland 合成器、风格启动欢迎屏、内置匿名工具和游戏支持。
 
 ---
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # ╔══════════════════════════════════════════════════════════════╗
 # ║     Star-Talk / 星语 — 01-kernel.sh                       ║
-# ║     Recompile kernel with SQUASHFS + OVERLAY_FS support    ║
+# ║     Download & compile Linux kernel from source            ║
 # ╚══════════════════════════════════════════════════════════════╝
 set -euo pipefail
 source "$(dirname "$0")/utils.sh"
@@ -9,79 +9,76 @@ source "$(dirname "$0")/utils.sh"
 PHASE="01"
 START_TIME=$(date +%s)
 
-step "Phase ${PHASE}: Recompiling Linux kernel with SQUASHFS + OVERLAY_FS"
+KERNEL_VER="7.0.12"
+KERNEL_MAJOR="7.x"
+KERNEL_SRC="$SOURCES_DIR/linux-${KERNEL_VER}.tar.xz"
+KERNEL_DIR="$BUILD_DIR/linux-${KERNEL_VER}"
+KERNEL_CONFIG="$CONFIGS_DIR/kernel/star-talk.config"
 
-cd "$PROJECT_ROOT/linux-7.0.12"
+step "Phase ${PHASE}: Downloading & compiling Linux ${KERNEL_VER}"
 
-# ── Check current config ─────────────────────────────────────────
-if [ ! -f .config ]; then
-    die "No .config found in linux-7.0.12/. Run 'make menuconfig' first or restore config"
+# ── Download kernel source ──────────────────────────────────────
+if [ ! -d "$KERNEL_DIR" ]; then
+    step "Downloading Linux kernel ${KERNEL_VER}..."
+    KERNEL_URL="https://cdn.kernel.org/pub/linux/kernel/v${KERNEL_MAJOR}/linux-${KERNEL_VER}.tar.xz"
+    download "$KERNEL_URL" "$KERNEL_SRC"
+
+    substep "Extracting kernel source..."
+    extract_to "$KERNEL_SRC" "$(dirname "$KERNEL_DIR")"
+fi
+success "Kernel source: $KERNEL_DIR"
+
+# ── Copy our kernel config ──────────────────────────────────────
+cd "$KERNEL_DIR"
+
+if [ -f "$KERNEL_CONFIG" ]; then
+    cp "$KERNEL_CONFIG" .config
+    success "Using Star-Talk kernel config"
+else
+    warn "No custom config at $KERNEL_CONFIG, generating defconfig..."
+    make defconfig
 fi
 
-# ── Enable required features ─────────────────────────────────────
-step "Enabling SQUASHFS support..."
+# ── Enable required features ────────────────────────────────────
+step "Enabling SQUASHFS + OVERLAY_FS..."
 ./scripts/config -e CONFIG_SQUASHFS
 ./scripts/config -e CONFIG_SQUASHFS_XZ
 ./scripts/config -e CONFIG_SQUASHFS_ZSTD
 ./scripts/config -e CONFIG_SQUASHFS_LZ4
 ./scripts/config -e CONFIG_SQUASHFS_ZLIB
 ./scripts/config -e CONFIG_SQUASHFS_FILE_DIRECT
-
-step "Enabling OVERLAY_FS support..."
 ./scripts/config -e CONFIG_OVERLAY_FS
 ./scripts/config -e CONFIG_OVERLAY_FS_REDIRECT_DIR
-./scripts/config -e CONFIG_OVERLAY_FS_INDEX
 
-# Verify changes
-step "Verifying kernel config changes..."
-if grep -q "CONFIG_SQUASHFS=y" .config; then
-    success "SQUASHFS enabled in kernel config"
-else
-    warn "SQUASHFS may not have been enabled correctly"
-fi
-
-if grep -q "CONFIG_OVERLAY_FS=y" .config; then
-    success "OVERLAY_FS enabled in kernel config"
-else
-    warn "OVERLAY_FS may not have been enabled correctly"
-fi
-
-# ── Update config (resolve dependencies automatically) ───────────
-step "Running 'make olddefconfig' to resolve dependencies..."
+# ── Resolve dependencies ────────────────────────────────────────
+step "Resolving config dependencies..."
 make -j"$JOBS" olddefconfig
 
-# ── Compile the kernel ──────────────────────────────────────────
-step "Compiling kernel (${JOBS} jobs)..."
+# Save resolved config for reproducibility
+mkdir -p "$(dirname "$KERNEL_CONFIG")"
+cp .config "$KERNEL_CONFIG"
+cp .config "$OUT_DIR/kernel.config"
+
+# ── Compile ─────────────────────────────────────────────────────
+step "Compiling kernel (${JOBS} jobs, ~30 min)..."
 make -j"$JOBS"
 
-# ── Compile modules ─────────────────────────────────────────────
 step "Compiling kernel modules..."
 make -j"$JOBS" modules
 
 # ── Copy outputs ────────────────────────────────────────────────
-step "Copying kernel artifacts to output..."
 cp arch/x86/boot/bzImage "$OUT_DIR/bzImage"
 cp System.map "$OUT_DIR/System.map"
-cp .config "$OUT_DIR/kernel.config"
+success "bzImage: $OUT_DIR/bzImage ($(du -h "$OUT_DIR/bzImage" | cut -f1))"
 
-success "Kernel compiled: $OUT_DIR/bzImage ($(du -h "$OUT_DIR/bzImage" | cut -f1))"
-
-# ── Install modules to rootfs ────────────────────────────────────
-step "Installing kernel modules to rootfs..."
-make INSTALL_MOD_PATH="$ROOTFS_DIR/usr" modules_install
-
-MODULE_COUNT=$(find "$ROOTFS_DIR/usr/lib/modules" -name "*.ko" 2>/dev/null | wc -l)
-success "Installed ${MODULE_COUNT} kernel modules to rootfs"
-
-# ── Verify critical features ─────────────────────────────────────
-step "Verifying compiled kernel features..."
-KERNEL_STRING=$(strings "$OUT_DIR/bzImage" 2>/dev/null | head -50)
-
-if echo "$KERNEL_STRING" | grep -qi "squashfs"; then
-    success "SquashFS support confirmed in kernel binary"
-else
-    warn "Could not verify SquashFS in bzImage (may be compressed)"
+# ── Install modules to rootfs ──────────────────────────────────
+if [ -d "$ROOTFS_DIR" ]; then
+    step "Installing kernel modules to rootfs..."
+    make INSTALL_MOD_PATH="$ROOTFS_DIR/usr" modules_install
 fi
 
 cd "$PROJECT_ROOT"
 build_summary "$PHASE" "$START_TIME"
+echo ""
+info "Kernel source: $(du -sh "$KERNEL_DIR" | cut -f1)"
+info "Kernel binary: $(du -sh "$OUT_DIR/bzImage" | cut -f1)"

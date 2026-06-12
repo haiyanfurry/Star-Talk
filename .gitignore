@@ -13,11 +13,15 @@
 /out/kernel.config
 /out/System.map
 
-# Downloaded archives
+# Downloaded archives (except source tarballs in src/)
 *.tar.*
 *.tar
 *.tgz
 *.zip
+!src/tarballs/*.tar.*
+!src/tarballs/*.tar
+!src/tarballs/*.tgz
+!src/tarballs/*.zip
 
 # Editor / IDE
 .vscode/

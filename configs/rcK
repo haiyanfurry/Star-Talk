@@ -1,0 +1,17 @@
+#!/bin/busybox sh
+# ╔══════════════════════════════════════════════════════════════╗
+# ║     Star-Talk / 星语 — System Shutdown (rcK)               ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+echo "Star-Talk / 星语 is shutting down..."
+
+# Kill all processes
+killall5 -15 2>/dev/null || true
+sleep 1
+killall5 -9 2>/dev/null || true
+
+# Unmount filesystems
+umount -a -r 2>/dev/null || true
+
+echo "Goodbye."
+exit 0

@@ -1,0 +1,37 @@
+# Star-Talk / 星语 — .gitignore
+
+# Build artifacts
+/work/
+/out/
+*.tar.*
+*.tar
+*.tgz
+*.zip
+
+# Kernel build artifacts (inside linux-7.0.12)
+/linux-7.0.12/*.o
+/linux-7.0.12/*.ko
+/linux-7.0.12/*.a
+/linux-7.0.12/vmlinux
+/linux-7.0.12/vmlinux.o
+/linux-7.0.12/System.map
+/linux-7.0.12/Module.symvers
+/linux-7.0.12/modules.order
+/linux-7.0.12/.tmp_*
+/linux-7.0.12/.*.cmd
+/linux-7.0.12/.*.d
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Sensitive
+*.img
+!star-talk-*.img

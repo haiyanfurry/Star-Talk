@@ -1,0 +1,27 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║     Star-Talk / 星语 — /etc/profile (global shell config)  ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── Environment ──────────────────────────────────────────────────
+export EDITOR=nano
+export PAGER=less
+
+# ── PATH ─────────────────────────────────────────────────────────
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+
+# ── umask ────────────────────────────────────────────────────────
+umask 022
+
+# ── PS1 prompt (for login shells) ────────────────────────────────
+if [ "$(id -u)" -eq 0 ]; then
+    # Root prompt
+    export PS1='\[\033[1;31m\]\u@\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\] # '
+else
+    # User prompt
+    export PS1='\[\033[1;32m\]\u\[\033[1;36m\]@\[\033[1;33m\]\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\] \$ '
+fi
+
+# ── Source bashrc if running bash ────────────────────────────────
+if [ -n "${BASH_VERSION:-}" ] && [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+fi

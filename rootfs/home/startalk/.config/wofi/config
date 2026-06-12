@@ -1,0 +1,39 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║     Star-Talk / 星语 — Wofi Application Launcher Config    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── Mode ────────────────────────────────────────────────────────
+mode=drun
+show=drun
+
+# ── Geometry ────────────────────────────────────────────────────
+width=600
+height=400
+location=center
+halign=fill
+orientation=vertical
+
+# ── Appearance ──────────────────────────────────────────────────
+prompt=Star-Talk
+filter_rate=100
+allow_markup=true
+no_actions=true
+sort_order=default
+gtk_dark=true
+
+# ── Search ──────────────────────────────────────────────────────
+term=foot
+exec_search=false
+hide_search=false
+parse_search=false
+
+# ── Behavior ────────────────────────────────────────────────────
+insensitive=false
+allow_images=true
+image_size=24
+columns=1
+lines=8
+
+# ── Keybindings ─────────────────────────────────────────────────
+key_expand=Tab
+key_exit=Escape

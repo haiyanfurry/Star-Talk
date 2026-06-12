@@ -1,0 +1,34 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/dumpsexp 78063b3e8621f0eb086d4cc1774238ec 1779043642
+obj /usr/bin/hmac256 3175cab8e00082de6fcc3755feb94212 1779043642
+obj /usr/bin/mpicalc 0584433ecf31a94f73ef2a9e817ffae9 1779043642
+obj /usr/bin/x86_64-pc-linux-gnu-libgcrypt-config 0d2fd8183390a2105bcb9fa8335b5312 1779043640
+dir /usr/include
+obj /usr/include/gcrypt.h 921455f749f747943164cd9ac583d6cc 1779043640
+dir /usr/lib64
+obj /usr/lib64/libgcrypt.so.20.7.2 cf802a811f20e05557a36205d5014e41 1779043642
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/libgcrypt.pc b30eda20ff4bfd4f64efbc66dc573b0b 1779043640
+dir /usr/share
+dir /usr/share/aclocal
+obj /usr/share/aclocal/libgcrypt.m4 685d8eeaea9ba8a4c9eeefda911a4e47 1779043640
+dir /usr/share/doc
+dir /usr/share/doc/libgcrypt-1.12.2
+obj /usr/share/doc/libgcrypt-1.12.2/AUTHORS.bz2 3dbe7ec7c5007e12391e59e490576869 1779043641
+obj /usr/share/doc/libgcrypt-1.12.2/ChangeLog.bz2 9063d43d14dfc7ffa40c64d5596e07cd 1779043641
+obj /usr/share/doc/libgcrypt-1.12.2/NEWS.bz2 5a15aed84774883ffa316349d6a17047 1779043641
+obj /usr/share/doc/libgcrypt-1.12.2/README.GIT.bz2 562a132294974ba99d7c224af7301984 1779043641
+obj /usr/share/doc/libgcrypt-1.12.2/README.bz2 9c5ac8ff80e2ccab209b2ba788d9b7bc 1779043641
+obj /usr/share/doc/libgcrypt-1.12.2/THANKS.bz2 f422d011fbc445faaaa0f2106caddd1d 1779043641
+obj /usr/share/doc/libgcrypt-1.12.2/TODO.bz2 f1167edd8e88fe03c52912030d08892f 1779043641
+dir /usr/share/info
+obj /usr/share/info/gcrypt.info-1.bz2 3bcb0835cca7baaf03659c9078f842ae 1779043640
+obj /usr/share/info/gcrypt.info-2.bz2 6afed5eb2db8f159e2dd4eddd185a2b1 1779043640
+obj /usr/share/info/gcrypt.info.bz2 b7c765f7118b5e8c7527bdd9a7f95c9c 1779043640
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/hmac256.1.bz2 eac17aed8274f9a5e526d3651e975a67 1779043640
+sym /usr/lib64/libgcrypt.so.20 -> libgcrypt.so.20.7.2 1781128613
+sym /usr/lib64/libgcrypt.so -> libgcrypt.so.20.7.2 1781128613
+sym /usr/bin/libgcrypt-config -> x86_64-pc-linux-gnu-libgcrypt-config 1781128613

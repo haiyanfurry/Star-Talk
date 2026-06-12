@@ -1,0 +1,38 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/editables
+obj /usr/lib/python3.13/site-packages/editables/__init__.py c10aec44d3a44cf2fcaed5c043ddca5c 1780764390
+dir /usr/lib/python3.13/site-packages/editables/__pycache__
+obj /usr/lib/python3.13/site-packages/editables/__pycache__/__init__.cpython-313.opt-1.pyc d37b166c655ad858cd506c10806574ba 1780764390
+obj /usr/lib/python3.13/site-packages/editables/__pycache__/__init__.cpython-313.opt-2.pyc d37b166c655ad858cd506c10806574ba 1780764390
+obj /usr/lib/python3.13/site-packages/editables/__pycache__/__init__.cpython-313.pyc d37b166c655ad858cd506c10806574ba 1780764390
+obj /usr/lib/python3.13/site-packages/editables/__pycache__/redirector.cpython-313.opt-1.pyc a2a06fc87c2b724b37961e8d0e50f31f 1780764390
+obj /usr/lib/python3.13/site-packages/editables/__pycache__/redirector.cpython-313.opt-2.pyc a2a06fc87c2b724b37961e8d0e50f31f 1780764390
+obj /usr/lib/python3.13/site-packages/editables/__pycache__/redirector.cpython-313.pyc a2a06fc87c2b724b37961e8d0e50f31f 1780764390
+obj /usr/lib/python3.13/site-packages/editables/py.typed d41d8cd98f00b204e9800998ecf8427e 1780764390
+obj /usr/lib/python3.13/site-packages/editables/redirector.py 3b4c9a9232f69bde5c5c18b53aef7cde 1780764390
+dir /usr/lib/python3.13/site-packages/editables-0.6.dist-info
+obj /usr/lib/python3.13/site-packages/editables-0.6.dist-info/METADATA 269689d2a95464459ce02581c2baa993 1780764390
+obj /usr/lib/python3.13/site-packages/editables-0.6.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764390
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/editables
+obj /usr/lib/python3.14/site-packages/editables/__init__.py c10aec44d3a44cf2fcaed5c043ddca5c 1780764390
+dir /usr/lib/python3.14/site-packages/editables/__pycache__
+obj /usr/lib/python3.14/site-packages/editables/__pycache__/__init__.cpython-314.opt-1.pyc e8e46b132b4c0f5bb6da54b3e3119d75 1780764390
+obj /usr/lib/python3.14/site-packages/editables/__pycache__/__init__.cpython-314.opt-2.pyc e8e46b132b4c0f5bb6da54b3e3119d75 1780764390
+obj /usr/lib/python3.14/site-packages/editables/__pycache__/__init__.cpython-314.pyc e8e46b132b4c0f5bb6da54b3e3119d75 1780764390
+obj /usr/lib/python3.14/site-packages/editables/__pycache__/redirector.cpython-314.opt-1.pyc 387ca85f8d10b6de67c57b50077052bc 1780764390
+obj /usr/lib/python3.14/site-packages/editables/__pycache__/redirector.cpython-314.opt-2.pyc 387ca85f8d10b6de67c57b50077052bc 1780764390
+obj /usr/lib/python3.14/site-packages/editables/__pycache__/redirector.cpython-314.pyc 387ca85f8d10b6de67c57b50077052bc 1780764390
+obj /usr/lib/python3.14/site-packages/editables/py.typed d41d8cd98f00b204e9800998ecf8427e 1780764390
+obj /usr/lib/python3.14/site-packages/editables/redirector.py 3b4c9a9232f69bde5c5c18b53aef7cde 1780764390
+dir /usr/lib/python3.14/site-packages/editables-0.6.dist-info
+obj /usr/lib/python3.14/site-packages/editables-0.6.dist-info/METADATA 269689d2a95464459ce02581c2baa993 1780764390
+obj /usr/lib/python3.14/site-packages/editables-0.6.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764390
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/editables-0.6
+obj /usr/share/doc/editables-0.6/README.md.bz2 d52597ce808a520192e4a5f17fa9ac86 1780764391

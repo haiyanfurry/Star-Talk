@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.gnome.font-viewer
-Exec=/usr/bin/gnome-font-viewer --gapplication-service

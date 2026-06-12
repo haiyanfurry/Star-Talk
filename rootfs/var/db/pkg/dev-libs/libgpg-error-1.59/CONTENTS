@@ -1,0 +1,103 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/gpg-error 199638bb32a0800ea843f7c2a76be095 1775409457
+obj /usr/bin/x86_64-pc-linux-gnu-gpg-error-config 7ab1cf1151b4448cffdc09bc19aa9473 1775409456
+obj /usr/bin/x86_64-pc-linux-gnu-gpgrt-config ca5c72ccfe51b83038ef830c67fc85ee 1775409456
+obj /usr/bin/yat2m 583ea132d54e9fc683bc44392c2a81d8 1775409457
+dir /usr/include
+obj /usr/include/gpg-error.h 585e4bdf67affe231901587643f2065d 1775409456
+obj /usr/include/gpgrt.h ce7e7ea25bbd4985a4c94ca2f1eef686 1775409456
+dir /usr/include/x86_64-pc-linux-gnu
+obj /usr/include/x86_64-pc-linux-gnu/gpg-error.h 7995e88053f705ba4e966e26a5467843 1775409456
+obj /usr/include/x86_64-pc-linux-gnu/gpgrt.h 7995e88053f705ba4e966e26a5467843 1775409456
+dir /usr/lib64
+obj /usr/lib64/libgpg-error.so.0.41.2 740944b367410b4786bbf5ef71726650 1775409457
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/gpg-error.pc bb343399ee3211f9b936a427e21363b8 1775409456
+dir /usr/share
+dir /usr/share/aclocal
+obj /usr/share/aclocal/gpg-error.m4 60e3c4ae2bd7855d00e0b5050bd35d94 1775409456
+obj /usr/share/aclocal/gpgrt.m4 e4b709375bb87eb1d1f6836d29b49a1d 1775409456
+dir /usr/share/doc
+dir /usr/share/doc/libgpg-error-1.59
+obj /usr/share/doc/libgpg-error-1.59/AUTHORS.bz2 9dfb1db131ec4b213de0ea3e0794040e 1775409456
+obj /usr/share/doc/libgpg-error-1.59/ChangeLog.bz2 c2cebb9e1118e34466509a72b608dccc 1775409456
+obj /usr/share/doc/libgpg-error-1.59/NEWS.bz2 04f00d584b4451c5787d42dc577f79fa 1775409456
+obj /usr/share/doc/libgpg-error-1.59/README.bz2 43920e62b1f73f570242d024e5fe88c5 1775409456
+obj /usr/share/doc/libgpg-error-1.59/THANKS.bz2 c4ebc4a0de1c5c6799e91db0e3a6eb8a 1775409456
+dir /usr/share/info
+obj /usr/share/info/gpgrt.info.bz2 19af51912fb8071b7e0f3a4be9a70539 1775409456
+dir /usr/share/libgpg-error
+obj /usr/share/libgpg-error/errorref.txt 9a41a467337e51476179bd11c8ffa886 1775409456
+dir /usr/share/locale
+dir /usr/share/locale/cs
+dir /usr/share/locale/cs/LC_MESSAGES
+obj /usr/share/locale/cs/LC_MESSAGES/libgpg-error.mo f6e86c1dfbbbf1b5cc4eb0475adb7b68 1775409456
+dir /usr/share/locale/da
+dir /usr/share/locale/da/LC_MESSAGES
+obj /usr/share/locale/da/LC_MESSAGES/libgpg-error.mo f0c4374758966020dce709ab54e7da97 1775409456
+dir /usr/share/locale/de
+dir /usr/share/locale/de/LC_MESSAGES
+obj /usr/share/locale/de/LC_MESSAGES/libgpg-error.mo 0e9857d69ba90300e8ccddf202655dfd 1775409456
+dir /usr/share/locale/eo
+dir /usr/share/locale/eo/LC_MESSAGES
+obj /usr/share/locale/eo/LC_MESSAGES/libgpg-error.mo d9fa69000ab25bc61a7269ce730a2b66 1775409456
+dir /usr/share/locale/es
+dir /usr/share/locale/es/LC_MESSAGES
+obj /usr/share/locale/es/LC_MESSAGES/libgpg-error.mo 0197c09754a0e65027120d0f9dbcd440 1775409456
+dir /usr/share/locale/fr
+dir /usr/share/locale/fr/LC_MESSAGES
+obj /usr/share/locale/fr/LC_MESSAGES/libgpg-error.mo 4942e6fe7cf37a622e414c6731a6ca74 1775409456
+dir /usr/share/locale/hu
+dir /usr/share/locale/hu/LC_MESSAGES
+obj /usr/share/locale/hu/LC_MESSAGES/libgpg-error.mo a696e5e6198afd0fde0bb8b74e67cd54 1775409456
+dir /usr/share/locale/it
+dir /usr/share/locale/it/LC_MESSAGES
+obj /usr/share/locale/it/LC_MESSAGES/libgpg-error.mo c4111d03e490a67b3c2c607d5d4e7847 1775409456
+dir /usr/share/locale/ja
+dir /usr/share/locale/ja/LC_MESSAGES
+obj /usr/share/locale/ja/LC_MESSAGES/libgpg-error.mo 65c5dd8b4b6d971e5a2ed70acb01d9e9 1775409456
+dir /usr/share/locale/nl
+dir /usr/share/locale/nl/LC_MESSAGES
+obj /usr/share/locale/nl/LC_MESSAGES/libgpg-error.mo 7df4abce3b45dbfb9fc4f03daa2739a6 1775409456
+dir /usr/share/locale/pl
+dir /usr/share/locale/pl/LC_MESSAGES
+obj /usr/share/locale/pl/LC_MESSAGES/libgpg-error.mo 1ba943b03efc2ec0ca6df5e29290a559 1775409456
+dir /usr/share/locale/pt
+dir /usr/share/locale/pt/LC_MESSAGES
+obj /usr/share/locale/pt/LC_MESSAGES/libgpg-error.mo 25dd1c9b89dc40c6932886df86611fcc 1775409456
+dir /usr/share/locale/ro
+dir /usr/share/locale/ro/LC_MESSAGES
+obj /usr/share/locale/ro/LC_MESSAGES/libgpg-error.mo d0834f12227079de7b88fc79fd3006c7 1775409456
+dir /usr/share/locale/ru
+dir /usr/share/locale/ru/LC_MESSAGES
+obj /usr/share/locale/ru/LC_MESSAGES/libgpg-error.mo 642f95cca4e5c24ffb3201ce7baf9a81 1775409456
+dir /usr/share/locale/sr
+dir /usr/share/locale/sr/LC_MESSAGES
+obj /usr/share/locale/sr/LC_MESSAGES/libgpg-error.mo dfc1560275bc0217fef12941ef5245e6 1775409456
+dir /usr/share/locale/sv
+dir /usr/share/locale/sv/LC_MESSAGES
+obj /usr/share/locale/sv/LC_MESSAGES/libgpg-error.mo e2ef6b13bc16185c7250707ea273e9a3 1775409456
+dir /usr/share/locale/tr
+dir /usr/share/locale/tr/LC_MESSAGES
+obj /usr/share/locale/tr/LC_MESSAGES/libgpg-error.mo 77df356ba07204f4a0d3d4cc9678e1ee 1775409456
+dir /usr/share/locale/uk
+dir /usr/share/locale/uk/LC_MESSAGES
+obj /usr/share/locale/uk/LC_MESSAGES/libgpg-error.mo f2a718279e28ab28be2bb0fa942149c6 1775409456
+dir /usr/share/locale/vi
+dir /usr/share/locale/vi/LC_MESSAGES
+obj /usr/share/locale/vi/LC_MESSAGES/libgpg-error.mo fd82a046c8680c93eb836e62ff51a0ea 1775409456
+dir /usr/share/locale/zh_CN
+dir /usr/share/locale/zh_CN/LC_MESSAGES
+obj /usr/share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo 90ffcf52f5913fbd1e7acbddb38a487e 1775409456
+dir /usr/share/locale/zh_TW
+dir /usr/share/locale/zh_TW/LC_MESSAGES
+obj /usr/share/locale/zh_TW/LC_MESSAGES/libgpg-error.mo 960e42b0c849c66579312435b7f7c362 1775409456
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/gpg-error-config.1.bz2 8a18f3055370a035e67bb2888656508e 1775409456
+obj /usr/share/man/man1/gpgrt-config.1.bz2 1c26ac1d11ec876e65d1a47d97d5b43e 1775409456
+sym /usr/lib64/libgpg-error.so.0 -> libgpg-error.so.0.41.2 1781128610
+sym /usr/lib64/libgpg-error.so -> libgpg-error.so.0.41.2 1781128610
+sym /usr/bin/gpgrt-config -> x86_64-pc-linux-gnu-gpgrt-config 1781128610
+sym /usr/bin/gpg-error-config -> x86_64-pc-linux-gnu-gpg-error-config 1781128610

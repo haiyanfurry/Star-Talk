@@ -1,0 +1,14 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/patchelf 3792f1d67ae7cb4e018ada9b3d93e280 1774199894
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/patchelf-0.18.0
+obj /usr/share/doc/patchelf-0.18.0/BUGS.bz2 dcd217ffac9ac50dca1079f095ebef58 1774199894
+obj /usr/share/doc/patchelf-0.18.0/README.md.bz2 6d2aef5a10253897569b940db86839bb 1774199894
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/patchelf.1.bz2 318eb852dcc93eeadfc7ab5260dd27ca 1774199894
+dir /usr/share/zsh
+dir /usr/share/zsh/site-functions
+obj /usr/share/zsh/site-functions/_patchelf b569bc1722b4f9296c5690cb2cca039f 1774199894

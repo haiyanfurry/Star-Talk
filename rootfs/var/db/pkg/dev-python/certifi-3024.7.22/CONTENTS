@@ -1,0 +1,48 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/certifi
+obj /usr/lib/python3.13/site-packages/certifi/__init__.py 1c1b8c1bda7062745fc5fbc44b775bb9 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__main__.py 80196007df7a241a2db396005a98f5da 1780764813
+dir /usr/lib/python3.13/site-packages/certifi/__pycache__
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/__init__.cpython-313.opt-1.pyc 51ec596e523f85da3ad9fd052fd760d0 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/__init__.cpython-313.opt-2.pyc 51ec596e523f85da3ad9fd052fd760d0 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/__init__.cpython-313.pyc 51ec596e523f85da3ad9fd052fd760d0 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/__main__.cpython-313.opt-1.pyc 939be40ac470d969bd49be34b668d8a6 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/__main__.cpython-313.opt-2.pyc 939be40ac470d969bd49be34b668d8a6 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/__main__.cpython-313.pyc 939be40ac470d969bd49be34b668d8a6 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/core.cpython-313.opt-1.pyc e9eb2280a3efe53291534b9192342ff5 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/core.cpython-313.opt-2.pyc e9eb2280a3efe53291534b9192342ff5 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/__pycache__/core.cpython-313.pyc e9eb2280a3efe53291534b9192342ff5 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/cacert.pem d5b0eaf0ea4aa52b0dab64b782f42a29 1780764813
+obj /usr/lib/python3.13/site-packages/certifi/core.py 4c37f90e96c63e5e1b4a8cfe50eea18b 1780764813
+dir /usr/lib/python3.13/site-packages/certifi-3024.7.22.dist-info
+obj /usr/lib/python3.13/site-packages/certifi-3024.7.22.dist-info/METADATA d405bebae7fcb8128ba2fdc7079b15b2 1780764813
+obj /usr/lib/python3.13/site-packages/certifi-3024.7.22.dist-info/WHEEL 0be2025a54a57ff313e1e195f0f36c31 1780764813
+obj /usr/lib/python3.13/site-packages/certifi-3024.7.22.dist-info/top_level.txt 5ebd7f7c387ebb31c14e3c701023ac97 1780764813
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/certifi
+obj /usr/lib/python3.14/site-packages/certifi/__init__.py 1c1b8c1bda7062745fc5fbc44b775bb9 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__main__.py 80196007df7a241a2db396005a98f5da 1780764813
+dir /usr/lib/python3.14/site-packages/certifi/__pycache__
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/__init__.cpython-314.opt-1.pyc 1ce9234a0c7c18b95e771962cfbf6e5f 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/__init__.cpython-314.opt-2.pyc 1ce9234a0c7c18b95e771962cfbf6e5f 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/__init__.cpython-314.pyc 1ce9234a0c7c18b95e771962cfbf6e5f 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/__main__.cpython-314.opt-1.pyc a7443efdf4233997b1034528d5c7ff45 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/__main__.cpython-314.opt-2.pyc a7443efdf4233997b1034528d5c7ff45 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/__main__.cpython-314.pyc a7443efdf4233997b1034528d5c7ff45 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/core.cpython-314.opt-1.pyc 6efc032e1a51b77c1fbbe82bce11726c 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/core.cpython-314.opt-2.pyc 6efc032e1a51b77c1fbbe82bce11726c 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/__pycache__/core.cpython-314.pyc 6efc032e1a51b77c1fbbe82bce11726c 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/cacert.pem d5b0eaf0ea4aa52b0dab64b782f42a29 1780764813
+obj /usr/lib/python3.14/site-packages/certifi/core.py 4c37f90e96c63e5e1b4a8cfe50eea18b 1780764813
+dir /usr/lib/python3.14/site-packages/certifi-3024.7.22.dist-info
+obj /usr/lib/python3.14/site-packages/certifi-3024.7.22.dist-info/METADATA d405bebae7fcb8128ba2fdc7079b15b2 1780764813
+obj /usr/lib/python3.14/site-packages/certifi-3024.7.22.dist-info/WHEEL 0be2025a54a57ff313e1e195f0f36c31 1780764813
+obj /usr/lib/python3.14/site-packages/certifi-3024.7.22.dist-info/top_level.txt 5ebd7f7c387ebb31c14e3c701023ac97 1780764813
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/certifi-3024.7.22
+obj /usr/share/doc/certifi-3024.7.22/README.md.bz2 3ae73cc6b5635ec90e746064959b969e 1780764814

@@ -1,0 +1,24 @@
+dir /usr
+dir /usr/include
+dir /usr/include/jsoncpp
+dir /usr/include/jsoncpp/json
+obj /usr/include/jsoncpp/json/allocator.h c10483cbb419b16b7cd6be370d009b0a 1725938309
+obj /usr/include/jsoncpp/json/assertions.h d542dfb73cafbe41637eede9bd393556 1725938309
+obj /usr/include/jsoncpp/json/config.h 43f71f88dd8558f62a589b6473c18229 1725938309
+obj /usr/include/jsoncpp/json/forwards.h 68cafd5ef203a84ca68015baeca367df 1725938309
+obj /usr/include/jsoncpp/json/json.h 4f5d70ded9fdb62205531c4969876073 1725938309
+obj /usr/include/jsoncpp/json/json_features.h 899ae283628e6248ef008c637732fc10 1725938309
+obj /usr/include/jsoncpp/json/reader.h d0b6be84735a41a826f5f563bf7b45ec 1725938309
+obj /usr/include/jsoncpp/json/value.h 6ad000f0ac03fb283e4a1e13d05cd6b7 1725938309
+obj /usr/include/jsoncpp/json/version.h 60a9e66801b83fdb617d84401af452a9 1725938309
+obj /usr/include/jsoncpp/json/writer.h fe96c4c068d06d6272a6212682fb3d2c 1725938309
+dir /usr/lib64
+obj /usr/lib64/libjsoncpp.so.26 8ac83e7f34590e04298fdabc41616d9a 1780765017
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/jsoncpp.pc 8d3daa0edd649661cf098da1726d37ed 1780765014
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/jsoncpp-1.9.6-r2
+obj /usr/share/doc/jsoncpp-1.9.6-r2/AUTHORS.bz2 3b7ffc801e0acb8ca6c67eeefd7ecc79 1780765016
+obj /usr/share/doc/jsoncpp-1.9.6-r2/README.md.bz2 65c581737091ca062327d1528d822b4c 1780765016
+sym /usr/lib64/libjsoncpp.so -> libjsoncpp.so.26 1781128605

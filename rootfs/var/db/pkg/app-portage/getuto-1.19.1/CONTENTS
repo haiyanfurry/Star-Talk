@@ -1,0 +1,3 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/getuto bdb1c345b4b6ea1c0eb78508ada6ea80 1780248553

@@ -1,0 +1,46 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/markupsafe
+obj /usr/lib/python3.13/site-packages/markupsafe/__init__.py b12bd109ab83b72fbd662d5bcf88fe66 1780765021
+dir /usr/lib/python3.13/site-packages/markupsafe/__pycache__
+obj /usr/lib/python3.13/site-packages/markupsafe/__pycache__/__init__.cpython-313.opt-1.pyc e361291019142c23bd4db5c4627380fe 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/__pycache__/__init__.cpython-313.opt-2.pyc a8f36becd9c9e161174d6065ca73e655 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/__pycache__/__init__.cpython-313.pyc e361291019142c23bd4db5c4627380fe 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/__pycache__/_native.cpython-313.opt-1.pyc 3b2689f443bc521005cd5250d8556d82 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/__pycache__/_native.cpython-313.opt-2.pyc 3b2689f443bc521005cd5250d8556d82 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/__pycache__/_native.cpython-313.pyc 3b2689f443bc521005cd5250d8556d82 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/_native.py 700c99d9727fa1a61fbccaac4f0eeb04 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/_speedups.c 14ed362eebe4f6004748b4c6e39fa373 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/_speedups.cpython-313-x86_64-linux-gnu.so 12d58a5b0c6ab31619b77d7e7a8bd727 1780765023
+obj /usr/lib/python3.13/site-packages/markupsafe/_speedups.pyi 409ce8e53d0314236bd3ff08d6e96b80 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe/py.typed d41d8cd98f00b204e9800998ecf8427e 1780765021
+dir /usr/lib/python3.13/site-packages/markupsafe-3.0.3.dist-info
+obj /usr/lib/python3.13/site-packages/markupsafe-3.0.3.dist-info/METADATA e96b21a26690c41a91b8dc8a5a345b9d 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe-3.0.3.dist-info/WHEEL 960a2250ba3d825e8f9b82e66bafd01e 1780765021
+obj /usr/lib/python3.13/site-packages/markupsafe-3.0.3.dist-info/top_level.txt 5862354c9fbb5b15204672c79808e25c 1780765021
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/markupsafe
+obj /usr/lib/python3.14/site-packages/markupsafe/__init__.py b12bd109ab83b72fbd662d5bcf88fe66 1780765022
+dir /usr/lib/python3.14/site-packages/markupsafe/__pycache__
+obj /usr/lib/python3.14/site-packages/markupsafe/__pycache__/__init__.cpython-314.opt-1.pyc 2dae62e144f404267fb713cf077bb28d 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/__pycache__/__init__.cpython-314.opt-2.pyc 071589e28f6530be193b105c7e1906e8 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/__pycache__/__init__.cpython-314.pyc 2dae62e144f404267fb713cf077bb28d 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/__pycache__/_native.cpython-314.opt-1.pyc 33b6cf002dd89d9569c702d578f63893 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/__pycache__/_native.cpython-314.opt-2.pyc 33b6cf002dd89d9569c702d578f63893 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/__pycache__/_native.cpython-314.pyc 33b6cf002dd89d9569c702d578f63893 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/_native.py 700c99d9727fa1a61fbccaac4f0eeb04 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/_speedups.c 14ed362eebe4f6004748b4c6e39fa373 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/_speedups.cpython-314-x86_64-linux-gnu.so 1151472313bc5976a6ad8d245e8a361c 1780765023
+obj /usr/lib/python3.14/site-packages/markupsafe/_speedups.pyi 409ce8e53d0314236bd3ff08d6e96b80 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe/py.typed d41d8cd98f00b204e9800998ecf8427e 1780765022
+dir /usr/lib/python3.14/site-packages/markupsafe-3.0.3.dist-info
+obj /usr/lib/python3.14/site-packages/markupsafe-3.0.3.dist-info/METADATA e96b21a26690c41a91b8dc8a5a345b9d 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe-3.0.3.dist-info/WHEEL 2566731b3232b554bae32fd2a8a8cc18 1780765022
+obj /usr/lib/python3.14/site-packages/markupsafe-3.0.3.dist-info/top_level.txt 5862354c9fbb5b15204672c79808e25c 1780765022
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/markupsafe-3.0.3
+obj /usr/share/doc/markupsafe-3.0.3/README.md.bz2 9803bc0226027e7f0af31389b2f1efd9 1780765022

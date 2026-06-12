@@ -1,0 +1,78 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/hatch_vcs
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__about__.py 5701295cdb698ba3d3dbceffd18e8cc1 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__init__.py 1138865593ce1752b03343f74333e971 1780764921
+dir /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/__about__.cpython-313.opt-1.pyc 3338890ea198ca67f6c3979b5d3b28ab 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/__about__.cpython-313.opt-2.pyc 3338890ea198ca67f6c3979b5d3b28ab 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/__about__.cpython-313.pyc 3338890ea198ca67f6c3979b5d3b28ab 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/__init__.cpython-313.opt-1.pyc 63cd122352f22f5d4559f6b9c6e7a2ca 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/__init__.cpython-313.opt-2.pyc 63cd122352f22f5d4559f6b9c6e7a2ca 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/__init__.cpython-313.pyc 63cd122352f22f5d4559f6b9c6e7a2ca 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/build_hook.cpython-313.opt-1.pyc a17545be950298eb789075845b98e7e0 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/build_hook.cpython-313.opt-2.pyc a17545be950298eb789075845b98e7e0 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/build_hook.cpython-313.pyc a17545be950298eb789075845b98e7e0 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/hooks.cpython-313.opt-1.pyc afafd539c20c0303a38e797f8f2e620e 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/hooks.cpython-313.opt-2.pyc afafd539c20c0303a38e797f8f2e620e 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/hooks.cpython-313.pyc afafd539c20c0303a38e797f8f2e620e 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/metadata_hook.cpython-313.opt-1.pyc 7af3c049076359b135050fb97eec9d67 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/metadata_hook.cpython-313.opt-2.pyc 7af3c049076359b135050fb97eec9d67 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/metadata_hook.cpython-313.pyc 7af3c049076359b135050fb97eec9d67 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/vcs_utils.cpython-313.opt-1.pyc f757b74ac0e7792c255a2f3ac0381c80 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/vcs_utils.cpython-313.opt-2.pyc f757b74ac0e7792c255a2f3ac0381c80 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/vcs_utils.cpython-313.pyc f757b74ac0e7792c255a2f3ac0381c80 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/version_source.cpython-313.opt-1.pyc acbb4a3a7b2c9e806a8d303f15c7d304 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/version_source.cpython-313.opt-2.pyc acbb4a3a7b2c9e806a8d303f15c7d304 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/__pycache__/version_source.cpython-313.pyc acbb4a3a7b2c9e806a8d303f15c7d304 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/build_hook.py 3b901f8a5ef475bc952c6f85c4337c83 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/hooks.py 94b047c5f5f204cae5b1630d1ee7ee54 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/metadata_hook.py 6653091cf61f9a8c4fdfebe400a4ebd8 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/vcs_utils.py 242411556a9e6fd53d93c0a74dc8a663 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs/version_source.py e1613b816c705e8730efabe2ab87aca8 1780764921
+dir /usr/lib/python3.13/site-packages/hatch_vcs-0.5.0.dist-info
+obj /usr/lib/python3.13/site-packages/hatch_vcs-0.5.0.dist-info/METADATA b55322386ca6833dbc22bab84207e290 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs-0.5.0.dist-info/WHEEL 7412a649a466b9dd567141f836b1e222 1780764921
+obj /usr/lib/python3.13/site-packages/hatch_vcs-0.5.0.dist-info/entry_points.txt b209ccaa7fbce90d50c3653ac39fbe68 1780764921
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/hatch_vcs
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__about__.py 5701295cdb698ba3d3dbceffd18e8cc1 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__init__.py 1138865593ce1752b03343f74333e971 1780764921
+dir /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/__about__.cpython-314.opt-1.pyc cd104ff2070ac65c885182dc763b4ee0 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/__about__.cpython-314.opt-2.pyc cd104ff2070ac65c885182dc763b4ee0 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/__about__.cpython-314.pyc cd104ff2070ac65c885182dc763b4ee0 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/__init__.cpython-314.opt-1.pyc add4daf3d13c16139db9c939bfd14011 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/__init__.cpython-314.opt-2.pyc add4daf3d13c16139db9c939bfd14011 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/__init__.cpython-314.pyc add4daf3d13c16139db9c939bfd14011 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/build_hook.cpython-314.opt-1.pyc d6e0b9ade4c05aa4a94867671a14ef6e 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/build_hook.cpython-314.opt-2.pyc d6e0b9ade4c05aa4a94867671a14ef6e 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/build_hook.cpython-314.pyc d6e0b9ade4c05aa4a94867671a14ef6e 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/hooks.cpython-314.opt-1.pyc a0496b3971d082000a639431bea47062 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/hooks.cpython-314.opt-2.pyc a0496b3971d082000a639431bea47062 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/hooks.cpython-314.pyc a0496b3971d082000a639431bea47062 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/metadata_hook.cpython-314.opt-1.pyc 25069b6793cd9b4508d06369e739c8de 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/metadata_hook.cpython-314.opt-2.pyc 25069b6793cd9b4508d06369e739c8de 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/metadata_hook.cpython-314.pyc 25069b6793cd9b4508d06369e739c8de 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/vcs_utils.cpython-314.opt-1.pyc 789f1449e3ad08246db240b4ff2113f4 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/vcs_utils.cpython-314.opt-2.pyc 789f1449e3ad08246db240b4ff2113f4 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/vcs_utils.cpython-314.pyc 789f1449e3ad08246db240b4ff2113f4 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/version_source.cpython-314.opt-1.pyc 793cfdb9216d6c893592a6183ede89ee 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/version_source.cpython-314.opt-2.pyc 793cfdb9216d6c893592a6183ede89ee 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/__pycache__/version_source.cpython-314.pyc 793cfdb9216d6c893592a6183ede89ee 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/build_hook.py 3b901f8a5ef475bc952c6f85c4337c83 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/hooks.py 94b047c5f5f204cae5b1630d1ee7ee54 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/metadata_hook.py 6653091cf61f9a8c4fdfebe400a4ebd8 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/vcs_utils.py 242411556a9e6fd53d93c0a74dc8a663 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs/version_source.py e1613b816c705e8730efabe2ab87aca8 1780764921
+dir /usr/lib/python3.14/site-packages/hatch_vcs-0.5.0.dist-info
+obj /usr/lib/python3.14/site-packages/hatch_vcs-0.5.0.dist-info/METADATA b55322386ca6833dbc22bab84207e290 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs-0.5.0.dist-info/WHEEL 7412a649a466b9dd567141f836b1e222 1780764921
+obj /usr/lib/python3.14/site-packages/hatch_vcs-0.5.0.dist-info/entry_points.txt b209ccaa7fbce90d50c3653ac39fbe68 1780764921
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/hatch-vcs-0.5.0
+obj /usr/share/doc/hatch-vcs-0.5.0/README.md.bz2 ecde40a696c243a8ec4c99a20f994fdb 1780764922

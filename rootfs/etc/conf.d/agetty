@@ -1,0 +1,2 @@
+# Autologin for startalk on tty1
+agetty_options="--noclear --autologin startalk"

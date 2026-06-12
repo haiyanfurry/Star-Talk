@@ -1,0 +1,36 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/__pycache__
+obj /usr/lib/python3.13/site-packages/__pycache__/socks.cpython-313.opt-1.pyc 78126302336a797c94b11f690c142428 1780764818
+obj /usr/lib/python3.13/site-packages/__pycache__/socks.cpython-313.opt-2.pyc 5c0b211f3454b5b1b3b6dd42465c963a 1780764818
+obj /usr/lib/python3.13/site-packages/__pycache__/socks.cpython-313.pyc 78126302336a797c94b11f690c142428 1780764818
+obj /usr/lib/python3.13/site-packages/__pycache__/sockshandler.cpython-313.opt-1.pyc 56e15b6971a09405ab662696e3f1a2d5 1780764818
+obj /usr/lib/python3.13/site-packages/__pycache__/sockshandler.cpython-313.opt-2.pyc e4ead33bb1c576ec7a2eb541c32bc692 1780764818
+obj /usr/lib/python3.13/site-packages/__pycache__/sockshandler.cpython-313.pyc 56e15b6971a09405ab662696e3f1a2d5 1780764818
+dir /usr/lib/python3.13/site-packages/pysocks-1.7.1.dist-info
+obj /usr/lib/python3.13/site-packages/pysocks-1.7.1.dist-info/METADATA 926871c86f64a2af4b02bf0f759e9ed0 1780764818
+obj /usr/lib/python3.13/site-packages/pysocks-1.7.1.dist-info/WHEEL 0be2025a54a57ff313e1e195f0f36c31 1780764818
+obj /usr/lib/python3.13/site-packages/pysocks-1.7.1.dist-info/top_level.txt 9cea706425cc2d5019eaecb2761bb22a 1780764818
+obj /usr/lib/python3.13/site-packages/socks.py d54ae9f865fa2a979360595a32be06d3 1780764818
+obj /usr/lib/python3.13/site-packages/sockshandler.py e60abfc2a8fb421d5e82d61a181bd770 1780764818
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/__pycache__
+obj /usr/lib/python3.14/site-packages/__pycache__/socks.cpython-314.opt-1.pyc e71ca357220a71938549d4fbf6abd87c 1780764818
+obj /usr/lib/python3.14/site-packages/__pycache__/socks.cpython-314.opt-2.pyc 0e89918fabd60cf10033239404a50013 1780764818
+obj /usr/lib/python3.14/site-packages/__pycache__/socks.cpython-314.pyc e71ca357220a71938549d4fbf6abd87c 1780764818
+obj /usr/lib/python3.14/site-packages/__pycache__/sockshandler.cpython-314.opt-1.pyc 57d6d74b0692682604bf58ab1c27f335 1780764818
+obj /usr/lib/python3.14/site-packages/__pycache__/sockshandler.cpython-314.opt-2.pyc afce8907ea9572e8b87dc0b7c4955c3a 1780764818
+obj /usr/lib/python3.14/site-packages/__pycache__/sockshandler.cpython-314.pyc 57d6d74b0692682604bf58ab1c27f335 1780764818
+dir /usr/lib/python3.14/site-packages/pysocks-1.7.1.dist-info
+obj /usr/lib/python3.14/site-packages/pysocks-1.7.1.dist-info/METADATA 926871c86f64a2af4b02bf0f759e9ed0 1780764818
+obj /usr/lib/python3.14/site-packages/pysocks-1.7.1.dist-info/WHEEL 0be2025a54a57ff313e1e195f0f36c31 1780764818
+obj /usr/lib/python3.14/site-packages/pysocks-1.7.1.dist-info/top_level.txt 9cea706425cc2d5019eaecb2761bb22a 1780764818
+obj /usr/lib/python3.14/site-packages/socks.py d54ae9f865fa2a979360595a32be06d3 1780764818
+obj /usr/lib/python3.14/site-packages/sockshandler.py e60abfc2a8fb421d5e82d61a181bd770 1780764818
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/pysocks-1.7.1-r2
+obj /usr/share/doc/pysocks-1.7.1-r2/README.md.bz2 3a566b9e503027f1a95d5447aa3839ea 1780764819

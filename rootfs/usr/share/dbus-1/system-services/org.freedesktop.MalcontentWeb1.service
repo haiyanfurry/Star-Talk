@@ -1,8 +1,0 @@
-# SPDX-License-Identifier: GPL-2.0-or-later
-# SPDX-FileCopyrightText: 2025 GNOME Foundation, Inc.
-
-[D-BUS Service]
-Name=org.freedesktop.MalcontentWeb1
-Exec=/usr/lib/malcontent-webd
-User=malcontent-webd
-SystemdService=malcontent-webd.service

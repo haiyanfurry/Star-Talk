@@ -1,0 +1,84 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/flit_core
+obj /usr/lib/python3.13/site-packages/flit_core/__init__.py 4ad8850b5117a45bdb6ff02acaac8bb2 1780764385
+dir /usr/lib/python3.13/site-packages/flit_core/__pycache__
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/__init__.cpython-313.opt-1.pyc cfa3ba0c6d70d1c701afa823d7d7b507 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/__init__.cpython-313.opt-2.pyc ec8a6e0ac98ec0e73158be46d2e20244 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/__init__.cpython-313.pyc cfa3ba0c6d70d1c701afa823d7d7b507 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/_spdx_data.cpython-313.opt-1.pyc 8d9fdc425ff3a1c5627b7ce7b44c7a83 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/_spdx_data.cpython-313.opt-2.pyc 8d9fdc425ff3a1c5627b7ce7b44c7a83 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/_spdx_data.cpython-313.pyc 8d9fdc425ff3a1c5627b7ce7b44c7a83 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/buildapi.cpython-313.opt-1.pyc a8bcca011eb1387d507af4556877296c 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/buildapi.cpython-313.opt-2.pyc d7971e2a9ff0f0715a61dc85c8345080 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/buildapi.cpython-313.pyc a8bcca011eb1387d507af4556877296c 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/common.cpython-313.opt-1.pyc e57b7d7007eb5e2a4b2a9188ab2ad2d4 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/common.cpython-313.opt-2.pyc a8ab8fe38b6779a0ebc6b19a5b652007 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/common.cpython-313.pyc febc7498a83eddaff8996873fd973150 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/config.cpython-313.opt-1.pyc 1cd2b4493c5649388a69748ab0dc510f 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/config.cpython-313.opt-2.pyc 9bd4049cb37dcd528d7d50466ac14cf2 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/config.cpython-313.pyc 1cd2b4493c5649388a69748ab0dc510f 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/sdist.cpython-313.opt-1.pyc e0bc2af4875528010f0c196f7a775dbb 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/sdist.cpython-313.opt-2.pyc cfd539921a9dd45bdacdfd62c048840d 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/sdist.cpython-313.pyc e0bc2af4875528010f0c196f7a775dbb 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/versionno.cpython-313.opt-1.pyc adf04b23d11a35e908918e6ad8ad493a 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/versionno.cpython-313.opt-2.pyc de330816bb381714a18e4db4375a6bbf 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/versionno.cpython-313.pyc adf04b23d11a35e908918e6ad8ad493a 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/wheel.cpython-313.opt-1.pyc c43d617aeda445676ca5db83b2a09831 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/wheel.cpython-313.opt-2.pyc 64a05c89ca109b6f19613259fef3b80e 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/__pycache__/wheel.cpython-313.pyc c43d617aeda445676ca5db83b2a09831 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/_spdx_data.py dc09219dae39ee6d99280de95c4227de 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/buildapi.py d85934ec89f6f30f98479e5473de0908 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/common.py e606c43c68541117930468e7e3f097f3 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/config.py 29c52f65e2a83f6c223cf5e5bdba88aa 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/sdist.py e367d0ad6fe52e358703339830bb8aaa 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/versionno.py 50250a2c85add8a8bc3aabd80eaa06d6 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core/wheel.py 55f90b5d9f2a4566dab78f016206002f 1780764385
+dir /usr/lib/python3.13/site-packages/flit_core-3.12.0.dist-info
+obj /usr/lib/python3.13/site-packages/flit_core-3.12.0.dist-info/METADATA 28469c10449ac59425e762a0b89f9427 1780764385
+obj /usr/lib/python3.13/site-packages/flit_core-3.12.0.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764385
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/flit_core
+obj /usr/lib/python3.14/site-packages/flit_core/__init__.py 4ad8850b5117a45bdb6ff02acaac8bb2 1780764385
+dir /usr/lib/python3.14/site-packages/flit_core/__pycache__
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/__init__.cpython-314.opt-1.pyc 99d4f6bff080b1a6ea7ac35a06ce222b 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/__init__.cpython-314.opt-2.pyc 22dd1ff53846ca134155d6e7172ac964 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/__init__.cpython-314.pyc 99d4f6bff080b1a6ea7ac35a06ce222b 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/_spdx_data.cpython-314.opt-1.pyc 3ece751b3f85f4c2cbcafed4ccf9d861 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/_spdx_data.cpython-314.opt-2.pyc 3ece751b3f85f4c2cbcafed4ccf9d861 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/_spdx_data.cpython-314.pyc 3ece751b3f85f4c2cbcafed4ccf9d861 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/buildapi.cpython-314.opt-1.pyc 5ff2bbd9ab28879a85281715a972f273 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/buildapi.cpython-314.opt-2.pyc 15c1cf224de6b736b6e63bfea2990f82 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/buildapi.cpython-314.pyc 5ff2bbd9ab28879a85281715a972f273 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/common.cpython-314.opt-1.pyc 047eeb77911217adf5c3779e9cfdb70f 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/common.cpython-314.opt-2.pyc 81c15e16423a625ff6f3802eb74ab384 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/common.cpython-314.pyc f149e48411b1dc43d4ce3b09644e55c6 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/config.cpython-314.opt-1.pyc b4f17c0d72a1ae9bd707bfa45eb8040e 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/config.cpython-314.opt-2.pyc 4ef4532f328af0d80ea8da39ad9119e8 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/config.cpython-314.pyc b4f17c0d72a1ae9bd707bfa45eb8040e 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/sdist.cpython-314.opt-1.pyc 37bafeac490fd79e1e92e2c1d782e982 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/sdist.cpython-314.opt-2.pyc ac7c414a53d0e584d56ddb0ffd9c0106 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/sdist.cpython-314.pyc 37bafeac490fd79e1e92e2c1d782e982 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/versionno.cpython-314.opt-1.pyc e5288b903fa6ddd118a80324cd4ee45e 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/versionno.cpython-314.opt-2.pyc 9597ff7bbc1605e8c12f0e4a5db2face 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/versionno.cpython-314.pyc e5288b903fa6ddd118a80324cd4ee45e 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/wheel.cpython-314.opt-1.pyc 870ac2d842980d2707e169c767371f04 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/wheel.cpython-314.opt-2.pyc 6ba1c11ff95536be99127e7b9446d260 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/__pycache__/wheel.cpython-314.pyc 870ac2d842980d2707e169c767371f04 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/_spdx_data.py dc09219dae39ee6d99280de95c4227de 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/buildapi.py d85934ec89f6f30f98479e5473de0908 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/common.py e606c43c68541117930468e7e3f097f3 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/config.py 29c52f65e2a83f6c223cf5e5bdba88aa 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/sdist.py e367d0ad6fe52e358703339830bb8aaa 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/versionno.py 50250a2c85add8a8bc3aabd80eaa06d6 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core/wheel.py 55f90b5d9f2a4566dab78f016206002f 1780764385
+dir /usr/lib/python3.14/site-packages/flit_core-3.12.0.dist-info
+obj /usr/lib/python3.14/site-packages/flit_core-3.12.0.dist-info/METADATA 28469c10449ac59425e762a0b89f9427 1780764385
+obj /usr/lib/python3.14/site-packages/flit_core-3.12.0.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764385
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/flit-core-3.12.0
+obj /usr/share/doc/flit-core-3.12.0/README.rst.bz2 c1e87d8bd87459b4dc46143582deac3c 1780764386

@@ -1,0 +1,26 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/__pycache__
+obj /usr/lib/python3.13/site-packages/__pycache__/typing_extensions.cpython-313.opt-1.pyc ad08c7bee294950e27f32d4aeee96777 1780764449
+obj /usr/lib/python3.13/site-packages/__pycache__/typing_extensions.cpython-313.opt-2.pyc 2a71332767daf3580d6d014fe612a06c 1780764449
+obj /usr/lib/python3.13/site-packages/__pycache__/typing_extensions.cpython-313.pyc 4d8db28208e53e98322c1d655f6f4352 1780764449
+dir /usr/lib/python3.13/site-packages/typing_extensions-4.15.0.dist-info
+obj /usr/lib/python3.13/site-packages/typing_extensions-4.15.0.dist-info/METADATA 03df4f38533adb1116a8b9a1e0a8d816 1780764449
+obj /usr/lib/python3.13/site-packages/typing_extensions-4.15.0.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764449
+obj /usr/lib/python3.13/site-packages/typing_extensions.py b362b62b309464c067c563f0bd1ff55a 1780764449
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/__pycache__
+obj /usr/lib/python3.14/site-packages/__pycache__/typing_extensions.cpython-314.opt-1.pyc 9e1af89f34ee6c6b31ea89098ffeca92 1780764449
+obj /usr/lib/python3.14/site-packages/__pycache__/typing_extensions.cpython-314.opt-2.pyc 37b4b0060475dbea6d037750457b3d57 1780764449
+obj /usr/lib/python3.14/site-packages/__pycache__/typing_extensions.cpython-314.pyc 6e4059605968cd9d18ed9c123f089709 1780764449
+dir /usr/lib/python3.14/site-packages/typing_extensions-4.15.0.dist-info
+obj /usr/lib/python3.14/site-packages/typing_extensions-4.15.0.dist-info/METADATA 03df4f38533adb1116a8b9a1e0a8d816 1780764449
+obj /usr/lib/python3.14/site-packages/typing_extensions-4.15.0.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764449
+obj /usr/lib/python3.14/site-packages/typing_extensions.py b362b62b309464c067c563f0bd1ff55a 1780764449
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/typing-extensions-4.15.0
+obj /usr/share/doc/typing-extensions-4.15.0/README.md.bz2 ee7f749e06995bdffb7fe7f7bb8316da 1780764450

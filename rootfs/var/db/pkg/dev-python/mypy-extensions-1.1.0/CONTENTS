@@ -1,0 +1,26 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/__pycache__
+obj /usr/lib/python3.13/site-packages/__pycache__/mypy_extensions.cpython-313.opt-1.pyc 32c64b8f568cbd4cb7ccf24bcefe42c8 1780764422
+obj /usr/lib/python3.13/site-packages/__pycache__/mypy_extensions.cpython-313.opt-2.pyc 64f161cf1f173d8acdc3a36c4e591b36 1780764422
+obj /usr/lib/python3.13/site-packages/__pycache__/mypy_extensions.cpython-313.pyc fffb2cfb87912faa8a1359df7b7e1565 1780764422
+dir /usr/lib/python3.13/site-packages/mypy_extensions-1.1.0.dist-info
+obj /usr/lib/python3.13/site-packages/mypy_extensions-1.1.0.dist-info/METADATA da363a526e04ae5401f7c2fd4036cdf3 1780764422
+obj /usr/lib/python3.13/site-packages/mypy_extensions-1.1.0.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764422
+obj /usr/lib/python3.13/site-packages/mypy_extensions.py 50927a8decc715ffab917394d0e185ba 1780764422
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/__pycache__
+obj /usr/lib/python3.14/site-packages/__pycache__/mypy_extensions.cpython-314.opt-1.pyc fa91b2fb51ad2adfbf55beab27f0b070 1780764423
+obj /usr/lib/python3.14/site-packages/__pycache__/mypy_extensions.cpython-314.opt-2.pyc 2996e632e6470c86c7e9780eba8fb828 1780764423
+obj /usr/lib/python3.14/site-packages/__pycache__/mypy_extensions.cpython-314.pyc dce6518965ae86be0d62b35028d42312 1780764423
+dir /usr/lib/python3.14/site-packages/mypy_extensions-1.1.0.dist-info
+obj /usr/lib/python3.14/site-packages/mypy_extensions-1.1.0.dist-info/METADATA da363a526e04ae5401f7c2fd4036cdf3 1780764423
+obj /usr/lib/python3.14/site-packages/mypy_extensions-1.1.0.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764423
+obj /usr/lib/python3.14/site-packages/mypy_extensions.py 50927a8decc715ffab917394d0e185ba 1780764423
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/mypy-extensions-1.1.0
+obj /usr/share/doc/mypy-extensions-1.1.0/README.md.bz2 1fef056b635a4f39ffd0c262d48896d1 1780764423

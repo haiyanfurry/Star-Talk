@@ -1,0 +1,76 @@
+dir /usr
+dir /usr/include
+dir /usr/include/attr
+obj /usr/include/attr/attributes.h a78d6f0233f011d84810bc843963df60 1741541339
+obj /usr/include/attr/error_context.h cb81ec9fe7117119f2492af7da824754 1741541339
+obj /usr/include/attr/libattr.h e8f546cdbff5fa2397e839b00c0865d8 1741541339
+obj /usr/include/attr/xattr.h b60baecbe50cda11234bfee7550b3aff 1741541340
+dir /usr/lib64
+sym /usr/lib64/libattr.so -> libattr.so.1.1.2502 1781128768
+sym /usr/lib64/libattr.so.1 -> libattr.so.1.1.2502 1781128768
+obj /usr/lib64/libattr.so.1.1.2502 dab29f08e52fec838e5109b87ef10044 1741541340
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/libattr.pc 248a045887839f3e0913b089b1098e13 1741541339
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/attr-2.5.2-r1
+obj /usr/share/doc/attr-2.5.2-r1/CHANGES.bz2 71b4b75bf05681225ffe7a84229abeb1 1741541339
+obj /usr/share/doc/attr-2.5.2-r1/COPYING.LGPL.bz2 191eb6945bd43999ae4ccd4cd963fb87 1741541339
+obj /usr/share/doc/attr-2.5.2-r1/COPYING.bz2 3664dc3df3322e4ef69f5a3a536f0c00 1741541339
+obj /usr/share/doc/attr-2.5.2-r1/README.bz2 a9e0a243d465f8fec7899f6aeedbd2fb 1741541340
+dir /usr/share/locale
+dir /usr/share/locale/cs
+dir /usr/share/locale/cs/LC_MESSAGES
+obj /usr/share/locale/cs/LC_MESSAGES/attr.mo 01b82750aa371c1eaf294975a0e24184 1741541339
+dir /usr/share/locale/de
+dir /usr/share/locale/de/LC_MESSAGES
+obj /usr/share/locale/de/LC_MESSAGES/attr.mo 86f77d380830f899f2532054d256309d 1741541339
+dir /usr/share/locale/en@boldquot
+dir /usr/share/locale/en@boldquot/LC_MESSAGES
+obj /usr/share/locale/en@boldquot/LC_MESSAGES/attr.mo e8faacd0105cf68286cb2992553f2072 1741541339
+dir /usr/share/locale/en@quot
+dir /usr/share/locale/en@quot/LC_MESSAGES
+obj /usr/share/locale/en@quot/LC_MESSAGES/attr.mo 1627944a18bde4c655b975c42b338c57 1741541339
+dir /usr/share/locale/es
+dir /usr/share/locale/es/LC_MESSAGES
+obj /usr/share/locale/es/LC_MESSAGES/attr.mo 52abab53582a8ffa221089ce081fb907 1741541339
+dir /usr/share/locale/fr
+dir /usr/share/locale/fr/LC_MESSAGES
+obj /usr/share/locale/fr/LC_MESSAGES/attr.mo 3675c8a5bb1f153a8b7bcc282f0e27a2 1741541339
+dir /usr/share/locale/gl
+dir /usr/share/locale/gl/LC_MESSAGES
+obj /usr/share/locale/gl/LC_MESSAGES/attr.mo bed9719d11f259d4c32dbb4ff95c5370 1741541339
+dir /usr/share/locale/ka
+dir /usr/share/locale/ka/LC_MESSAGES
+obj /usr/share/locale/ka/LC_MESSAGES/attr.mo e0f438ecd2c62606a51cf8fdad52fb09 1741541339
+dir /usr/share/locale/nl
+dir /usr/share/locale/nl/LC_MESSAGES
+obj /usr/share/locale/nl/LC_MESSAGES/attr.mo 54dd4b7ef1572a51386407ae0d937c89 1741541339
+dir /usr/share/locale/pl
+dir /usr/share/locale/pl/LC_MESSAGES
+obj /usr/share/locale/pl/LC_MESSAGES/attr.mo 469e57e0614ef2019efce406f4ed03c0 1741541339
+dir /usr/share/locale/sv
+dir /usr/share/locale/sv/LC_MESSAGES
+obj /usr/share/locale/sv/LC_MESSAGES/attr.mo 8e752fadde53b7df04a04414a69948a2 1741541339
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/attr.1.bz2 ae1c1ea38fdb022131daef41808d51d1 1741541339
+obj /usr/share/man/man1/getfattr.1.bz2 c5a7cfb8c60b223b27d339f4bf36ee07 1741541339
+obj /usr/share/man/man1/setfattr.1.bz2 aca4b7461a55a8df9ed82a18e2d8708a 1741541339
+dir /usr/share/man/man3
+obj /usr/share/man/man3/attr_get.3.bz2 42acf82fa84ed972c5aaa10e5f1a0adc 1741541339
+sym /usr/share/man/man3/attr_getf.3.bz2 -> attr_get.3.bz2 1781128768
+obj /usr/share/man/man3/attr_list.3.bz2 923020f71ede9d8b9f6fa92f1c00142e 1741541339
+sym /usr/share/man/man3/attr_listf.3.bz2 -> attr_list.3.bz2 1781128768
+obj /usr/share/man/man3/attr_multi.3.bz2 6c740a26eb64f4aaf0d7175bc77a1915 1741541339
+sym /usr/share/man/man3/attr_multif.3.bz2 -> attr_multi.3.bz2 1781128768
+obj /usr/share/man/man3/attr_remove.3.bz2 38fa8699b3a7c6c0ae0d40cbf10014c5 1741541339
+sym /usr/share/man/man3/attr_removef.3.bz2 -> attr_remove.3.bz2 1781128768
+obj /usr/share/man/man3/attr_set.3.bz2 9f6fbcde7b6b3547791bdb2f804e9b8a 1741541339
+sym /usr/share/man/man3/attr_setf.3.bz2 -> attr_set.3.bz2 1781128768
+dir /etc
+obj /etc/xattr.conf 743ca3f83ea263f1f56ad1f63f907bdb 1741541339
+dir /bin
+obj /bin/attr 721b4f80ed0ce6064fee718b6f189a1a 1741541340
+obj /bin/getfattr f8fdfc8f1336df722242402bf0d2914a 1741541340
+obj /bin/setfattr 734a77fbf8af9998f0ba32d3ad1bd9f2 1741541340

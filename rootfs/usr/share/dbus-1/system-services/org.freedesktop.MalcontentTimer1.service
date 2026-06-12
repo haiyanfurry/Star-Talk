@@ -1,8 +1,0 @@
-# SPDX-License-Identifier: GPL-2.0-or-later
-# SPDX-FileCopyrightText: 2024 GNOME Foundation, Inc.
-
-[D-BUS Service]
-Name=org.freedesktop.MalcontentTimer1
-Exec=/usr/lib/malcontent-timerd
-User=malcontent-timerd
-SystemdService=malcontent-timerd.service

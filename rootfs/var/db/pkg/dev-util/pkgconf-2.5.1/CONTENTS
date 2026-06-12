@@ -1,0 +1,39 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/bomtool d8a58c65767032ec9fb146c876c9024d 1754846511
+sym /usr/bin/pkg-config -> x86_64-pc-linux-gnu-pkg-config 1781128711
+sym /usr/bin/pkgconf -> x86_64-pc-linux-gnu-pkgconf 1781128711
+sym /usr/bin/x86_64-pc-linux-gnu-pkg-config -> x86_64-pc-linux-gnu-pkgconf 1781128711
+obj /usr/bin/x86_64-pc-linux-gnu-pkgconf 42fe2b684d87d325119ef6c91be158b7 1754846511
+dir /usr/include
+dir /usr/include/pkgconf
+dir /usr/include/pkgconf/libpkgconf
+obj /usr/include/pkgconf/libpkgconf/bsdstubs.h 3b992d1045bdc39894372eb485218b38 1754846510
+obj /usr/include/pkgconf/libpkgconf/iter.h 8939e076894025a46fc57a6ca2b61deb 1754846510
+obj /usr/include/pkgconf/libpkgconf/libpkgconf-api.h 7f06086ad4fa8839cde543ffd60a7a74 1754846510
+obj /usr/include/pkgconf/libpkgconf/libpkgconf.h 584ff2e8f18854a74287f0b7cda80237 1754846510
+obj /usr/include/pkgconf/libpkgconf/stdinc.h 3a338a08e86a56242f23e7d45c5055da 1754846510
+dir /usr/lib64
+sym /usr/lib64/libpkgconf.so -> libpkgconf.so.7.0.0 1781128711
+sym /usr/lib64/libpkgconf.so.7 -> libpkgconf.so.7.0.0 1781128711
+obj /usr/lib64/libpkgconf.so.7.0.0 b4b577154e784449ee232b9fa79bd200 1754846511
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/libpkgconf.pc 5c1fc8751d15646ca908d17d93e7f972 1754846510
+dir /usr/share
+dir /usr/share/aclocal
+obj /usr/share/aclocal/pkg.m4 e4c10296e396b5eb7fc73ce002d65cdf 1754846510
+dir /usr/share/doc
+dir /usr/share/doc/pkgconf-2.5.1
+obj /usr/share/doc/pkgconf-2.5.1/AUTHORS.bz2 3c57862ffcec2ba68152849b77c1cd13 1754846510
+obj /usr/share/doc/pkgconf-2.5.1/NEWS.bz2 b3d16f32ef3d6e00e7e75eb0cea7d53a 1754846510
+obj /usr/share/doc/pkgconf-2.5.1/README.md.bz2 0b6311558b6b4dda478e32c877a312f4 1754846510
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/bomtool.1.bz2 b13b5ce40d829302f2a791f2ecf98f40 1754846510
+obj /usr/share/man/man1/pkgconf.1.bz2 f6176fb659c9bf3aba756d5f22b59eb8 1754846510
+dir /usr/share/man/man5
+obj /usr/share/man/man5/pc.5.bz2 8426e8983442580cee8d05e94b28db6f 1754846510
+obj /usr/share/man/man5/pkgconf-personality.5.bz2 e241ca1f23c5aa32121e62c60a3a3efc 1754846510
+dir /usr/share/man/man7
+obj /usr/share/man/man7/pkg.m4.7.bz2 d4841239fe75d14e812d627b33d42237 1754846510
+sym /usr/share/man/man1/pkg-config.1.bz2 -> pkgconf.1.bz2 1781128711

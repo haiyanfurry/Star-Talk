@@ -1,0 +1,99 @@
+dir /usr
+dir /usr/include
+dir /usr/include/acl
+obj /usr/include/acl/libacl.h ae83d23ac4e62c7051835575edd57d97 1771783551
+dir /usr/include/sys
+obj /usr/include/sys/acl.h 348bb4a7adf664733d084485ab77d683 1771783551
+dir /usr/lib64
+obj /usr/lib64/libacl.so.1.1.2302 6a716acc7be78120c6a38e9df885ad4f 1771783551
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/libacl.pc 08d6c744e53e94986e3b549587777db0 1771783551
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/acl-2.3.2-r3
+obj /usr/share/doc/acl-2.3.2-r3/CHANGES.bz2 f24ccc06964d1a20c4d3c85e64788828 1771783551
+obj /usr/share/doc/acl-2.3.2-r3/COPYING.LGPL.bz2 037035a9e71d34d1e42fec10994f5ed2 1771783551
+obj /usr/share/doc/acl-2.3.2-r3/COPYING.bz2 f52f44ca843635845cbfa35aab70da57 1771783551
+obj /usr/share/doc/acl-2.3.2-r3/extensions.txt.bz2 9b6ca413b9e0dffbce0c8c815b0ff868 1771783551
+obj /usr/share/doc/acl-2.3.2-r3/libacl.txt.bz2 232622fcfe319752314638f4245971b7 1771783551
+dir /usr/share/locale
+dir /usr/share/locale/de
+dir /usr/share/locale/de/LC_MESSAGES
+obj /usr/share/locale/de/LC_MESSAGES/acl.mo db466286fa816ff6940c55894fe82b2a 1771783551
+dir /usr/share/locale/en@boldquot
+dir /usr/share/locale/en@boldquot/LC_MESSAGES
+obj /usr/share/locale/en@boldquot/LC_MESSAGES/acl.mo 844071f85c024982550a29ae19fbf603 1771783551
+dir /usr/share/locale/en@quot
+dir /usr/share/locale/en@quot/LC_MESSAGES
+obj /usr/share/locale/en@quot/LC_MESSAGES/acl.mo 88cfa925ca813bf609647f6765feaf5a 1771783551
+dir /usr/share/locale/es
+dir /usr/share/locale/es/LC_MESSAGES
+obj /usr/share/locale/es/LC_MESSAGES/acl.mo 65ebb6a45fcd75c3ff80d6f58cf23ab1 1771783551
+dir /usr/share/locale/fr
+dir /usr/share/locale/fr/LC_MESSAGES
+obj /usr/share/locale/fr/LC_MESSAGES/acl.mo f546786f31cc96b2eca587bc8811dbfb 1771783551
+dir /usr/share/locale/gl
+dir /usr/share/locale/gl/LC_MESSAGES
+obj /usr/share/locale/gl/LC_MESSAGES/acl.mo 32e685691aa24b452ee06b4fa435f69c 1771783551
+dir /usr/share/locale/ka
+dir /usr/share/locale/ka/LC_MESSAGES
+obj /usr/share/locale/ka/LC_MESSAGES/acl.mo 280a0a48259c343846b0e43923d6db9b 1771783551
+dir /usr/share/locale/pl
+dir /usr/share/locale/pl/LC_MESSAGES
+obj /usr/share/locale/pl/LC_MESSAGES/acl.mo b5208a22664f356c13ba99c7ad6809a1 1771783551
+dir /usr/share/locale/sv
+dir /usr/share/locale/sv/LC_MESSAGES
+obj /usr/share/locale/sv/LC_MESSAGES/acl.mo 4aefa4db366f068e8ccc1edfa7b5af80 1771783551
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/chacl.1.bz2 7ffa993d9d21715b17901d4c2492c419 1771783551
+obj /usr/share/man/man1/getfacl.1.bz2 75b19a056c890c6876f5369e98c1cbfc 1771783551
+obj /usr/share/man/man1/setfacl.1.bz2 6a305266a1342db8515c48151eb7a79c 1771783551
+dir /usr/share/man/man3
+obj /usr/share/man/man3/acl_add_perm.3.bz2 05fc1a3160a17ddbb20a937781c4da5e 1771783551
+obj /usr/share/man/man3/acl_calc_mask.3.bz2 e903635ecbf643bc8c479ec6eab0aa89 1771783551
+obj /usr/share/man/man3/acl_check.3.bz2 3013810e66775bd1f80ef0a564764e3c 1771783551
+obj /usr/share/man/man3/acl_clear_perms.3.bz2 ae86fe8cb8d44bdaa0192fd8723baeb8 1771783551
+obj /usr/share/man/man3/acl_cmp.3.bz2 e7645c704c6c12a9fd08bd0502f29716 1771783551
+obj /usr/share/man/man3/acl_copy_entry.3.bz2 a9e8a5d3ccdc56f2927551da31c89a57 1771783551
+obj /usr/share/man/man3/acl_copy_ext.3.bz2 8049f9cc24000fbe7743ccbc5e2c0dca 1771783551
+obj /usr/share/man/man3/acl_copy_int.3.bz2 bac75740c9a7478d12fd16aee00b6dfc 1771783551
+obj /usr/share/man/man3/acl_create_entry.3.bz2 669ea34edfa67b272c08d829984dbfc0 1771783551
+obj /usr/share/man/man3/acl_delete_def_file.3.bz2 dd4674f74b5cec5ec3f9d7df473a34d0 1771783551
+obj /usr/share/man/man3/acl_delete_entry.3.bz2 4c9bd9913825f2fefd18ed5515c138f7 1771783551
+obj /usr/share/man/man3/acl_delete_perm.3.bz2 4a89e7010182a72ada5e51ccadfb48c6 1771783551
+obj /usr/share/man/man3/acl_dup.3.bz2 be5ccc28d6d7c5e63bc2f1166fe468a1 1771783551
+obj /usr/share/man/man3/acl_entries.3.bz2 df409019e0bb7d31c5e48aac282a95c3 1771783551
+obj /usr/share/man/man3/acl_equiv_mode.3.bz2 33be285937fc36bf8b4bb58320505011 1771783551
+obj /usr/share/man/man3/acl_error.3.bz2 4eab4ae6a763f42419c41ffd315cf03d 1771783551
+obj /usr/share/man/man3/acl_extended_fd.3.bz2 f57b164796d72afd610ac776490c62e1 1771783551
+obj /usr/share/man/man3/acl_extended_file.3.bz2 59d6a75385c6906d1f32fd3bcc11fe5c 1771783551
+obj /usr/share/man/man3/acl_extended_file_nofollow.3 8b4fb31dbe4ef3259c10d4c8c1852592 1771783551
+obj /usr/share/man/man3/acl_free.3.bz2 8da1ebffec324d0e000d49d5b38d2c27 1771783551
+obj /usr/share/man/man3/acl_from_mode.3.bz2 ef8ce97468d1a23534642685399ed1ca 1771783551
+obj /usr/share/man/man3/acl_from_text.3.bz2 e47aac02769681f4dc8e69cfb6974a98 1771783551
+obj /usr/share/man/man3/acl_get_entry.3.bz2 f5d7f6f33b0e97250189cf7602f0848e 1771783551
+obj /usr/share/man/man3/acl_get_fd.3.bz2 28aaaa18b2e8f51183b91aee6168a55e 1771783551
+obj /usr/share/man/man3/acl_get_file.3.bz2 cfbd730a84b1a5e9da612dc80dff67c8 1771783551
+obj /usr/share/man/man3/acl_get_perm.3.bz2 16d34179bae554b501c2934bfa6fd084 1771783551
+obj /usr/share/man/man3/acl_get_permset.3.bz2 bce7a0935e26a113988c2c7f4681bfc5 1771783551
+obj /usr/share/man/man3/acl_get_qualifier.3.bz2 af9c77b7a94c6761200bfb60885aa604 1771783551
+obj /usr/share/man/man3/acl_get_tag_type.3.bz2 d12324da03d03d69987ea29caa0da802 1771783551
+obj /usr/share/man/man3/acl_init.3.bz2 61069590bcd2baa3a40fab5b4637e618 1771783551
+obj /usr/share/man/man3/acl_set_fd.3.bz2 71e154163077bf291e48dbdf006023f1 1771783551
+obj /usr/share/man/man3/acl_set_file.3.bz2 d6470992db1347b9ba0b7ca746b50b8e 1771783551
+obj /usr/share/man/man3/acl_set_permset.3.bz2 11296f8a3b2aedd07e8fd3afd735be91 1771783551
+obj /usr/share/man/man3/acl_set_qualifier.3.bz2 e234fa9ec0cc0d1bbb917eb1d1fd155b 1771783551
+obj /usr/share/man/man3/acl_set_tag_type.3.bz2 cc8d784c7e47aad97503f39adf51fd94 1771783551
+obj /usr/share/man/man3/acl_size.3.bz2 546dd5f43c093f2066728ec6886fe9d2 1771783551
+obj /usr/share/man/man3/acl_to_any_text.3.bz2 a50c0d1a8f68c81df6603f3793cc22b1 1771783551
+obj /usr/share/man/man3/acl_to_text.3.bz2 62d6d3fbbdc58c763beb363f027b1e62 1771783551
+obj /usr/share/man/man3/acl_valid.3.bz2 e42fca3df8c170192b1b600eb9bdcff0 1771783551
+dir /usr/share/man/man5
+obj /usr/share/man/man5/acl.5.bz2 cb283e7119fba8792ae0f5590d21cb97 1771783551
+dir /bin
+obj /bin/chacl 0f5da28fe79e42cdafa3e16e3db2d271 1771783551
+obj /bin/getfacl c7745ef0ec0eb5f23b46cea5a0098c5c 1771783551
+obj /bin/setfacl 10b130196f60ec00fee4fcdb3e92eca3 1771783551
+sym /usr/lib64/libacl.so.1 -> libacl.so.1.1.2302 1781128742
+sym /usr/lib64/libacl.so -> libacl.so.1.1.2302 1781128742

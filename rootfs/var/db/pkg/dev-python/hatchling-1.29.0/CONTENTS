@@ -1,0 +1,651 @@
+dir /usr
+dir /usr/bin
+sym /usr/bin/hatchling -> ../lib/python-exec/python-exec2 1781128697
+dir /usr/lib
+dir /usr/lib/python-exec
+dir /usr/lib/python-exec/python3.13
+obj /usr/lib/python-exec/python3.13/hatchling 385709fce7f234e2fc2e8bf295207e37 1780764915
+dir /usr/lib/python-exec/python3.14
+obj /usr/lib/python-exec/python3.14/hatchling 9e4f7a0feb565efeeff84d256b4a3dfa 1780764915
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/hatchling
+obj /usr/lib/python3.13/site-packages/hatchling/__about__.py 7e2f66fafbee600da0ba8f4812b4659b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__main__.py aa63e484e787af2cc74ff854da705f00 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__about__.cpython-313.opt-1.pyc 28472301e9c1795783cb751fad6940d6 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__about__.cpython-313.opt-2.pyc 28472301e9c1795783cb751fad6940d6 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__about__.cpython-313.pyc 28472301e9c1795783cb751fad6940d6 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__init__.cpython-313.opt-1.pyc a8e89ceb9f2a4b535d86311b786f6564 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__init__.cpython-313.opt-2.pyc a8e89ceb9f2a4b535d86311b786f6564 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__init__.cpython-313.pyc a8e89ceb9f2a4b535d86311b786f6564 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__main__.cpython-313.opt-1.pyc e8d9df7e1e86e22373c63c82b1bdcab4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__main__.cpython-313.opt-2.pyc e8d9df7e1e86e22373c63c82b1bdcab4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/__main__.cpython-313.pyc e8d9df7e1e86e22373c63c82b1bdcab4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/build.cpython-313.opt-1.pyc 7b05661f5a965c384a881a3e18590538 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/build.cpython-313.opt-2.pyc 090fc8c6cb0ca29e32e22bdfdf47e8e8 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/build.cpython-313.pyc 7b05661f5a965c384a881a3e18590538 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/ouroboros.cpython-313.opt-1.pyc 308e86ea964a4595fdd25af5a13c1dfe 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/ouroboros.cpython-313.opt-2.pyc 71d0ec70656974905b7bcd5d2d3f0850 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/__pycache__/ouroboros.cpython-313.pyc 308e86ea964a4595fdd25af5a13c1dfe 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/bridge
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__/__init__.cpython-313.opt-1.pyc 204821986284af337db47d11608c9666 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__/__init__.cpython-313.opt-2.pyc 204821986284af337db47d11608c9666 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__/__init__.cpython-313.pyc 204821986284af337db47d11608c9666 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__/app.cpython-313.opt-1.pyc b7a23d70f582387fd53f987def3e2bbc 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__/app.cpython-313.opt-2.pyc de8c50da5dcc0e44347807fb4bf68738 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/__pycache__/app.cpython-313.pyc b7a23d70f582387fd53f987def3e2bbc 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/bridge/app.py df9762196c3a366c1f4eae287dccb8af 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/build.py e32802cf929f61b1785b2ce9c701382d 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/__init__.cpython-313.opt-1.pyc aa73e0950ab822a9b2f269a9fbba261b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/__init__.cpython-313.opt-2.pyc aa73e0950ab822a9b2f269a9fbba261b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/__init__.cpython-313.pyc aa73e0950ab822a9b2f269a9fbba261b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/app.cpython-313.opt-1.pyc fff30a05b497ca4827004c0698d5d282 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/app.cpython-313.opt-2.pyc fff30a05b497ca4827004c0698d5d282 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/app.cpython-313.pyc fff30a05b497ca4827004c0698d5d282 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/binary.cpython-313.opt-1.pyc 14b6e826a8b136beec58b622ae71ec44 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/binary.cpython-313.opt-2.pyc cee61bac39801391d94092d65a6bb0af 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/binary.cpython-313.pyc 14b6e826a8b136beec58b622ae71ec44 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/config.cpython-313.opt-1.pyc aaac0c0aa85ad3127c7c3cfd126c402d 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/config.cpython-313.opt-2.pyc c61299afd6f582eaf4bc14b81129924f 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/config.cpython-313.pyc aaac0c0aa85ad3127c7c3cfd126c402d 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/constants.cpython-313.opt-1.pyc 150659b54c797a36a5b29c34b341f18a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/constants.cpython-313.opt-2.pyc 150659b54c797a36a5b29c34b341f18a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/constants.cpython-313.pyc 150659b54c797a36a5b29c34b341f18a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/custom.cpython-313.opt-1.pyc 106fdb290458f40eb9aab0e32e40eca0 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/custom.cpython-313.opt-2.pyc 106fdb290458f40eb9aab0e32e40eca0 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/custom.cpython-313.pyc 106fdb290458f40eb9aab0e32e40eca0 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/macos.cpython-313.opt-1.pyc 85ea49b8145d2f0041295295a281705e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/macos.cpython-313.opt-2.pyc 06bd4839ec190f6da545b21d1b4f5c6b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/macos.cpython-313.pyc 85ea49b8145d2f0041295295a281705e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/sdist.cpython-313.opt-1.pyc a9eed0900e8d32062b71943b6dd91c43 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/sdist.cpython-313.opt-2.pyc 2ed9298adfeffb496a08bdda1cc45409 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/sdist.cpython-313.pyc a9eed0900e8d32062b71943b6dd91c43 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/utils.cpython-313.opt-1.pyc 80b38498427b2a642698ef6bbeb88d9b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/utils.cpython-313.opt-2.pyc 6dea19ab78435bb941ed9e172fe950b5 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/utils.cpython-313.pyc 80b38498427b2a642698ef6bbeb88d9b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/wheel.cpython-313.opt-1.pyc 12ed813d258294ae620efa198632606c 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/wheel.cpython-313.opt-2.pyc 14e4c3dc7aee8b94543bf9a45b7596c5 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/__pycache__/wheel.cpython-313.pyc 12ed813d258294ae620efa198632606c 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/app.py 519230bd84b44c73d9e5106421f0b89e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/binary.py d210ef7e2c738441f656ea9f2a29527f 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/config.py 9040f49dfc8b6da488791545a80ba2d8 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/constants.py a8fa48cda5237453e31e351b5245ee3d 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/custom.py 677bc71defb0cb83be2e532f08f55da4 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/hooks
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/__init__.cpython-313.opt-1.pyc 13574307d69a6d8ed96e43a2a189b1e1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/__init__.cpython-313.opt-2.pyc 13574307d69a6d8ed96e43a2a189b1e1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/__init__.cpython-313.pyc 13574307d69a6d8ed96e43a2a189b1e1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/custom.cpython-313.opt-1.pyc e7087ad4289304f9d1602f151bd033ca 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/custom.cpython-313.opt-2.pyc e7087ad4289304f9d1602f151bd033ca 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/custom.cpython-313.pyc e7087ad4289304f9d1602f151bd033ca 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/version.cpython-313.opt-1.pyc f9248d14aad322ea6a6116c1c593752e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/version.cpython-313.opt-2.pyc f9248d14aad322ea6a6116c1c593752e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/__pycache__/version.cpython-313.pyc f9248d14aad322ea6a6116c1c593752e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/custom.py 2ddce6169e07a34f9a75dac93ccd8028 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/__init__.cpython-313.opt-1.pyc 2163b417ba43c7835cb972cf185d906a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/__init__.cpython-313.opt-2.pyc 2163b417ba43c7835cb972cf185d906a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/__init__.cpython-313.pyc 2163b417ba43c7835cb972cf185d906a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/hooks.cpython-313.opt-1.pyc 52853b507dd40a42a344f7807a36bb0e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/hooks.cpython-313.opt-2.pyc 52853b507dd40a42a344f7807a36bb0e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/hooks.cpython-313.pyc 52853b507dd40a42a344f7807a36bb0e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/interface.cpython-313.opt-1.pyc d2952a63a92a9b2fba7e5dfd74fd7f66 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/interface.cpython-313.opt-2.pyc daefbf874bf9ee0cc884206feb9da708 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/__pycache__/interface.cpython-313.pyc d2952a63a92a9b2fba7e5dfd74fd7f66 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/hooks.py 1f68f33b8a770546992a11df7ab79ade 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/plugin/interface.py 272c86341ddcaae297bc6d2d2a95b9ea 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/hooks/version.py b3d3a4a6f340842721a412d78777616a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/macos.py 10c85d69e7bfeaa5d737f4f803add7b2 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/plugin
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/__init__.cpython-313.opt-1.pyc 3748aaafcba6a278dcbbc10077f04e80 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/__init__.cpython-313.opt-2.pyc 3748aaafcba6a278dcbbc10077f04e80 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/__init__.cpython-313.pyc 3748aaafcba6a278dcbbc10077f04e80 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/hooks.cpython-313.opt-1.pyc 9c62e78464b4f0339a335544f8d3097e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/hooks.cpython-313.opt-2.pyc 9c62e78464b4f0339a335544f8d3097e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/hooks.cpython-313.pyc 9c62e78464b4f0339a335544f8d3097e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/interface.cpython-313.opt-1.pyc 15d319272273c62c83b0cd2f8064aca4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/interface.cpython-313.opt-2.pyc 1b4519717166d5b70a31dd450140f138 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/__pycache__/interface.cpython-313.pyc 15d319272273c62c83b0cd2f8064aca4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/hooks.py 514cd60d046d0949f770434ae53168b1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/plugin/interface.py e68591bb8625802a6b11856a7fe201be 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/sdist.py b24b98f3b90e6ca3330a1cacfe08094f 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/utils.py 027efa88b06b7f8f4d27f165df0fba68 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/builders/wheel.py 74a9fd2f88994daea54fdbe554ea94bd 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli
+obj /usr/lib/python3.13/site-packages/hatchling/cli/__init__.py d36294afcb6cfb650ea2f28a1eb552dc 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/cli/__pycache__/__init__.cpython-313.opt-1.pyc 63ec214c3c6c167b803196ace62a156f 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/__pycache__/__init__.cpython-313.opt-2.pyc 63ec214c3c6c167b803196ace62a156f 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/__pycache__/__init__.cpython-313.pyc 63ec214c3c6c167b803196ace62a156f 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/build
+obj /usr/lib/python3.13/site-packages/hatchling/cli/build/__init__.py 41cc2a45ecafd709d6656e58f95ea68b 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/build/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/cli/build/__pycache__/__init__.cpython-313.opt-1.pyc e3c1ea329a303dd8daa0f72e1d0180ed 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/build/__pycache__/__init__.cpython-313.opt-2.pyc e3c1ea329a303dd8daa0f72e1d0180ed 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/build/__pycache__/__init__.cpython-313.pyc e3c1ea329a303dd8daa0f72e1d0180ed 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/dep
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__init__.py 3cc480036eccde16253a8da5fbd5f8ce 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__/__init__.cpython-313.opt-1.pyc 526f1e50173985f646b76cb62046a150 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__/__init__.cpython-313.opt-2.pyc 526f1e50173985f646b76cb62046a150 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__/__init__.cpython-313.pyc 526f1e50173985f646b76cb62046a150 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__/core.cpython-313.opt-1.pyc f5453158abac3650ca09b2b52f377fc4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__/core.cpython-313.opt-2.pyc f5453158abac3650ca09b2b52f377fc4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/__pycache__/core.cpython-313.pyc f5453158abac3650ca09b2b52f377fc4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/dep/core.py 44ce19415ffa3befc3784e77e524725d 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/metadata
+obj /usr/lib/python3.13/site-packages/hatchling/cli/metadata/__init__.py f38612b287e198bd54afc6476665d444 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/metadata/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/cli/metadata/__pycache__/__init__.cpython-313.opt-1.pyc 3e2b10c35435feb05469caaee1d3b515 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/metadata/__pycache__/__init__.cpython-313.opt-2.pyc 3e2b10c35435feb05469caaee1d3b515 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/metadata/__pycache__/__init__.cpython-313.pyc 3e2b10c35435feb05469caaee1d3b515 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/version
+obj /usr/lib/python3.13/site-packages/hatchling/cli/version/__init__.py 1c13d186692005d894d9b9befb756541 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/cli/version/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/cli/version/__pycache__/__init__.cpython-313.opt-1.pyc c5c4c393218ec542f222778100883208 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/version/__pycache__/__init__.cpython-313.opt-2.pyc c5c4c393218ec542f222778100883208 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/cli/version/__pycache__/__init__.cpython-313.pyc c5c4c393218ec542f222778100883208 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/dep
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__/__init__.cpython-313.opt-1.pyc 027a9053981c34664b9a904be2383649 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__/__init__.cpython-313.opt-2.pyc 027a9053981c34664b9a904be2383649 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__/__init__.cpython-313.pyc 027a9053981c34664b9a904be2383649 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__/core.cpython-313.opt-1.pyc 80421795dc20f4eeb0a887773200cff1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__/core.cpython-313.opt-2.pyc 80421795dc20f4eeb0a887773200cff1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/dep/__pycache__/core.cpython-313.pyc 80421795dc20f4eeb0a887773200cff1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/dep/core.py cb02ebfcc613eb8cf41fde2472240229 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/licenses
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__/__init__.cpython-313.opt-1.pyc 1a9fbd106cda9c8f0050f81a3e0c55af 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__/__init__.cpython-313.opt-2.pyc 1a9fbd106cda9c8f0050f81a3e0c55af 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__/__init__.cpython-313.pyc 1a9fbd106cda9c8f0050f81a3e0c55af 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__/supported.cpython-313.opt-1.pyc 72a01a9abeee70617a4badadf4585083 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__/supported.cpython-313.opt-2.pyc 72a01a9abeee70617a4badadf4585083 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/__pycache__/supported.cpython-313.pyc 72a01a9abeee70617a4badadf4585083 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/licenses/supported.py 046b07949799dd0445346ffa6a6d3de9 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/metadata
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/__init__.cpython-313.opt-1.pyc 2553431560eb312079b3d67fdf42abdf 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/__init__.cpython-313.opt-2.pyc 2553431560eb312079b3d67fdf42abdf 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/__init__.cpython-313.pyc 2553431560eb312079b3d67fdf42abdf 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/core.cpython-313.opt-1.pyc 5ef95143926d2acd713045019e258e14 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/core.cpython-313.opt-2.pyc 00d4c641ac33b23c58cc321b963d92fd 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/core.cpython-313.pyc 5ef95143926d2acd713045019e258e14 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/custom.cpython-313.opt-1.pyc fefd9ab41401c3ac6059befd245dddac 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/custom.cpython-313.opt-2.pyc fefd9ab41401c3ac6059befd245dddac 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/custom.cpython-313.pyc fefd9ab41401c3ac6059befd245dddac 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/spec.cpython-313.opt-1.pyc cfa994eed33a47f4b0e2172ba629815a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/spec.cpython-313.opt-2.pyc 0f250d5fe23f630e2b251ca26d3a15e8 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/spec.cpython-313.pyc cfa994eed33a47f4b0e2172ba629815a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/utils.cpython-313.opt-1.pyc 09a31ef86b2d04e254c71e90314d07d3 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/utils.cpython-313.opt-2.pyc 09a31ef86b2d04e254c71e90314d07d3 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/__pycache__/utils.cpython-313.pyc 09a31ef86b2d04e254c71e90314d07d3 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/core.py 7a59ca069129a592438bb16199ab0ce9 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/custom.py 32410b8860cfc01452b5651d348e4719 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/metadata/plugin
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/__init__.cpython-313.opt-1.pyc c94ffd59ff1d76105012e71fc1c0df31 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/__init__.cpython-313.opt-2.pyc c94ffd59ff1d76105012e71fc1c0df31 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/__init__.cpython-313.pyc c94ffd59ff1d76105012e71fc1c0df31 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/hooks.cpython-313.opt-1.pyc 6c21ae0e1fdb0898cbfc37a04abbe168 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/hooks.cpython-313.opt-2.pyc 6c21ae0e1fdb0898cbfc37a04abbe168 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/hooks.cpython-313.pyc 6c21ae0e1fdb0898cbfc37a04abbe168 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/interface.cpython-313.opt-1.pyc f181a10b87cabbebdddd38630b4bb880 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/interface.cpython-313.opt-2.pyc 8feb0e7c2b6d281d035f15dc0f34bb7b 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/__pycache__/interface.cpython-313.pyc f181a10b87cabbebdddd38630b4bb880 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/hooks.py abf9dd761df7d55465d1c073df062887 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/plugin/interface.py 75f6544b7da7e23b41d77ab6ce252c8d 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/spec.py 92c3e8398620559f91354f449bf87a53 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/metadata/utils.py 6f9e31db9dd867130363136e28cf6900 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/ouroboros.py 2212965743d2f091491d367da32795bf 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/plugin
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__init__.py 21df27f31f0e05ca2613842b87f8557a 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/__init__.cpython-313.opt-1.pyc 3273975926e4173453348e358f3a9840 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/__init__.cpython-313.opt-2.pyc 3273975926e4173453348e358f3a9840 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/__init__.cpython-313.pyc 3273975926e4173453348e358f3a9840 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/exceptions.cpython-313.opt-1.pyc 74a7e0af3a09df04be986676e23aed52 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/exceptions.cpython-313.opt-2.pyc 74a7e0af3a09df04be986676e23aed52 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/exceptions.cpython-313.pyc 74a7e0af3a09df04be986676e23aed52 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/manager.cpython-313.opt-1.pyc 2288ae4b369ec97f1d121a78826b0028 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/manager.cpython-313.opt-2.pyc 2288ae4b369ec97f1d121a78826b0028 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/manager.cpython-313.pyc 2288ae4b369ec97f1d121a78826b0028 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/specs.cpython-313.opt-1.pyc 181c2c3f37a9ae6cd2d154f2f1345ed1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/specs.cpython-313.opt-2.pyc 87c12329268457c78f6accef74da5b6e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/specs.cpython-313.pyc 181c2c3f37a9ae6cd2d154f2f1345ed1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/utils.cpython-313.opt-1.pyc e1973887109e121cda16a13f61033335 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/utils.cpython-313.opt-2.pyc e1973887109e121cda16a13f61033335 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/__pycache__/utils.cpython-313.pyc e1973887109e121cda16a13f61033335 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/exceptions.py b63c22988be5cbe673b66ab06cd94f08 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/manager.py 128a50b3bca4c7c5d38e385c96ca8dfb 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/specs.py dbe70dfbbc7fcc3b673fc75b60027664 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/plugin/utils.py 8b3748dfa3bac536f10aad381416230a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/py.typed d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/utils
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/__init__.cpython-313.opt-1.pyc aa72e0f45efb22d921fe7b27cc582270 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/__init__.cpython-313.opt-2.pyc aa72e0f45efb22d921fe7b27cc582270 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/__init__.cpython-313.pyc aa72e0f45efb22d921fe7b27cc582270 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/constants.cpython-313.opt-1.pyc 2a1be7defc941629476bf96872da52e3 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/constants.cpython-313.opt-2.pyc 2a1be7defc941629476bf96872da52e3 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/constants.cpython-313.pyc 2a1be7defc941629476bf96872da52e3 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/context.cpython-313.opt-1.pyc 7f40a2fe7835408a2f919b654cf326d8 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/context.cpython-313.opt-2.pyc 8f1bc939950bc60361e8c52d84efffb0 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/context.cpython-313.pyc 7f40a2fe7835408a2f919b654cf326d8 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/fs.cpython-313.opt-1.pyc 3a6a58bf2996f2607957d2cc840fce04 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/fs.cpython-313.opt-2.pyc 3a6a58bf2996f2607957d2cc840fce04 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/__pycache__/fs.cpython-313.pyc 3a6a58bf2996f2607957d2cc840fce04 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/constants.py baf9e4e4facf153bd889b5ecf7715d93 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/context.py bbce0f7d57c15a5549db23fe080adb17 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/utils/fs.py b766a9708fb4b1ca594d7280b689b03d 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version
+obj /usr/lib/python3.13/site-packages/hatchling/version/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/version/__pycache__/__init__.cpython-313.opt-1.pyc 467a32b878a790c6085f03a6ef4c7822 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/__pycache__/__init__.cpython-313.opt-2.pyc 467a32b878a790c6085f03a6ef4c7822 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/__pycache__/__init__.cpython-313.pyc 467a32b878a790c6085f03a6ef4c7822 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/__pycache__/core.cpython-313.opt-1.pyc 6c65c189551614956b8ebb4ca97bff9a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/__pycache__/core.cpython-313.opt-2.pyc 6c65c189551614956b8ebb4ca97bff9a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/__pycache__/core.cpython-313.pyc 6c65c189551614956b8ebb4ca97bff9a 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/core.py b12cd2a0d5438986739a5dfd0061e00b 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/scheme
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__/__init__.cpython-313.opt-1.pyc 5c5a3eff8a1312cece2423965cce5c78 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__/__init__.cpython-313.opt-2.pyc 5c5a3eff8a1312cece2423965cce5c78 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__/__init__.cpython-313.pyc 5c5a3eff8a1312cece2423965cce5c78 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__/standard.cpython-313.opt-1.pyc 3ebd43f5186c8ee9c65948cbe6d2394d 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__/standard.cpython-313.opt-2.pyc 01e44dff979e3ce415f24766137004f1 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/__pycache__/standard.cpython-313.pyc 3ebd43f5186c8ee9c65948cbe6d2394d 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/__init__.cpython-313.opt-1.pyc ba481b6b834ea54264603aff76288524 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/__init__.cpython-313.opt-2.pyc ba481b6b834ea54264603aff76288524 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/__init__.cpython-313.pyc ba481b6b834ea54264603aff76288524 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/hooks.cpython-313.opt-1.pyc 3131f9da21807687e5e7f383e62e01cd 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/hooks.cpython-313.opt-2.pyc 3131f9da21807687e5e7f383e62e01cd 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/hooks.cpython-313.pyc 3131f9da21807687e5e7f383e62e01cd 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/interface.cpython-313.opt-1.pyc 5f9bc65a4c36396952a8daf183e0c6b4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/interface.cpython-313.opt-2.pyc 0f5a38539cc8d877bf5833c485952b60 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/__pycache__/interface.cpython-313.pyc 5f9bc65a4c36396952a8daf183e0c6b4 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/hooks.py f8c3f8ba09b015e01847f0c6f6693e65 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/plugin/interface.py d8da70d60f6455e68c7aa04cee5c5b94 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/scheme/standard.py ff890d1a18f171f2e3f881b52080ba81 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/source
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/__init__.cpython-313.opt-1.pyc 0b0cc97661298635072de3bb5eca9296 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/__init__.cpython-313.opt-2.pyc 0b0cc97661298635072de3bb5eca9296 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/__init__.cpython-313.pyc 0b0cc97661298635072de3bb5eca9296 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/code.cpython-313.opt-1.pyc e88a4433bceb9c78fdd73b35dbe75a65 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/code.cpython-313.opt-2.pyc e88a4433bceb9c78fdd73b35dbe75a65 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/code.cpython-313.pyc e88a4433bceb9c78fdd73b35dbe75a65 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/env.cpython-313.opt-1.pyc 4ccb395a7fa2fd97a161c55167c759c5 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/env.cpython-313.opt-2.pyc 4ccb395a7fa2fd97a161c55167c759c5 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/env.cpython-313.pyc 4ccb395a7fa2fd97a161c55167c759c5 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/regex.cpython-313.opt-1.pyc 14f6dabc2a9ca305495293c088fa3cea 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/regex.cpython-313.opt-2.pyc 14f6dabc2a9ca305495293c088fa3cea 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/__pycache__/regex.cpython-313.pyc 14f6dabc2a9ca305495293c088fa3cea 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/code.py e41eb06ca25b83fb86c9008ec2da695c 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/env.py 3a1fcd6347e0786a4b31275b09346bca 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/source/plugin
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/__init__.cpython-313.opt-1.pyc 49167dd2ce544a9e691f3d3a0bc28d92 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/__init__.cpython-313.opt-2.pyc 49167dd2ce544a9e691f3d3a0bc28d92 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/__init__.cpython-313.pyc 49167dd2ce544a9e691f3d3a0bc28d92 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/hooks.cpython-313.opt-1.pyc 006239bef84826d8b6134035fcac260c 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/hooks.cpython-313.opt-2.pyc 006239bef84826d8b6134035fcac260c 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/hooks.cpython-313.pyc 006239bef84826d8b6134035fcac260c 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/interface.cpython-313.opt-1.pyc a0eb8a5c1908fda968bb95208954cb3e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/interface.cpython-313.opt-2.pyc f6dfa2bbb15f9be3f27f878ef3873163 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/__pycache__/interface.cpython-313.pyc a0eb8a5c1908fda968bb95208954cb3e 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/hooks.py 819c9541e05e701d4a001134fdc35697 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/plugin/interface.py d2fd203723e9d173a18a72ac8f406076 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling/version/source/regex.py 4389c8fcef0167bb819a59187e431e42 1780764915
+dir /usr/lib/python3.13/site-packages/hatchling-1.29.0.dist-info
+obj /usr/lib/python3.13/site-packages/hatchling-1.29.0.dist-info/METADATA cd22bb2b110dbde4c552b76db6beacaa 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling-1.29.0.dist-info/WHEEL 7412a649a466b9dd567141f836b1e222 1780764915
+obj /usr/lib/python3.13/site-packages/hatchling-1.29.0.dist-info/entry_points.txt b768722e5be4046a6e1ceea21fbe8b74 1780764915
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/hatchling
+obj /usr/lib/python3.14/site-packages/hatchling/__about__.py 7e2f66fafbee600da0ba8f4812b4659b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__main__.py aa63e484e787af2cc74ff854da705f00 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__about__.cpython-314.opt-1.pyc c27197f5c6e44d4c80eaef5ad8638781 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__about__.cpython-314.opt-2.pyc c27197f5c6e44d4c80eaef5ad8638781 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__about__.cpython-314.pyc c27197f5c6e44d4c80eaef5ad8638781 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__init__.cpython-314.opt-1.pyc ac38583b3638e5227cb09d278dbeaa9e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__init__.cpython-314.opt-2.pyc ac38583b3638e5227cb09d278dbeaa9e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__init__.cpython-314.pyc ac38583b3638e5227cb09d278dbeaa9e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__main__.cpython-314.opt-1.pyc 2f077482854fba43d80554be0ae6cb00 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__main__.cpython-314.opt-2.pyc 2f077482854fba43d80554be0ae6cb00 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/__main__.cpython-314.pyc 2f077482854fba43d80554be0ae6cb00 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/build.cpython-314.opt-1.pyc 33e9cb3caa82bac7f3dd2c72830b06cd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/build.cpython-314.opt-2.pyc cb9581cf13e6a31732fe4f6117b65acb 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/build.cpython-314.pyc 33e9cb3caa82bac7f3dd2c72830b06cd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/ouroboros.cpython-314.opt-1.pyc d3c4f60f08cccdf2b5292eee1f9e3551 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/ouroboros.cpython-314.opt-2.pyc 938c87c438286bd6bf4de792ebae7209 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/__pycache__/ouroboros.cpython-314.pyc d3c4f60f08cccdf2b5292eee1f9e3551 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/bridge
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__/__init__.cpython-314.opt-1.pyc 3ddeabe93ca157ca47b74de6ae5be127 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__/__init__.cpython-314.opt-2.pyc 3ddeabe93ca157ca47b74de6ae5be127 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__/__init__.cpython-314.pyc 3ddeabe93ca157ca47b74de6ae5be127 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__/app.cpython-314.opt-1.pyc be759fc9b6f0917b9fbe5f4526a778f6 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__/app.cpython-314.opt-2.pyc 2b110029de176a3d2b01bafb53d0ef2c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/__pycache__/app.cpython-314.pyc be759fc9b6f0917b9fbe5f4526a778f6 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/bridge/app.py df9762196c3a366c1f4eae287dccb8af 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/build.py e32802cf929f61b1785b2ce9c701382d 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/__init__.cpython-314.opt-1.pyc 3a00297d68d0223846ae3d6fc3b6e660 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/__init__.cpython-314.opt-2.pyc 3a00297d68d0223846ae3d6fc3b6e660 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/__init__.cpython-314.pyc 3a00297d68d0223846ae3d6fc3b6e660 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/app.cpython-314.opt-1.pyc 80584444bd847922a20d86d7b634652a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/app.cpython-314.opt-2.pyc 80584444bd847922a20d86d7b634652a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/app.cpython-314.pyc 80584444bd847922a20d86d7b634652a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/binary.cpython-314.opt-1.pyc 15662fe9e1ad10d365e83e55bd239127 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/binary.cpython-314.opt-2.pyc b47c1ef4ebd491ab890c6cb853574961 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/binary.cpython-314.pyc 15662fe9e1ad10d365e83e55bd239127 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/config.cpython-314.opt-1.pyc db4dc44b54023d10d5c1282b512bb56c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/config.cpython-314.opt-2.pyc f18baae3f3541ea522b58ee3eb5f6745 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/config.cpython-314.pyc db4dc44b54023d10d5c1282b512bb56c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/constants.cpython-314.opt-1.pyc 44dc5464e70187ea18501ac889676b6e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/constants.cpython-314.opt-2.pyc 44dc5464e70187ea18501ac889676b6e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/constants.cpython-314.pyc 44dc5464e70187ea18501ac889676b6e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/custom.cpython-314.opt-1.pyc 933ec04205e83e597d8d7f2c25c65440 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/custom.cpython-314.opt-2.pyc 933ec04205e83e597d8d7f2c25c65440 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/custom.cpython-314.pyc 933ec04205e83e597d8d7f2c25c65440 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/macos.cpython-314.opt-1.pyc e6e84057d14c937f413d595c6f505fc1 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/macos.cpython-314.opt-2.pyc b1a017978977b31b0a3ede48a74f8b8b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/macos.cpython-314.pyc e6e84057d14c937f413d595c6f505fc1 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/sdist.cpython-314.opt-1.pyc b73311d86d9e31e3da562a7573f985d5 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/sdist.cpython-314.opt-2.pyc 7b524d2101610c30d797e8cd4d8b44e9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/sdist.cpython-314.pyc b73311d86d9e31e3da562a7573f985d5 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/utils.cpython-314.opt-1.pyc 0a55027807e6fb9ac00f6d11903b60c6 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/utils.cpython-314.opt-2.pyc 8cebbe548288f7b09968bf18d0ec4f21 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/utils.cpython-314.pyc 0a55027807e6fb9ac00f6d11903b60c6 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/wheel.cpython-314.opt-1.pyc 8e2a3e26fcfd85bd4458972068166d27 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/wheel.cpython-314.opt-2.pyc a9b34e4ee56b13620f099ea8fd7730de 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/__pycache__/wheel.cpython-314.pyc 8e2a3e26fcfd85bd4458972068166d27 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/app.py 519230bd84b44c73d9e5106421f0b89e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/binary.py d210ef7e2c738441f656ea9f2a29527f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/config.py 9040f49dfc8b6da488791545a80ba2d8 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/constants.py a8fa48cda5237453e31e351b5245ee3d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/custom.py 677bc71defb0cb83be2e532f08f55da4 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/hooks
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/__init__.cpython-314.opt-1.pyc 22abae3f6907d2f504074e54fe41bf8a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/__init__.cpython-314.opt-2.pyc 22abae3f6907d2f504074e54fe41bf8a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/__init__.cpython-314.pyc 22abae3f6907d2f504074e54fe41bf8a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/custom.cpython-314.opt-1.pyc 5068b994e5b1229572db38946222739d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/custom.cpython-314.opt-2.pyc 5068b994e5b1229572db38946222739d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/custom.cpython-314.pyc 5068b994e5b1229572db38946222739d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/version.cpython-314.opt-1.pyc 573c2ed3a583c64f9d4bafaf2b3247cc 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/version.cpython-314.opt-2.pyc 573c2ed3a583c64f9d4bafaf2b3247cc 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/__pycache__/version.cpython-314.pyc 573c2ed3a583c64f9d4bafaf2b3247cc 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/custom.py 2ddce6169e07a34f9a75dac93ccd8028 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/__init__.cpython-314.opt-1.pyc a2e31c8b8ef91370e842d36d18a3f72f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/__init__.cpython-314.opt-2.pyc a2e31c8b8ef91370e842d36d18a3f72f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/__init__.cpython-314.pyc a2e31c8b8ef91370e842d36d18a3f72f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/hooks.cpython-314.opt-1.pyc e144af2adf4ca4345b8aa9f87ff2bf01 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/hooks.cpython-314.opt-2.pyc e144af2adf4ca4345b8aa9f87ff2bf01 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/hooks.cpython-314.pyc e144af2adf4ca4345b8aa9f87ff2bf01 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/interface.cpython-314.opt-1.pyc bea829fdae2c80fda3e3b38f5ba245a9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/interface.cpython-314.opt-2.pyc 315a65da4f386af43e5536f0c9b187a6 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/__pycache__/interface.cpython-314.pyc bea829fdae2c80fda3e3b38f5ba245a9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/hooks.py 1f68f33b8a770546992a11df7ab79ade 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/plugin/interface.py 272c86341ddcaae297bc6d2d2a95b9ea 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/hooks/version.py b3d3a4a6f340842721a412d78777616a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/macos.py 10c85d69e7bfeaa5d737f4f803add7b2 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/plugin
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/__init__.cpython-314.opt-1.pyc d9d7cd6246baa737e2ce590aae4adf92 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/__init__.cpython-314.opt-2.pyc d9d7cd6246baa737e2ce590aae4adf92 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/__init__.cpython-314.pyc d9d7cd6246baa737e2ce590aae4adf92 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/hooks.cpython-314.opt-1.pyc 1f620c7d6d0d8b7c6ed5dc5997e0926a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/hooks.cpython-314.opt-2.pyc 1f620c7d6d0d8b7c6ed5dc5997e0926a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/hooks.cpython-314.pyc 1f620c7d6d0d8b7c6ed5dc5997e0926a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/interface.cpython-314.opt-1.pyc ba80e13d4bfbe1b2e168ea93d66f2dd9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/interface.cpython-314.opt-2.pyc 096bc5d2bf837c5301734642580eb037 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/__pycache__/interface.cpython-314.pyc ba80e13d4bfbe1b2e168ea93d66f2dd9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/hooks.py 514cd60d046d0949f770434ae53168b1 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/plugin/interface.py e68591bb8625802a6b11856a7fe201be 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/sdist.py b24b98f3b90e6ca3330a1cacfe08094f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/utils.py 027efa88b06b7f8f4d27f165df0fba68 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/builders/wheel.py 74a9fd2f88994daea54fdbe554ea94bd 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli
+obj /usr/lib/python3.14/site-packages/hatchling/cli/__init__.py d36294afcb6cfb650ea2f28a1eb552dc 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/cli/__pycache__/__init__.cpython-314.opt-1.pyc e397efac067c82428cd5fa814b331ab2 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/__pycache__/__init__.cpython-314.opt-2.pyc e397efac067c82428cd5fa814b331ab2 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/__pycache__/__init__.cpython-314.pyc e397efac067c82428cd5fa814b331ab2 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/build
+obj /usr/lib/python3.14/site-packages/hatchling/cli/build/__init__.py 41cc2a45ecafd709d6656e58f95ea68b 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/build/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/cli/build/__pycache__/__init__.cpython-314.opt-1.pyc 69d087b82d5306f4fa85bc439a942d33 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/build/__pycache__/__init__.cpython-314.opt-2.pyc 69d087b82d5306f4fa85bc439a942d33 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/build/__pycache__/__init__.cpython-314.pyc 69d087b82d5306f4fa85bc439a942d33 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/dep
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__init__.py 3cc480036eccde16253a8da5fbd5f8ce 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__/__init__.cpython-314.opt-1.pyc 4c5b989f685bc66b78425091479c3c97 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__/__init__.cpython-314.opt-2.pyc 4c5b989f685bc66b78425091479c3c97 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__/__init__.cpython-314.pyc 4c5b989f685bc66b78425091479c3c97 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__/core.cpython-314.opt-1.pyc e818c269fa3756945927f5f873aafc5d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__/core.cpython-314.opt-2.pyc e818c269fa3756945927f5f873aafc5d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/__pycache__/core.cpython-314.pyc e818c269fa3756945927f5f873aafc5d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/dep/core.py 44ce19415ffa3befc3784e77e524725d 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/metadata
+obj /usr/lib/python3.14/site-packages/hatchling/cli/metadata/__init__.py f38612b287e198bd54afc6476665d444 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/metadata/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/cli/metadata/__pycache__/__init__.cpython-314.opt-1.pyc fc2f78bbcbda0c6e5b883b4d2a340a0f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/metadata/__pycache__/__init__.cpython-314.opt-2.pyc fc2f78bbcbda0c6e5b883b4d2a340a0f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/metadata/__pycache__/__init__.cpython-314.pyc fc2f78bbcbda0c6e5b883b4d2a340a0f 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/version
+obj /usr/lib/python3.14/site-packages/hatchling/cli/version/__init__.py 1c13d186692005d894d9b9befb756541 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/cli/version/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/cli/version/__pycache__/__init__.cpython-314.opt-1.pyc 4a7d98b44740ccce664bd4c1bced0ad3 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/version/__pycache__/__init__.cpython-314.opt-2.pyc 4a7d98b44740ccce664bd4c1bced0ad3 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/cli/version/__pycache__/__init__.cpython-314.pyc 4a7d98b44740ccce664bd4c1bced0ad3 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/dep
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__/__init__.cpython-314.opt-1.pyc 0647fd5bc20b6eefd6b48fb1acccff1a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__/__init__.cpython-314.opt-2.pyc 0647fd5bc20b6eefd6b48fb1acccff1a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__/__init__.cpython-314.pyc 0647fd5bc20b6eefd6b48fb1acccff1a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__/core.cpython-314.opt-1.pyc 7a72fb6ff4dca8b0f274f66191becd81 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__/core.cpython-314.opt-2.pyc 7a72fb6ff4dca8b0f274f66191becd81 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/dep/__pycache__/core.cpython-314.pyc 7a72fb6ff4dca8b0f274f66191becd81 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/dep/core.py cb02ebfcc613eb8cf41fde2472240229 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/licenses
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__/__init__.cpython-314.opt-1.pyc 3ef3fcde8a5d163c51be43bd031a5b6c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__/__init__.cpython-314.opt-2.pyc 3ef3fcde8a5d163c51be43bd031a5b6c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__/__init__.cpython-314.pyc 3ef3fcde8a5d163c51be43bd031a5b6c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__/supported.cpython-314.opt-1.pyc 55986bf4c20c31629244821e6d4abd61 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__/supported.cpython-314.opt-2.pyc 55986bf4c20c31629244821e6d4abd61 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/__pycache__/supported.cpython-314.pyc 55986bf4c20c31629244821e6d4abd61 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/licenses/supported.py 046b07949799dd0445346ffa6a6d3de9 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/metadata
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/__init__.cpython-314.opt-1.pyc b2a0598f4eb02017ca087973ab5e2b9a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/__init__.cpython-314.opt-2.pyc b2a0598f4eb02017ca087973ab5e2b9a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/__init__.cpython-314.pyc b2a0598f4eb02017ca087973ab5e2b9a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/core.cpython-314.opt-1.pyc bf96c2d13778d7cd1a6cfcee99abc1ed 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/core.cpython-314.opt-2.pyc 448001b236470697b7d31ba3da2b70b9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/core.cpython-314.pyc bf96c2d13778d7cd1a6cfcee99abc1ed 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/custom.cpython-314.opt-1.pyc 95bfc8e9168ba7a0b768df5f7b16248a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/custom.cpython-314.opt-2.pyc 95bfc8e9168ba7a0b768df5f7b16248a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/custom.cpython-314.pyc 95bfc8e9168ba7a0b768df5f7b16248a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/spec.cpython-314.opt-1.pyc 81fa2402374d5350d859a8a8c15ba9bd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/spec.cpython-314.opt-2.pyc 8be4cabe3faa96f074a3a0f69475bd86 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/spec.cpython-314.pyc 81fa2402374d5350d859a8a8c15ba9bd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/utils.cpython-314.opt-1.pyc 5ebad7c99155ad942175af12862f3b3b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/utils.cpython-314.opt-2.pyc 5ebad7c99155ad942175af12862f3b3b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/__pycache__/utils.cpython-314.pyc 5ebad7c99155ad942175af12862f3b3b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/core.py 7a59ca069129a592438bb16199ab0ce9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/custom.py 32410b8860cfc01452b5651d348e4719 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/metadata/plugin
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/__init__.cpython-314.opt-1.pyc 47e0b81037127be32d506e8378f82cbf 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/__init__.cpython-314.opt-2.pyc 47e0b81037127be32d506e8378f82cbf 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/__init__.cpython-314.pyc 47e0b81037127be32d506e8378f82cbf 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/hooks.cpython-314.opt-1.pyc de0e77320235dddee6d241a76192bbf9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/hooks.cpython-314.opt-2.pyc de0e77320235dddee6d241a76192bbf9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/hooks.cpython-314.pyc de0e77320235dddee6d241a76192bbf9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/interface.cpython-314.opt-1.pyc a7c01746672fc27d787cde9ad94105d9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/interface.cpython-314.opt-2.pyc 2f380eccb7231f0560c1289069a97c3f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/__pycache__/interface.cpython-314.pyc a7c01746672fc27d787cde9ad94105d9 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/hooks.py abf9dd761df7d55465d1c073df062887 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/plugin/interface.py 75f6544b7da7e23b41d77ab6ce252c8d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/spec.py 92c3e8398620559f91354f449bf87a53 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/metadata/utils.py 6f9e31db9dd867130363136e28cf6900 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/ouroboros.py 2212965743d2f091491d367da32795bf 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/plugin
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__init__.py 21df27f31f0e05ca2613842b87f8557a 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/__init__.cpython-314.opt-1.pyc 5f59dd5492c47782fbb15437f8a9578e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/__init__.cpython-314.opt-2.pyc 5f59dd5492c47782fbb15437f8a9578e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/__init__.cpython-314.pyc 5f59dd5492c47782fbb15437f8a9578e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/exceptions.cpython-314.opt-1.pyc 9c708c2c0d55187942fc9d7db54b56ac 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/exceptions.cpython-314.opt-2.pyc 9c708c2c0d55187942fc9d7db54b56ac 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/exceptions.cpython-314.pyc 9c708c2c0d55187942fc9d7db54b56ac 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/manager.cpython-314.opt-1.pyc 18091daddbbc052a3176fc69339270d2 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/manager.cpython-314.opt-2.pyc 18091daddbbc052a3176fc69339270d2 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/manager.cpython-314.pyc 18091daddbbc052a3176fc69339270d2 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/specs.cpython-314.opt-1.pyc e2da54938921f8a809ab93df7ba19010 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/specs.cpython-314.opt-2.pyc bc4b5af594ef75f667105e6ca3f43763 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/specs.cpython-314.pyc e2da54938921f8a809ab93df7ba19010 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/utils.cpython-314.opt-1.pyc 5b6c13f54ded6d5220d21638a01f8118 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/utils.cpython-314.opt-2.pyc 5b6c13f54ded6d5220d21638a01f8118 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/__pycache__/utils.cpython-314.pyc 5b6c13f54ded6d5220d21638a01f8118 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/exceptions.py b63c22988be5cbe673b66ab06cd94f08 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/manager.py 128a50b3bca4c7c5d38e385c96ca8dfb 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/specs.py dbe70dfbbc7fcc3b673fc75b60027664 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/plugin/utils.py 8b3748dfa3bac536f10aad381416230a 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/py.typed d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/utils
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/__init__.cpython-314.opt-1.pyc ada8227f8a52761379ef9fa995ce48fc 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/__init__.cpython-314.opt-2.pyc ada8227f8a52761379ef9fa995ce48fc 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/__init__.cpython-314.pyc ada8227f8a52761379ef9fa995ce48fc 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/constants.cpython-314.opt-1.pyc ecb68475108173cd88815d2168d443bd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/constants.cpython-314.opt-2.pyc ecb68475108173cd88815d2168d443bd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/constants.cpython-314.pyc ecb68475108173cd88815d2168d443bd 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/context.cpython-314.opt-1.pyc d2096d974b4d0b4695047676e637fdb8 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/context.cpython-314.opt-2.pyc 248888aa1f442b17666e1680c43dacf3 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/context.cpython-314.pyc d2096d974b4d0b4695047676e637fdb8 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/fs.cpython-314.opt-1.pyc 64e34cecfca6bd1a36f8a73431588706 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/fs.cpython-314.opt-2.pyc 64e34cecfca6bd1a36f8a73431588706 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/__pycache__/fs.cpython-314.pyc 64e34cecfca6bd1a36f8a73431588706 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/constants.py baf9e4e4facf153bd889b5ecf7715d93 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/context.py bbce0f7d57c15a5549db23fe080adb17 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/utils/fs.py b766a9708fb4b1ca594d7280b689b03d 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version
+obj /usr/lib/python3.14/site-packages/hatchling/version/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/version/__pycache__/__init__.cpython-314.opt-1.pyc 5113ed9aa48cdea476f98ed1efe33735 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/__pycache__/__init__.cpython-314.opt-2.pyc 5113ed9aa48cdea476f98ed1efe33735 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/__pycache__/__init__.cpython-314.pyc 5113ed9aa48cdea476f98ed1efe33735 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/__pycache__/core.cpython-314.opt-1.pyc e3e59680f78174083efafa4b4c16d16f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/__pycache__/core.cpython-314.opt-2.pyc e3e59680f78174083efafa4b4c16d16f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/__pycache__/core.cpython-314.pyc e3e59680f78174083efafa4b4c16d16f 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/core.py b12cd2a0d5438986739a5dfd0061e00b 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/scheme
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__/__init__.cpython-314.opt-1.pyc 3f7ba9f42a47428b3cbf12813871d396 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__/__init__.cpython-314.opt-2.pyc 3f7ba9f42a47428b3cbf12813871d396 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__/__init__.cpython-314.pyc 3f7ba9f42a47428b3cbf12813871d396 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__/standard.cpython-314.opt-1.pyc b0df2f45a18b73d4298015a1179e1406 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__/standard.cpython-314.opt-2.pyc d7fdcc4bf77bcce95b631778ed4de15d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/__pycache__/standard.cpython-314.pyc b0df2f45a18b73d4298015a1179e1406 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/__init__.cpython-314.opt-1.pyc 6fc924b3a32690fc56113d734166a8de 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/__init__.cpython-314.opt-2.pyc 6fc924b3a32690fc56113d734166a8de 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/__init__.cpython-314.pyc 6fc924b3a32690fc56113d734166a8de 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/hooks.cpython-314.opt-1.pyc 773726bbff4037a3c6c7fbfe76e13a8e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/hooks.cpython-314.opt-2.pyc 773726bbff4037a3c6c7fbfe76e13a8e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/hooks.cpython-314.pyc 773726bbff4037a3c6c7fbfe76e13a8e 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/interface.cpython-314.opt-1.pyc 3139143ff5874122d0613b98ed4e4171 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/interface.cpython-314.opt-2.pyc fb31564c52a3c930a40c7556b16ef449 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/__pycache__/interface.cpython-314.pyc 3139143ff5874122d0613b98ed4e4171 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/hooks.py f8c3f8ba09b015e01847f0c6f6693e65 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/plugin/interface.py d8da70d60f6455e68c7aa04cee5c5b94 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/scheme/standard.py ff890d1a18f171f2e3f881b52080ba81 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/source
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/__init__.cpython-314.opt-1.pyc f8294addf765a3ec4ebfabbf4e7125fa 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/__init__.cpython-314.opt-2.pyc f8294addf765a3ec4ebfabbf4e7125fa 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/__init__.cpython-314.pyc f8294addf765a3ec4ebfabbf4e7125fa 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/code.cpython-314.opt-1.pyc 7ca72ecee114943e13ce40d9a383cd05 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/code.cpython-314.opt-2.pyc 7ca72ecee114943e13ce40d9a383cd05 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/code.cpython-314.pyc 7ca72ecee114943e13ce40d9a383cd05 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/env.cpython-314.opt-1.pyc 42d3463346a90bb824185f18981d8486 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/env.cpython-314.opt-2.pyc 42d3463346a90bb824185f18981d8486 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/env.cpython-314.pyc 42d3463346a90bb824185f18981d8486 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/regex.cpython-314.opt-1.pyc 92f4338d7efe0cb15e11ab1799edcb27 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/regex.cpython-314.opt-2.pyc 92f4338d7efe0cb15e11ab1799edcb27 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/__pycache__/regex.cpython-314.pyc 92f4338d7efe0cb15e11ab1799edcb27 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/code.py e41eb06ca25b83fb86c9008ec2da695c 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/env.py 3a1fcd6347e0786a4b31275b09346bca 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/source/plugin
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__init__.py d41d8cd98f00b204e9800998ecf8427e 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/__init__.cpython-314.opt-1.pyc 477212339d15ad324f62903501adb532 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/__init__.cpython-314.opt-2.pyc 477212339d15ad324f62903501adb532 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/__init__.cpython-314.pyc 477212339d15ad324f62903501adb532 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/hooks.cpython-314.opt-1.pyc 65b9ef7c45133e721fe9a7cf0b3452b7 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/hooks.cpython-314.opt-2.pyc 65b9ef7c45133e721fe9a7cf0b3452b7 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/hooks.cpython-314.pyc 65b9ef7c45133e721fe9a7cf0b3452b7 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/interface.cpython-314.opt-1.pyc 20bdd846ea0dbfd58a9fec1ca9cf084b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/interface.cpython-314.opt-2.pyc d20fb1f9d4268ce07ed3bb67a8fc3f1d 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/__pycache__/interface.cpython-314.pyc 20bdd846ea0dbfd58a9fec1ca9cf084b 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/hooks.py 819c9541e05e701d4a001134fdc35697 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/plugin/interface.py d2fd203723e9d173a18a72ac8f406076 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling/version/source/regex.py 4389c8fcef0167bb819a59187e431e42 1780764915
+dir /usr/lib/python3.14/site-packages/hatchling-1.29.0.dist-info
+obj /usr/lib/python3.14/site-packages/hatchling-1.29.0.dist-info/METADATA cd22bb2b110dbde4c552b76db6beacaa 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling-1.29.0.dist-info/WHEEL 7412a649a466b9dd567141f836b1e222 1780764915
+obj /usr/lib/python3.14/site-packages/hatchling-1.29.0.dist-info/entry_points.txt b768722e5be4046a6e1ceea21fbe8b74 1780764915
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/hatchling-1.29.0
+obj /usr/share/doc/hatchling-1.29.0/README.md.bz2 0d8a74e82e2c68fd0219d81be83ef63f 1780764916

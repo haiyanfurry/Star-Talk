@@ -1,0 +1,24 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/ksba-config f4c5d66c892cd9ffc9bac0a59059f254 1775409493
+dir /usr/include
+obj /usr/include/ksba.h 79456389aff5b7d1210ce206cfc0c318 1775409493
+dir /usr/lib64
+obj /usr/lib64/libksba.so.8.14.8 005cf1da820df87a61624227ca7b3283 1775409494
+dir /usr/lib64/pkgconfig
+obj /usr/lib64/pkgconfig/ksba.pc 354880a586352c1a13d003a0d4adb9d0 1775409493
+dir /usr/share
+dir /usr/share/aclocal
+obj /usr/share/aclocal/ksba.m4 4cd236490282d7a0fcf2c24ee4d9f39f 1775409493
+dir /usr/share/doc
+dir /usr/share/doc/libksba-1.6.8
+obj /usr/share/doc/libksba-1.6.8/AUTHORS.bz2 99bca56e51ec8308c2be95f1f8caaa93 1775409493
+obj /usr/share/doc/libksba-1.6.8/ChangeLog.bz2 658c0e64800160d188a20fcc237cb364 1775409493
+obj /usr/share/doc/libksba-1.6.8/NEWS.bz2 7136db71033d5b30beaf64bbfc433761 1775409493
+obj /usr/share/doc/libksba-1.6.8/README.bz2 216e133a7a60a812b34471d92a7c1e48 1775409493
+obj /usr/share/doc/libksba-1.6.8/THANKS.bz2 5dcd00de27bd7dfee0d6ae4e951f7c25 1775409493
+obj /usr/share/doc/libksba-1.6.8/TODO.bz2 9a6ef069a56b30bd01f2ee5b742b9846 1775409493
+dir /usr/share/info
+obj /usr/share/info/ksba.info.bz2 330d78c057e7c028fea50196211d6b91 1775409493
+sym /usr/lib64/libksba.so.8 -> libksba.so.8.14.8 1781128616
+sym /usr/lib64/libksba.so -> libksba.so.8.14.8 1781128616

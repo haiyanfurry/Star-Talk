@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.gnome.Calendar
-Exec=/usr/bin/gnome-calendar --gapplication-service

@@ -1,1 +1,2 @@
-busybox
+#!/usr/bin/env sh
+exec "/bin/grep" -F "$@"

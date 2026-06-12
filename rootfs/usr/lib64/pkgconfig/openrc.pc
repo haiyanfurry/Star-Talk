@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib64
+
+pluginsdir=/usr/lib64/rc/plugins
+
+Name: OpenRC
+Description: Universal init system
+Version: 0.63.1
+Libs: -L${prefix}/lib64 -lrc
+Cflags: -I${includedir}

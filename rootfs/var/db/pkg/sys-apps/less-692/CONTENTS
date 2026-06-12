@@ -1,0 +1,24 @@
+dir /usr
+dir /usr/bin
+obj /usr/bin/less fb6c616d5cf80f7bcd8ed09e21287f74 1774200110
+obj /usr/bin/lessecho 67e6d5e338f67f3cba08cc7ed8915618 1774200110
+obj /usr/bin/lesskey 43973c26fd4c446a5e183f60eb4678c7 1774200110
+obj /usr/bin/lesspipe 7fa7960e71ae61391f4039eee5916e46 1774200109
+dir /usr/lib
+dir /usr/lib/lessfilter.d
+obj /usr/lib/lessfilter.d/.keep_sys-apps_less-0 d41d8cd98f00b204e9800998ecf8427e 1774200109
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/less-692
+obj /usr/share/doc/less-692/NEWS.bz2 6b9260a5d634e0b592b69328eefe26f0 1774200109
+obj /usr/share/doc/less-692/README.bz2 5912a4b99f523cefe32a2701be54064b 1774200109
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/less.1.bz2 e4d8270f8d86f173c430ab986dffe2f5 1774200109
+obj /usr/share/man/man1/lessecho.1.bz2 b1dec3f4baa166cc8619625adcb3f0fc 1774200109
+obj /usr/share/man/man1/lesskey.1.bz2 d0c787e2a22060cd158cdf1df7e5ca9a 1774200109
+dir /etc
+dir /etc/env.d
+obj /etc/env.d/70less c805eb302fa124719c8fc95a40e5eddc 1774200110
+dir /etc/lessfilter.d
+obj /etc/lessfilter.d/.keep_sys-apps_less-0 d41d8cd98f00b204e9800998ecf8427e 1774200109

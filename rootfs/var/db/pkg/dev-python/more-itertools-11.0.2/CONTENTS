@@ -1,0 +1,52 @@
+dir /usr
+dir /usr/lib
+dir /usr/lib/python3.13
+dir /usr/lib/python3.13/site-packages
+dir /usr/lib/python3.13/site-packages/more_itertools
+obj /usr/lib/python3.13/site-packages/more_itertools/__init__.py 2d10014f230de9940fdc4077a580f8e6 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__init__.pyi c8fc9d8b6958f88436396d8ecd41f206 1780764406
+dir /usr/lib/python3.13/site-packages/more_itertools/__pycache__
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/__init__.cpython-313.opt-1.pyc 7aef37bf75df0a5129756f37a8c8f4dd 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/__init__.cpython-313.opt-2.pyc 2da0da8bba5dc728dc3a64b8c48baf07 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/__init__.cpython-313.pyc 7aef37bf75df0a5129756f37a8c8f4dd 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/more.cpython-313.opt-1.pyc df52fd7e8615b8a0bd1a0b1330763ab5 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/more.cpython-313.opt-2.pyc 9e8a0d75fe97160284982c1887668907 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/more.cpython-313.pyc df52fd7e8615b8a0bd1a0b1330763ab5 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/recipes.cpython-313.opt-1.pyc 494f770ea6cd6752f9a2776ec4a32fde 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/recipes.cpython-313.opt-2.pyc d47b7bededb9dbad74bfa86350abf12a 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/__pycache__/recipes.cpython-313.pyc 33d670800c3c914c003caaec2f97a014 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/more.py 62267f5ad4ce9224ab3f59bf96508d4c 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/more.pyi c39fc5595a09e9ee0061fe5a136347be 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/py.typed d41d8cd98f00b204e9800998ecf8427e 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/recipes.py 94edfa339f7866371f622668d723ccfc 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools/recipes.pyi 9d7fa7d25e444f78778554b1f2d4997c 1780764406
+dir /usr/lib/python3.13/site-packages/more_itertools-11.0.2.dist-info
+obj /usr/lib/python3.13/site-packages/more_itertools-11.0.2.dist-info/METADATA d9fcbe81074f7c038afeb2eb2dcdcbf9 1780764406
+obj /usr/lib/python3.13/site-packages/more_itertools-11.0.2.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764406
+dir /usr/lib/python3.14
+dir /usr/lib/python3.14/site-packages
+dir /usr/lib/python3.14/site-packages/more_itertools
+obj /usr/lib/python3.14/site-packages/more_itertools/__init__.py 2d10014f230de9940fdc4077a580f8e6 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__init__.pyi c8fc9d8b6958f88436396d8ecd41f206 1780764407
+dir /usr/lib/python3.14/site-packages/more_itertools/__pycache__
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/__init__.cpython-314.opt-1.pyc 1191149cb7e78935f780b4bf957a99d5 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/__init__.cpython-314.opt-2.pyc cfa76ce7062bc7f90dc268cce7a02764 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/__init__.cpython-314.pyc 1191149cb7e78935f780b4bf957a99d5 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/more.cpython-314.opt-1.pyc 9ac0894d99e358fe137be407907909e3 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/more.cpython-314.opt-2.pyc 09d498b3bbc138c736bf5265b20c23c7 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/more.cpython-314.pyc 9ac0894d99e358fe137be407907909e3 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/recipes.cpython-314.opt-1.pyc fc61c201ef00cc82c5cbcd0eed875dc5 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/recipes.cpython-314.opt-2.pyc ab5c88a1541441c252f93e784fbec04b 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/__pycache__/recipes.cpython-314.pyc 7f777c39901353f011679e78be9c5585 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/more.py 62267f5ad4ce9224ab3f59bf96508d4c 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/more.pyi c39fc5595a09e9ee0061fe5a136347be 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/py.typed d41d8cd98f00b204e9800998ecf8427e 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/recipes.py 94edfa339f7866371f622668d723ccfc 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools/recipes.pyi 9d7fa7d25e444f78778554b1f2d4997c 1780764407
+dir /usr/lib/python3.14/site-packages/more_itertools-11.0.2.dist-info
+obj /usr/lib/python3.14/site-packages/more_itertools-11.0.2.dist-info/METADATA d9fcbe81074f7c038afeb2eb2dcdcbf9 1780764407
+obj /usr/lib/python3.14/site-packages/more_itertools-11.0.2.dist-info/WHEEL eca1d2e32987c5c9fd85f21a0c92d672 1780764407
+dir /usr/share
+dir /usr/share/doc
+dir /usr/share/doc/more-itertools-11.0.2
+obj /usr/share/doc/more-itertools-11.0.2/README.rst.bz2 76e8b7079edd4026a83067c6124d174c 1780764408

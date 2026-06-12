@@ -1,1 +1,0 @@
->=sys-libs/gdbm-1.8.3:0/6= app-arch/bzip2 >=virtual/zlib-1.2.12:0/1= virtual/libcrypt:0/2= >=sys-libs/glibc-2.41-r6

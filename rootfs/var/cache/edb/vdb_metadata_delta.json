@@ -1,1 +1,0 @@
-{"version": "1", "timestamp": 1781128987.5773976, "deltas": [{"event": "add", "package": "sys-apps/man-pages", "version": "6.17-r1", "slot": "0", "counter": "396"}, {"event": "add", "package": "net-misc/netifrc", "version": "0.7.13", "slot": "0", "counter": "397"}, {"event": "add", "package": "virtual/service-manager", "version": "2-r1", "slot": "0", "counter": "398"}]}

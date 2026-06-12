@@ -1,1 +1,0 @@
-toolchain-funcs flag-o-matic linux-info multiprocessing ninja-utils eapi9-pipestatus python-utils-r1 sysroot rust-toolchain meson out-of-source-utils multibuild multilib multilib-build multilib-minimal meson-multilib python-single-r1 secureboot bash-completion-r1 shell-completion udev

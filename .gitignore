@@ -2,24 +2,22 @@
 
 # Build artifacts
 /work/
-/out/
+/rootfs/
+
+# Kernel source (deleted after build)
+/linux-7.0.12/
+
+# Intermediate build outputs (keep final .img + kernel + initramfs)
+/out/root.ext4
+/out/esp.fat
+/out/kernel.config
+/out/System.map
+
+# Downloaded archives
 *.tar.*
 *.tar
 *.tgz
 *.zip
-
-# Kernel build artifacts (inside linux-7.0.12)
-/linux-7.0.12/*.o
-/linux-7.0.12/*.ko
-/linux-7.0.12/*.a
-/linux-7.0.12/vmlinux
-/linux-7.0.12/vmlinux.o
-/linux-7.0.12/System.map
-/linux-7.0.12/Module.symvers
-/linux-7.0.12/modules.order
-/linux-7.0.12/.tmp_*
-/linux-7.0.12/.*.cmd
-/linux-7.0.12/.*.d
 
 # Editor / IDE
 .vscode/
@@ -32,6 +30,6 @@
 .DS_Store
 Thumbs.db
 
-# Sensitive
+# Disk images (except release builds)
 *.img
-!star-talk-*.img
+!out/star-talk-*.img

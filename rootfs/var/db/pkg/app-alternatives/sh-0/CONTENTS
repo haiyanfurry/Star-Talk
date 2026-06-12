@@ -1,2 +1,0 @@
-dir /bin
-sym /bin/sh -> bash 1781128568

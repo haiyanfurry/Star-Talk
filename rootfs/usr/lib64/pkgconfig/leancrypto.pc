@@ -1,9 +1,0 @@
-prefix=/usr
-includedir=${prefix}/include
-libdir=${prefix}/lib64
-
-Name: leancrypto
-Description: PQC-resistant cryptographic library
-Version: 1.7.2
-Libs: -L${libdir} -lleancrypto
-Cflags: -I${includedir}

@@ -1,1 +1,0 @@
--O2 -pipe -fno-strict-aliasing -Wa,--noexecstack

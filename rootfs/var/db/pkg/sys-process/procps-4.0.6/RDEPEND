@@ -1,1 +1,0 @@
->=sys-libs/ncurses-5.7-r7:0/6=[unicode(+)] !<app-i18n/man-pages-l10n-4.2.0-r1 !<app-i18n/man-pages-zh_CN-1.6.4.2 !sys-apps/coreutils[kill] !sys-apps/util-linux[kill] >=sys-libs/glibc-2.42-r5

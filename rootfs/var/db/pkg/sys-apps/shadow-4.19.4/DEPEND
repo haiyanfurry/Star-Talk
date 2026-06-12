@@ -1,1 +1,0 @@
-virtual/libcrypt:0/2= sys-apps/acl:0/0= virtual/libintl sys-libs/pam:0/0= sys-apps/attr:0/0= !<sys-libs/glibc-2.38 >=sys-kernel/linux-headers-4.14

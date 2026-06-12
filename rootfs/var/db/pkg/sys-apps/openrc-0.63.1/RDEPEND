@@ -1,1 +1,0 @@
-sys-libs/libcap sys-process/psmisc sys-libs/pam >=sys-apps/sysvinit-2.86-r6 virtual/tmpfiles >=sys-libs/glibc-2.42-r7

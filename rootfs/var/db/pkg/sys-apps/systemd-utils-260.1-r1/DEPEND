@@ -1,1 +1,0 @@
-sys-apps/acl >=sys-apps/util-linux-2.37 sys-apps/acl >=sys-apps/kmod-15 >=sys-kernel/linux-headers-3.11

@@ -1,1 +1,0 @@
-abi_mips_n32 audit debug kerberos ldns libedit livecd pam security-key selinux +ssl static test verify-sig

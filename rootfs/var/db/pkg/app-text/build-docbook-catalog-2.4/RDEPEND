@@ -1,1 +1,0 @@
-dev-libs/libxml2 || ( sys-apps/util-linux app-misc/getopt )

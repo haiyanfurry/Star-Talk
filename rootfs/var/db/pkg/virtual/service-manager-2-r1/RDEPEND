@@ -1,1 +1,0 @@
-|| ( sys-apps/openrc sys-apps/s6-rc[system-init(-)] sys-process/runit[system-init(-)] )

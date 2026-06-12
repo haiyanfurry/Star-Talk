@@ -1,6 +1,0 @@
-#!/sbin/openrc-run
-name="dbus"
-description="D-Bus system message bus"
-command="/usr/bin/dbus-daemon"
-command_args="--system --fork"
-pidfile="/run/dbus/pid"

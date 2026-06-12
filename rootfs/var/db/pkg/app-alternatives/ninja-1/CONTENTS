@@ -1,3 +1,0 @@
-dir /usr
-dir /usr/bin
-sym /usr/bin/ninja -> ninja-reference 1781128594

@@ -1,1 +1,0 @@
-virtual/libintl !sys-libs/glibc[vanilla(+)] >=sys-libs/glibc-2.42-r5

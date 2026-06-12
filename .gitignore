@@ -30,6 +30,6 @@
 .DS_Store
 Thumbs.db
 
-# Disk images (except release builds)
+# Disk images and build outputs
 *.img
-!out/star-talk-*.img
+out/

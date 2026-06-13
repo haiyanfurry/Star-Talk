@@ -1,13 +1,13 @@
 #!/bin/busybox sh
 # ╔══════════════════════════════════════════════════════════════╗
-# ║     Star-Talk / 星语 — Initramfs /init                      ║
-# ║     AIX-Style Boot Sequence                                 ║
+# ║     Star-Talk / Star-Talk — Initramfs /init                       ║
+# ║     Style Boot Sequence                                      ║
 # ╚══════════════════════════════════════════════════════════════╝
 #
 # This script runs as PID 1 inside the initramfs.
 # Responsibilities:
 #   1. Mount virtual filesystems (proc, sys, dev, tmpfs)
-#   2. Display AIX-style welcome screen with hardware detection
+#   2. Display style welcome screen with hardware detection
 #   3. Locate and mount the root filesystem
 #   4. Set up overlay for persistence (optional)
 #   5. switch_root to the real init
@@ -55,7 +55,7 @@ for arg in $(cat /proc/cmdline); do
     esac
 done
 
-# ── Phase 3: AIX-style welcome screen ───────────────────────────
+# ── Phase 3: style welcome screen ───────────────────────────
 if [ -z "$QUIET_BOOT" ]; then
     # Hardware discovery
     CPU_MODEL=$(grep "model name" /proc/cpuinfo 2>/dev/null | head -1 | cut -d: -f2 | sed 's/^[ \t]*//')
@@ -103,7 +103,7 @@ if [ -z "$QUIET_BOOT" ]; then
     printf "  ╚══════════════════════════════════════════════════════════════╝\n"
     printf "${RESET}\n"
 
-    # Hardware telemetry panel (AIX-style)
+    # Hardware telemetry panel
     printf "${C_CYAN}  ┌── ${C_WHITE}Hardware Detection${C_CYAN} ──────────────────────────────────────┐\n"
     printf "${C_CYAN}  │${RESET}  ${C_GREEN}CPU      :${RESET} %-47s ${C_CYAN}│\n" "${CPU_MODEL}"
     printf "${C_CYAN}  │${RESET}  ${C_GREEN}Cores    :${RESET} %-47s ${C_CYAN}│\n" "${CPU_CORES}"

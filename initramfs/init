@@ -1,6 +1,6 @@
 #!/bin/busybox sh
 # ╔══════════════════════════════════════════════════════════════╗
-# ║     Star-Talk / Star-Talk — Initramfs /init                       ║
+# ║     Star-Talk / Star-Talk — Initramfs /init                  ║
 # ║     Style Boot Sequence                                      ║
 # ╚══════════════════════════════════════════════════════════════╝
 #

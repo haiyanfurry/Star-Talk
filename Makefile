@@ -1,131 +1,153 @@
-# Star-Talk / 星语 — Top-Level Makefile
-# Live Linux Distribution Build System
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  Star-Talk / 星语 — Top-Level Makefile (NetBSD Edition)            ║
+# ║  NetBSD-based Desktop Operating System Build System                ║
+# ╚══════════════════════════════════════════════════════════════════════╝
 #
 # Usage:
-#   make all          — Build everything and create USB image
-#   make kernel       — Recompile kernel only
-#   make busybox      — Build BusyBox (static + dynamic)
-#   make core-libs    — Build core system libraries
-#   make system-daemons — Build dbus, elogind
-#   make graphics     — Build Mesa, Wayland, graphics stack
-#   make desktop      — Build Niri, waybar, wofi, foot
-#   make audio        — Build PipeWire
-#   make anonymity    — Build Tor, obfs4proxy, i2pd
-#   make apps         — Fetch Firefox, Steam, Proton
-#   make initramfs    — Assemble initramfs
-#   make rootfs       — Assemble root filesystem
-#   make usb-image    — Create final USB disk image
-#   make burn DEVICE=/dev/sdX — Write image to USB
-#   make clean        — Clean build artifacts
-#   make clean-all    — Deep clean (remove downloaded sources)
-#   make test-qemu    — Test image in QEMU
+#   make all           — Build everything and create bootable disk image
+#   make kernel        — Build NetBSD SWIMSTAR kernel only
+#   make userland      — Build NetBSD userland (distribution)
+#   make packages      — Install KDE, Firefox, VSCode, Tor, I2PD via pkgsrc
+#   make desktop       — Configure KDE Plasma desktop + wallpapers
+#   make rootfs        — Assemble root filesystem
+#   make image         — Create final bootable disk image
+#   make installer     — Build installer ISO/USB
+#   make burn DEVICE=  — Write image to USB device
+#   make test-qemu     — Test boot in QEMU
+#   make clean         — Clean build artifacts
+#   make clean-all     — Deep clean (remove all work)
+#   make help          — Show this help
+#
+# Architecture: NetBSD kernel + KDE Plasma 5 desktop
+# Init system: NetBSD rc.d (AIX-style boot splash)
+# Package manager: pkgsrc
 
-JOBS ?= $(shell nproc)
+JOBS ?= $(shell nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
 PROJECT_ROOT := $(shell pwd)
-SCRIPTS_DIR := $(PROJECT_ROOT)/scripts
-SHELL := /bin/bash
+SCRIPTS_DIR := $(PROJECT_ROOT)/scripts/netbsd
+SHELL := /bin/sh
 
 export PROJECT_ROOT JOBS
 
-.PHONY: all kernel busybox core-libs system-daemons graphics desktop \
-        audio anonymity apps initramfs rootfs squashfs usb-image \
-        burn clean clean-all test-qemu help
+.PHONY: all kernel userland packages desktop rootfs image \
+        installer burn test-qemu clean clean-all help
 
-# ── Default target ──────────────────────────────────────────────
-all: kernel busybox core-libs system-daemons graphics desktop \
-     audio anonymity apps initramfs rootfs usb-image
+# ═══════════════════════════════════════════════════════════════════════
+# Default target
+# ═══════════════════════════════════════════════════════════════════════
+all: kernel userland packages desktop rootfs image
+	@echo ""
+	@echo "  ★ Star-Talk / 星语 build complete!"
+	@echo "  Image: out/star-talk-netbsd-$$(date +%Y%m%d).img"
+	@echo ""
 
-# ── Build phases ────────────────────────────────────────────────
-prepare:
-	@$(SCRIPTS_DIR)/00-prepare.sh
+# ═══════════════════════════════════════════════════════════════════════
+# Build Phases
+# ═══════════════════════════════════════════════════════════════════════
 
 kernel:
 	@$(SCRIPTS_DIR)/01-kernel.sh
 
-busybox: prepare
-	@$(SCRIPTS_DIR)/03-busybox.sh
+userland: kernel
+	@$(SCRIPTS_DIR)/02-userland.sh
 
-core-libs: busybox
-	@$(SCRIPTS_DIR)/04-core-libs.sh
+packages: userland
+	@$(SCRIPTS_DIR)/03-packages.sh
 
-system-daemons: core-libs
-	@$(SCRIPTS_DIR)/05-system-daemons.sh
+desktop: packages
+	@$(SCRIPTS_DIR)/04-desktop.sh
 
-graphics: system-daemons
-	@$(SCRIPTS_DIR)/06-graphics.sh
+rootfs: desktop
+	@$(SCRIPTS_DIR)/05-assemble-rootfs.sh
 
-desktop: graphics
-	@$(SCRIPTS_DIR)/07-desktop.sh
+image: rootfs
+	@$(SCRIPTS_DIR)/06-make-image.sh
 
-audio: system-daemons
-	@$(SCRIPTS_DIR)/08-audio.sh
+installer: image
+	@echo "Installer image built as part of disk image."
 
-anonymity: system-daemons
-	@$(SCRIPTS_DIR)/09-anonymity.sh
-
-apps: desktop
-	@$(SCRIPTS_DIR)/10-applications.sh
-
-initramfs: busybox
-	@$(SCRIPTS_DIR)/20-assemble-initramfs.sh
-
-rootfs: busybox core-libs system-daemons graphics desktop audio anonymity apps
-	@$(SCRIPTS_DIR)/21-assemble-rootfs.sh
-
-squashfs: rootfs
-	@$(SCRIPTS_DIR)/22-make-squashfs.sh
-
-usb-image: kernel initramfs rootfs
-	@$(SCRIPTS_DIR)/23-make-usb-image.sh
-
-# ── Burn to USB ─────────────────────────────────────────────────
-burn: usb-image
+# ═══════════════════════════════════════════════════════════════════════
+# Burn to USB
+# ═══════════════════════════════════════════════════════════════════════
+burn: image
 	@if [ -z "$(DEVICE)" ]; then \
 		echo "Usage: make burn DEVICE=/dev/sdX"; \
-		lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,LABEL; \
+		echo ""; \
+		echo "Available devices:"; \
+		if command -v lsblk >/dev/null 2>&1; then \
+			lsblk -o NAME,SIZE,TYPE,MOUNTPOINT; \
+		else \
+			echo "(lsblk not available — check dmesg)"; \
+		fi; \
 		exit 1; \
 	fi
-	@$(SCRIPTS_DIR)/24-burn-usb.sh $(DEVICE)
+	@IMAGE=$$(ls -t out/star-talk-netbsd-*.img 2>/dev/null | head -1); \
+	if [ -z "$$IMAGE" ]; then \
+		echo "No image found. Run 'make image' first."; \
+		exit 1; \
+	fi; \
+	echo "Writing $$IMAGE to $(DEVICE)..."; \
+	echo "WARNING: This will DESTROY all data on $(DEVICE)!"; \
+	echo "Press Ctrl+C within 5 seconds to cancel..."; \
+	sleep 5; \
+	dd if="$$IMAGE" of="$(DEVICE)" bs=1M conv=fsync status=progress && \
+		echo "Done! $(DEVICE) is ready." || \
+		echo "Write failed. Check device and permissions."
 
-# ── Testing ─────────────────────────────────────────────────────
-test-qemu: usb-image
-	@$(SCRIPTS_DIR)/25-test-qemu.sh
+# ═══════════════════════════════════════════════════════════════════════
+# Testing
+# ═══════════════════════════════════════════════════════════════════════
+test-qemu: image
+	@$(SCRIPTS_DIR)/07-test-qemu.sh
 
-# ── Maintenance ─────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Maintenance
+# ═══════════════════════════════════════════════════════════════════════
 clean:
-	rm -rf $(PROJECT_ROOT)/work/build/*
-	rm -f $(PROJECT_ROOT)/out/*.squashfs
-	rm -f $(PROJECT_ROOT)/out/initramfs.cpio.zst
+	rm -rf $(PROJECT_ROOT)/work/netbsd-obj/*
+	rm -rf $(PROJECT_ROOT)/work/rootfs-staging/*
+	rm -f $(PROJECT_ROOT)/out/star-talk-netbsd-*.img
 	@echo "Build artifacts cleaned."
+	@echo "Use 'make clean-all' to remove source trees too."
 
 clean-all: clean
-	rm -rf $(PROJECT_ROOT)/work/sources/*
-	rm -f $(PROJECT_ROOT)/out/*.img
-	@echo "Deep clean complete."
+	rm -rf $(PROJECT_ROOT)/work/netbsd-src
+	rm -rf $(PROJECT_ROOT)/work/pkgsrc
+	rm -rf $(PROJECT_ROOT)/work/netbsd-tools
+	rm -rf $(PROJECT_ROOT)/work/netbsd-dest
+	rm -rf $(PROJECT_ROOT)/work/rootfs-staging
+	rm -f $(PROJECT_ROOT)/out/netbsd
+	@echo "Deep clean complete. All sources removed."
 
-# ── Help ────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Help
+# ═══════════════════════════════════════════════════════════════════════
 help:
-	@echo "╔══════════════════════════════════════════════════════════╗"
-	@echo "║          Star-Talk / 星语 — Build System                ║"
-	@echo "╠══════════════════════════════════════════════════════════╣"
-	@echo "║  make all          Build everything → USB image         ║"
-	@echo "║  make kernel       Recompile kernel (SQUASHFS+OVERLAY)  ║"
-	@echo "║  make busybox      Build BusyBox static + dynamic       ║"
-	@echo "║  make core-libs    Build zlib, openssl, ncurses, etc.   ║"
-	@echo "║  make system-daemons Build dbus + elogind               ║"
-	@echo "║  make graphics     Build Mesa + Wayland stack           ║"
-	@echo "║  make desktop      Build Niri + waybar + wofi + foot    ║"
-	@echo "║  make audio        Build PipeWire + wireplumber         ║"
-	@echo "║  make anonymity    Build tor + obfs4proxy + i2pd        ║"
-	@echo "║  make apps         Fetch Firefox/Steam/Proton binaries  ║"
-	@echo "║  make initramfs    Assemble initramfs cpio              ║"
-	@echo "║  make rootfs       Assemble root filesystem             ║"
-	@echo "║  make usb-image    Create final USB disk image          ║"
-	@echo "║  make burn DEVICE=/dev/sdX  Write image to USB          ║"
-	@echo "║  make test-qemu    Test boot in QEMU                    ║"
-	@echo "║  make clean        Clean build artifacts                ║"
-	@echo "║  make clean-all    Deep clean (remove sources)          ║"
-	@echo "╚══════════════════════════════════════════════════════════╝"
+	@echo "╔══════════════════════════════════════════════════════════════╗"
+	@echo "║        Star-Talk / 星语 — NetBSD Build System              ║"
+	@echo "╠══════════════════════════════════════════════════════════════╣"
+	@echo "║  make all         Build everything → disk image             ║"
+	@echo "║  make kernel      Build NetBSD SWIMSTAR kernel             ║"
+	@echo "║  make userland    Build NetBSD distribution                ║"
+	@echo "║  make packages    Install KDE/Firefox/VSCode/Tor/I2PD      ║"
+	@echo "║  make desktop     Configure KDE Plasma + wallpapers        ║"
+	@echo "║  make rootfs      Assemble root filesystem                 ║"
+	@echo "║  make image       Create bootable disk image               ║"
+	@echo "║  make burn DEVICE=/dev/sdX  Write to USB                   ║"
+	@echo "║  make test-qemu   Test boot in QEMU                        ║"
+	@echo "║  make clean       Clean artifacts                          ║"
+	@echo "║  make clean-all   Deep clean (remove sources)              ║"
+	@echo "║  make help        Show this help                           ║"
+	@echo "╠══════════════════════════════════════════════════════════════╣"
+	@echo "║  Kernel:    NetBSD-current (SWIMSTAR config) ✅ compiled   ║"
+	@echo "║  Desktop:   KDE Plasma 6 + SDDM (⏳ not yet built)        ║"
+	@echo "║  Terminal:  Konsole                                        ║"
+	@echo "║  Browser:   Firefox (zh-CN)                                ║"
+	@echo "║  Editor:    VSCode (code-oss) + OpenCode                   ║"
+	@echo "║  Anonymity: Tor + I2PD (disabled by default)               ║"
+	@echo "║  Arch:      ${shell uname -m}                               ║"
+	@echo "║  Jobs:      ${JOBS}                                         ║"
+	@echo "╚══════════════════════════════════════════════════════════════╝"
 	@echo ""
-	@echo "Jobs: $(JOBS) cores"
 	@echo "Project: $(PROJECT_ROOT)"
+	@echo "License: GPL-3.0 — Copyright (C) 2026 Hai Yan (海盐)"

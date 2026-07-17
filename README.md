@@ -1,153 +1,92 @@
 # Star-Talk / 星語
 
-> A Gentoo-based Linux Live Distribution with Niri compositor, style boot splash, built-in anonymity tools, and gaming support.
-
-基于 Gentoo 的 Linux Live 发行版，集成 Niri 滚动平铺 Wayland 合成器、风格启动欢迎屏、内置匿名工具和游戏支持。
+> 基于 NetBSD 内核的桌面操作系统项目，目标搭载 KDE Plasma 6 桌面环境。
+> **当前状态：开发中 — 内核已编译通过，userland 和桌面环境待构建。**
 
 ---
 
-## ✨ 特性 Features
+## 📊 当前进度
 
-- **风格启动屏** — 硬件检测 + ASCII 艺术欢迎界面
-- **Niri 合成器** — 滚动平铺 Wayland 桌面，Catppuccin Mocha 主题
-- **Gentoo 基础** — OpenRC 初始化系统，Portage 包管理
-- **匿名工具** — Tor + obfs4proxy + i2pd 开箱即用
-- **游戏支持** — Steam + Proton GE + Wine 兼容层
-- **Firefox 浏览器** — 中文界面预装
-- **PipeWire 音频** — 现代化音频服务
-- **Live USB** — 即插即用，支持持久化存储
-
-## 🚀 快速开始 Quick Start
-
-### 写入 USB
-
-```bash
-sudo dd if=out/star-talk-YYYYMMDD.img of=/dev/sdX bs=4M status=progress conv=fsync
-```
-
-### 启动
-
-1. 插入 USB 设备
-2. 进入 BIOS/UEFI 启动菜单 (F12/F2/Esc)
-3. 选择 `UEFI: STARTALK_EFI`
-4. 系统自动登录用户 `startalk`，进入 Niri 桌面
-
-### 桌面快捷键
-
-| 按键 | 功能 |
+| 阶段 | 状态 |
 |------|------|
-| `Super+Return` | 终端 (Foot) |
-| `Super+D` | 应用启动器 (Wofi) |
-| `Super+Q` | 关闭窗口 |
-| `Super+H/L/J/K` | 窗口导航 |
-| `Super+1..9` | 工作区切换 |
+| 架构设计 + 文档 | ✅ 完成 |
+| SWIMSTAR 内核编译 | ✅ 通过 (out/netbsd, 198 MB) |
+| NetBSD userland 构建 | ⏳ 待执行 |
+| pkgsrc 软件包安装 | ⏳ 待执行 |
+| 根文件系统组装 | ⏳ 待执行 |
+| 磁盘映像生成 | ⏳ 待执行 |
+| 启动测试 | ❌ 未测试 |
 
-## 🏗️ 构建 Build
+## ✨ 计划特性
 
-### 依赖
+- **NetBSD 内核** — SWIMSTAR 配置，基于 GENERIC，添加桌面 GPU/音频/Wi-Fi 驱动
+- **KDE Plasma 6** — Wayland 桌面环境（pkgsrc 提供 plasma6-* 包）
+- **AIX 风格启动屏** — LED 诊断码 + 硬件面板检测 + ASCII 艺术
+- **硬盘安装器** — 借鉴 NetBSD `sysinst` 的 6 阶段安装脚本（**未经测试**）
+- **匿名工具** — Tor + i2pd 预装但默认不自启
+- **Firefox** — 通过 pkgsrc 安装
+- **VSCode** — 下载官方二进制包（不在 pkgsrc 中）
+- **Konsole** — KDE 配套终端
+- **pkgsrc 包管理** — NetBSD 原生包系统
 
-- Linux x86_64 宿主机
-- `mke2fs` `sgdisk` `mkfs.vfat` `mtools` `zstd` `cpio`
-- `curl` `wget` `git` `gcc` `make` `meson` `ninja` `cargo`
+## 🏗️ 构建
 
-### 构建步骤
+### 前置条件
+
+- NetBSD 源码树 (`NetBSD/src/`) — 已拉取
+- pkgsrc 树 (`NetBSD/pkgsrc/`) — 已拉取
+- 构建工具: `git curl tar make gcc`
+
+### 构建命令
 
 ```bash
-# 完整构建
-make all
-
-# 单独阶段
-make kernel       # 编译内核 (SQUASHFS + OVERLAY_FS)
-make busybox      # 编译 BusyBox (静态 + 动态)
-make initramfs    # 组装 initramfs (AIX 欢迎屏)
-make usb-image    # 生成 USB 磁盘映像
-
-# 写入 USB
-make burn DEVICE=/dev/sdX
-
-# QEMU 测试
-make test-qemu
+make kernel       # ✅ 已验证：编译 SWIMSTAR 内核
+make userland     # ⏳ 构建 NetBSD 基础系统
+make packages     # ⏳ 安装 KDE + 应用
+make image        # ⏳ 生成磁盘映像
+make test-qemu    # ⏳ QEMU 测试
 ```
 
-## 📂 项目结构 Project Structure
+> **注意**: `make userland` 和 `make packages` 尚未执行，实际构建时间和结果待验证。
+
+## 📂 项目结构
 
 ```
 Star-Talk/
-├── configs/                    # 配置模板 (Niri, Waybar, Wofi, Foot, 系统)
-│   ├── niri/config.kdl         # Niri 合成器配置
-│   ├── waybar/                 # Waybar 状态栏 (Catppuccin Mocha)
-│   ├── wofi/                   # Wofi 启动器
-│   ├── foot/foot.ini           # Foot 终端
-│   ├── inittab, fstab, rcS     # 系统初始化
-│   └── startalk-session        # 桌面会话启动脚本
-├── initramfs/
-│   └── init                    # 风格启动脚本 (PID 1)
-├── scripts/                    # 构建脚本 (18 个)
-│   ├── utils.sh                # 共享函数库
-│   ├── 00-prepare.sh           # 下载源码
-│   ├── 01-kernel.sh            # 编译内核
-│   ├── 03-busybox.sh           # 编译 BusyBox
-│   ├── 20-assemble-initramfs.sh
-│   ├── 23-make-usb-image.sh    # 生成 USB 映像
-│   └── 24-burn-usb.sh          # 写入 USB
-├── out/                        # 构建产物
-│   ├── bzImage                 # Linux 内核
-│   ├── initramfs.cpio.zst      # 压缩 initramfs
-│   └── star-talk-YYYYMMDD.img  # 最终 USB 映像
-├── Makefile                    # 顶层构建入口
-├── LICENSE                     # GPL-3.0
-└── README.md
+├── NetBSD/
+│   ├── src/          # NetBSD 源码 (7.1 GB)
+│   └── pkgsrc/       # pkgsrc 包管理 (917 MB)
+├── branding/
+│   └── splash.art    # ASCII 艺术 + LED 码定义
+├── configs/
+│   ├── netbsd/
+│   │   ├── kernel/SWIMSTAR    # 内核配置 (✅ 编译通过)
+│   │   ├── etc/rc.conf        # 系统服务配置
+│   │   ├── etc/boot.cfg       # 引导器菜单
+│   │   └── install/install.sh # 硬盘安装器 (⚠️ 未测试)
+│   ├── kde/
+│   │   └── plasma-setup.sh    # KDE 桌面配置
+│   └── sddm/
+│       └── sddm.conf          # SDDM 配置
+├── scripts/netbsd/            # 构建脚本
+├── doc/                       # 架构文档 + 已知问题
+├── out/netbsd                 # 编译好的内核 (198 MB)
+└── Makefile
 ```
 
-## 🔧 系统组件 System Components
+## ⚠️ 已知限制
 
-| 组件 | 说明 |
-|------|------|
-| **Base** | Gentoo Linux (OpenRC, Portage) |
-| **Kernel** | Linux 7.0.12 x86_64 (SQUASHFS + OVERLAY_FS) |
-| **Init** | 自定义 initramfs + 定制启动屏 |
-| **Compositor** | Niri (scrollable-tiling Wayland) |
-| **Bar** | Waybar (Catppuccin Mocha 主题) |
-| **Launcher** | Wofi (drun 模式) |
-| **Terminal** | Foot (Wayland-native) |
-| **Audio** | PipeWire + WirePlumber |
-| **Browser** | Firefox (zh-CN) |
-| **Gaming** | Steam + Proton GE + Wine |
-| **Anonymity** | Tor + obfs4proxy + i2pd |
+- **VSCode** 不在 NetBSD pkgsrc 中，通过下载 Linux 二进制包安装，兼容性未知
+- **i2pd** 不在 pkgsrc 中，需要从源码编译，**未实际编译测试**
+- **Steam / QQ / 微信** — NetBSD 的 Linux 兼容层支持有限
+- **整个系统尚未启动测试** — userland、桌面环境、安装器均未验证
+- 构建时间基于估算，实际可能差异很大
 
-## 🌐 匿名工具 Anonymity Tools
+详见: [doc/KNOWN_ISSUES.md](doc/KNOWN_ISSUES.md)
 
-| 服务 | 端口 | 说明 |
-|------|------|------|
-| Tor SOCKS | `127.0.0.1:9050` | Onion 路由匿名代理 |
-| Tor Control | `127.0.0.1:9051` | Tor 控制端口 |
-| I2P HTTP Proxy | `127.0.0.1:4444` | I2P 匿名网络代理 |
-| I2P Console | `127.0.0.1:7070` | I2P Web 控制台 |
-| obfs4proxy | — | Tor 网桥混淆插件 |
-
-使用 `torsocks <command>` 通过 Tor 代理运行命令。
-
-## 📄 许可证 License
+## 📄 许可证
 
 Star-Talk / 星語 — Copyright (C) 2026 **海盐 (Hai Yan)**
 
-本项目使用 **GNU General Public License v3.0** 授权。
-
-本系统中包含的第三方组件（Linux Kernel, Gentoo, BusyBox, Niri, Firefox 等）分别遵循各自的许可证。
-
----
-
-```
-   ╔══════════════════════════════════════════════════════════════╗
-   ║         .d8888b.  888                      888    888       ║
-   ║        d88P  Y88b 888                      888    888       ║
-   ║        Y88b.      888                      888    888       ║
-   ║         "Y888b.   888888  8888b.  888d888  888888 888  888  ║
-   ║            "Y88b. 888        "88b 888P"    888    888  888  ║
-   ║              "888 888    .d888888 888      888    888  888  ║
-   ║        Y88b  d88P Y88b.  888  888 888      Y88b.  Y88b 888  ║
-   ║         "Y8888P"   "Y888 "Y888888 888       "Y888  "Y88888  ║
-   ║                                                              ║
-   ║             ★  Welcome to Star-Talk / 星语  ★               ║
-   ╚══════════════════════════════════════════════════════════════╝
-```
+本项目原创代码使用 **GNU General Public License v3.0** 授权。
+第三方组件遵循各自许可证。

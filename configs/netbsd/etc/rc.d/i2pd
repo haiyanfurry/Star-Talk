@@ -1,0 +1,35 @@
+#!/bin/sh
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  Star-Talk / 星语 — I2PD Anonymity Service                 ║
+# ║  PRE-INSTALLED — DISABLED by default (rc.conf: i2pd=NO)    ║
+# ╚══════════════════════════════════════════════════════════════╝
+#
+# To enable:
+#   echo 'i2pd=YES' >> /etc/rc.conf
+#   service i2pd start
+#
+# Default ports:
+#   HTTP Proxy: 127.0.0.1:4444
+#   Web Console: 127.0.0.1:7070
+
+$_rc_subr_loaded . /etc/rc.subr
+
+name="i2pd"
+rcvar=$name
+command="/usr/pkg/sbin/i2pd"
+command_args="--daemon=0 --conf=/usr/pkg/etc/i2pd/i2pd.conf"
+pidfile="/var/run/i2pd/i2pd.pid"
+start_precmd="i2pd_prestart"
+required_files="/usr/pkg/etc/i2pd/i2pd.conf"
+
+i2pd_prestart() {
+    if [ ! -d /var/run/i2pd ]; then
+        mkdir -p /var/run/i2pd
+    fi
+    if [ ! -d /var/log/i2pd ]; then
+        mkdir -p /var/log/i2pd
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

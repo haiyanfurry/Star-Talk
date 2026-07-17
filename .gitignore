@@ -1,19 +1,22 @@
-# Star-Talk / 星语 — .gitignore
+# ── Star-Talk / 星语 — .gitignore (NetBSD Edition) ──────────────
 
 # Build artifacts
 /work/
 /rootfs/
 
-# Kernel source (deleted after build)
-/linux-7.0.12/
+# NetBSD build outputs
+work/netbsd-src/
+work/netbsd-obj/
+work/netbsd-tools/
+work/netbsd-dest/
+work/pkgsrc/
+work/rootfs-staging/
 
-# Intermediate build outputs (keep final .img + kernel + initramfs)
-/out/root.ext4
-/out/esp.fat
-/out/kernel.config
-/out/System.map
+# Kernel build artifacts
+out/netbsd
+out/star-talk-netbsd-*.img
 
-# Downloaded archives (except source tarballs in src/)
+# Downloaded archives
 *.tar.*
 *.tar
 *.tgz
@@ -34,6 +37,11 @@
 .DS_Store
 Thumbs.db
 
-# Disk images and build outputs
+# Disk images
 *.img
-out/
+
+# Linux legacy artifacts (from v1.x)
+/initramfs/bin/busybox
+/out/bzImage
+/out/initramfs.cpio.zst
+/out/initramfs.cpio

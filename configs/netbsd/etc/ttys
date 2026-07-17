@@ -1,0 +1,16 @@
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║    Star-Talk / 星语 — /etc/ttys                                    ║
+# ║    Terminal configuration                                           ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+# ttyE0  = wscons console (CTRL+ALT+F1)
+# ttyE1+ = virtual terminals (CTRL+ALT+F2-F4)
+
+console "/usr/libexec/getty Pc"         xterm   on  secure
+ttyE0   "/usr/libexec/getty Pc"         xterm   on  secure
+ttyE1   "/usr/libexec/getty Pc"         xterm   on  secure
+ttyE2   "/usr/libexec/getty Pc"         xterm   on  secure
+ttyE3   "/usr/libexec/getty Pc"         xterm   on  secure
+
+# Serial console (optional — for debugging headless systems)
+# tty00  "/usr/libexec/getty std.9600"  unknown off secure

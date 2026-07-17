@@ -1,0 +1,37 @@
+#!/bin/sh
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  Star-Talk / 星语 — Tor Anonymity Service                  ║
+# ║  PRE-INSTALLED — DISABLED by default (rc.conf: tor=NO)     ║
+# ╚══════════════════════════════════════════════════════════════╝
+#
+# To enable:
+#   echo 'tor=YES' >> /etc/rc.conf
+#   service tor start
+#
+# Default ports:
+#   SOCKS Proxy: 127.0.0.1:9050
+#   ControlPort: 127.0.0.1:9051
+
+$_rc_subr_loaded . /etc/rc.subr
+
+name="tor"
+rcvar=$name
+command="/usr/pkg/bin/tor"
+command_args="--runasdaemon 0 -f /usr/pkg/etc/tor/torrc"
+pidfile="/var/run/tor/tor.pid"
+start_precmd="tor_prestart"
+required_files="/usr/pkg/etc/tor/torrc"
+
+tor_prestart() {
+    if [ ! -d /var/run/tor ]; then
+        mkdir -p /var/run/tor
+        chown _tor:_tor /var/run/tor
+    fi
+    if [ ! -d /var/log/tor ]; then
+        mkdir -p /var/log/tor
+        chown _tor:_tor /var/log/tor
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

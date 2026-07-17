@@ -1,0 +1,57 @@
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║    Star-Talk / 星语 — NetBSD Kernel Configuration (SWIMSTAR)      ║
+# ║    Target: amd64 (x86_64) — Desktop/Gaming optimized              ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+#
+# Inherits all GENERIC settings, adds desktop optimizations.
+
+include "arch/amd64/conf/GENERIC"
+
+# ── Identification ─────────────────────────────────────────────────────
+makeoptions     DEBUG="-g"
+options         DDB
+options         DDB_ONPANIC=1
+
+# ── CPU & Scheduling ───────────────────────────────────────────────────
+options         MULTIPROCESSOR
+options         USER_LDT         # Needed for Wine/Linux compat
+
+# ── File Descriptors ───────────────────────────────────────────────────
+options         MAXFILES=4096    # More open files for desktop use
+
+# ── GPU / DRM Drivers ───────────────────────────────────────────────────
+# Intel integrated (Kaby Lake and newer)
+i915drmkms*     at pci?
+# AMD Radeon (GCN and newer)
+radeon*         at pci?
+amdgpu*         at pci?
+# NVIDIA open-source
+nouveau*        at pci?
+
+# ── Desktop Peripherals ─────────────────────────────────────────────────
+uhci*           at pci?
+ohci*           at pci?
+ehci*           at pci?
+xhci*           at pci?
+uhid*           at uhidev?
+
+# ── Audio ───────────────────────────────────────────────────────────────
+hdaudio*        at pci?
+uaudio*         at uhub?
+audio*          at audiobus?
+
+# ── Wi-Fi ───────────────────────────────────────────────────────────────
+iwm*            at pci?          # Intel 7000/8000/9000
+iwn*            at pci?          # Intel 4965-6000
+ath*            at pci?          # Atheros
+athn*           at pci?          # Atheros 802.11n
+
+# ── Virtualization ─────────────────────────────────────────────────────
+virtio*         at pci?
+vioif*          at virtio?
+viomb*          at virtio?
+ld*             at virtio?
+
+# ── Security (relaxed for desktop compatibility) ────────────────────────
+options         PAX_MPROTECT=1   # Keep enabled (GENERIC default)
+options         PAX_ASLR=1       # Keep enabled (GENERIC default)

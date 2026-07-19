@@ -1,7 +1,6 @@
 #!/bin/sh
 # ╔══════════════════════════════════════════════════════════════════════╗
-# ║  Star-Talk / 星语 — Disk Image Creation                           ║
-# ║  Uses nbmakefs for FFSv2 root (NetBSD native filesystem)           ║
+# ║  Star-Talk / 星语 — Disk Image Creation (GPT on loop device)      ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 set -e
 . "$(dirname "$0")/utils-netbsd.sh"
@@ -16,113 +15,102 @@ TOTAL_SIZE=$((ESP_SIZE + ROOT_SIZE + SWAP_SIZE + 5))
 KERNEL_SRC="$OUT_DIR/netbsd"
 BOOTX64="$OUT_DIR/bootx64.efi"
 MAKEFS="$NETBSD_TOOLDIR/bin/nbmakefs"
+ROOT_CONTENTS=/tmp/st-root-contents
+FFS_IMG=/tmp/st-root.ffs
+ESP_MNT=/tmp/st-esp
 
-# ── Prerequisites ──────────────────────────────────────────────────────
+info "Image: $IMAGE (${TOTAL_SIZE} MiB)"
+
+# Prerequisites
 for tool in sgdisk mkfs.vfat losetup; do
     command -v "$tool" >/dev/null 2>&1 || die "$tool not found"
 done
-[ -f "$KERNEL_SRC" ] || die "Kernel not found: $KERNEL_SRC"
-[ -x "$MAKEFS" ] || die "nbmakefs not found: $MAKEFS (run make kernel first)"
+[ -f "$KERNEL_SRC" ] || die "Kernel not found"
 
-info "Image: $IMAGE (${TOTAL_SIZE} MiB, FFSv2 root)"
-
-# ── Create + partition ─────────────────────────────────────────────────
-step "Creating GPT partitions..."
-rm -f "$IMAGE"
-# Use dd to create a non-sparse first chunk (avoids sgdisk sparse file issues)
-dd if=/dev/zero of="$IMAGE" bs=1M count=10 2>/dev/null
-truncate -s "${TOTAL_SIZE}M" "$IMAGE"
-# Create GPT on loop device directly
-LOOP=$(echo "kali" | echo "kali" | sudo -S -S losetup -Pf --show "$IMAGE")
-sleep 1
-echo "kali" | echo "kali" | sudo -S -S sgdisk -o "$LOOP" >/dev/null
-echo "kali" | echo "kali" | sudo -S -S sgdisk -n "1:1MiB:+${ESP_SIZE}MiB" -t "1:EF00" -c "1:EFI" "$LOOP" >/dev/null
-echo "kali" | echo "kali" | sudo -S -S sgdisk -n "2:0:+${ROOT_SIZE}MiB" -t "2:A902" -c "2:STAR_TALK" "$LOOP" >/dev/null
-echo "kali" | echo "kali" | sudo -S -S sgdisk -n "3:0:+${SWAP_SIZE}MiB" -t "3:8200" -c "3:SWAP" "$LOOP" >/dev/null
-# Verify GPT
-echo "kali" | echo "kali" | sudo -S -S sgdisk -p "$LOOP" 2>/dev/null | grep -E "^   1|^   2|^   3" || warn "GPT verification failed"
-success "GPT: EFI(${ESP_SIZE}M) + FFSv2(${ROOT_SIZE}M) + Swap(${SWAP_SIZE}M)"
-
-# ── Format EFI ─────────────────────────────────────────────────────────
-step "Formatting EFI partition..."
-cleanup() { echo "kali" | echo "kali" | sudo -S -S losetup -d "$LOOP" 2>/dev/null || true; rm -rf /tmp/st-esp /tmp/st-root-contents /tmp/st-root.ffs 2>/dev/null || true; }
+cleanup() {
+    sudo umount "$ESP_MNT" 2>/dev/null || true
+    sudo losetup -d "$LOOP" 2>/dev/null || true
+    rm -rf "$ESP_MNT" "$ROOT_CONTENTS" "$FFS_IMG" 2>/dev/null || true
+}
 trap cleanup EXIT
 
-echo "kali" | sudo -S mkfs.vfat -F32 -n "EFI" "${LOOP}p1" >/dev/null 2>&1
+# ── 1. Create file + loop + GPT ────────────────────────────────────────
+step "Creating GPT partitions..."
+rm -f "$IMAGE"
+dd if=/dev/zero of="$IMAGE" bs=1M count=1 2>/dev/null  # non-sparse header
+truncate -s "${TOTAL_SIZE}M" "$IMAGE"
+LOOP=$(sudo losetup -Pf --show "$IMAGE")
+sleep 1
+
+sudo sgdisk -o "$LOOP" >/dev/null
+sudo sgdisk -n "1:1MiB:+${ESP_SIZE}MiB" -t "1:EF00" -c "1:EFI" "$LOOP" >/dev/null
+sudo sgdisk -n "2:0:+${ROOT_SIZE}MiB" -t "2:A902" -c "2:STAR_TALK" "$LOOP" >/dev/null
+sudo sgdisk -n "3:0:+${SWAP_SIZE}MiB" -t "3:8200" -c "3:SWAP" "$LOOP" >/dev/null
+sudo partprobe "$LOOP" 2>/dev/null || true
+sleep 1
+success "GPT: EFI(${ESP_SIZE}M) + FFSv2(${ROOT_SIZE}M) + Swap(${SWAP_SIZE}M)"
+
+# ── 2. Format ESP ──────────────────────────────────────────────────────
+step "Formatting ESP..."
+sudo mkfs.vfat -F32 -n "EFI" "${LOOP}p1" >/dev/null 2>&1
 success "P1: FAT32"
 
-# ── Populate EFI ───────────────────────────────────────────────────────
-step "Populating EFI..."
-mkdir -p /tmp/st-esp
-echo "kali" | sudo -S mount "${LOOP}p1" /tmp/st-esp
-echo "kali" | sudo -S mkdir -p /tmp/st-esp/EFI/BOOT /tmp/st-esp/EFI/NetBSD
-echo "kali" | sudo -S cp "$KERNEL_SRC" /tmp/st-esp/EFI/NetBSD/netbsd
-echo "kali" | sudo -S cp "$KERNEL_SRC" /tmp/st-esp/netbsd
+# ── 3. Populate ESP ────────────────────────────────────────────────────
+step "Populating ESP..."
+mkdir -p "$ESP_MNT"
+sudo mount "${LOOP}p1" "$ESP_MNT"
+sudo mkdir -p "$ESP_MNT/EFI/BOOT" "$ESP_MNT/EFI/NetBSD"
+
+sudo cp "$KERNEL_SRC" "$ESP_MNT/EFI/NetBSD/netbsd"
+sudo cp "$KERNEL_SRC" "$ESP_MNT/netbsd"
 
 if [ -f "$BOOTX64" ]; then
-    echo "kali" | sudo -S cp "$BOOTX64" /tmp/st-esp/EFI/BOOT/BOOTX64.EFI
-    echo "kali" | sudo -S cp "$BOOTX64" /tmp/st-esp/EFI/NetBSD/bootx64.efi
+    sudo cp "$BOOTX64" "$ESP_MNT/EFI/BOOT/BOOTX64.EFI"
+    sudo cp "$BOOTX64" "$ESP_MNT/EFI/NetBSD/bootx64.efi"
 fi
 if [ -f "$CONFIGS_DIR/netbsd/etc/boot.cfg" ]; then
-    echo "kali" | sudo -S cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/BOOT/boot.cfg
-    echo "kali" | sudo -S cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/boot.cfg
-    echo "kali" | sudo -S cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/NetBSD/boot.cfg
+    sudo cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" "$ESP_MNT/EFI/BOOT/boot.cfg"
+    sudo cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" "$ESP_MNT/boot.cfg"
 fi
-echo "kali" | sudo -S umount /tmp/st-esp
-success "EFI populated (kernel + bootx64.efi + boot.cfg)"
+sudo umount "$ESP_MNT"
+success "ESP populated"
 
-# ── Build FFSv2 root with nbmakefs ─────────────────────────────────────
-step "Assembling FFSv2 root filesystem..."
-ROOT_CONTENTS=/tmp/st-root-contents
+# ── 4. Assemble rootfs contents ────────────────────────────────────────
+step "Assembling FFSv2 root..."
 rm -rf "$ROOT_CONTENTS"
 mkdir -p "$ROOT_CONTENTS"
 
-# Copy NetBSD userland
 if [ -d "$NETBSD_DESTDIR" ] && [ "$(ls -A "$NETBSD_DESTDIR" 2>/dev/null)" ]; then
     info "Copying userland..."
     cp -a "$NETBSD_DESTDIR"/* "$ROOT_CONTENTS/" 2>/dev/null || \
         (cd "$NETBSD_DESTDIR" && tar -cf - .) | (cd "$ROOT_CONTENTS" && tar -xf -)
 fi
-
-# Copy Star-Talk configs
 if [ -d "$ROOTFS_DIR" ] && [ "$(ls -A "$ROOTFS_DIR" 2>/dev/null)" ]; then
     cp -a "$ROOTFS_DIR"/* "$ROOT_CONTENTS/" 2>/dev/null || true
 fi
-
-# Essential directories
 for d in dev proc sys tmp var/log var/run mnt media home boot; do
     mkdir -p "$ROOT_CONTENTS/$d"
 done
+cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" "$ROOT_CONTENTS/boot.cfg" 2>/dev/null || true
 
-# Copy boot.cfg to root too
-if [ -f "$CONFIGS_DIR/netbsd/etc/boot.cfg" ]; then
-    cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" "$ROOT_CONTENTS/boot.cfg"
-fi
-
-# Copy pkgsrc tree (if available) for first-boot package installation
+# Copy pkgsrc
 if [ -d "$PKGSRC_DIR" ] && [ -f "$PKGSRC_DIR/Makefile" ]; then
-    info "Copying pkgsrc tree..."
-    PKGSRC_TARGET="$ROOT_CONTENTS/usr/pkgsrc"
-    mkdir -p "$PKGSRC_TARGET"
-    cp -a "$PKGSRC_DIR"/* "$PKGSRC_TARGET/" 2>/dev/null || \
-        (cd "$PKGSRC_DIR" && tar --exclude='.git' --exclude='distfiles' --exclude='packages' -cf - .) | \
-        (cd "$PKGSRC_TARGET" && tar -xf -)
-    success "pkgsrc tree copied"
+    info "Copying pkgsrc..."
+    mkdir -p "$ROOT_CONTENTS/usr/pkgsrc"
+    (cd "$PKGSRC_DIR" && tar --exclude='.git' --exclude='distfiles' --exclude='packages' -cf - .) | \
+        (cd "$ROOT_CONTENTS/usr/pkgsrc" && tar -xf -)
 fi
 
-# Create FFSv2 image with nbmakefs
+# ── 5. Create + write FFSv2 ────────────────────────────────────────────
 info "Creating FFSv2 (${ROOT_SIZE}M)..."
 "$MAKEFS" -t ffs -o version=2,label=STAR_TALK -s "${ROOT_SIZE}m" \
-    /tmp/st-root.ffs "$ROOT_CONTENTS" 2>&1 | tail -1
+    "$FFS_IMG" "$ROOT_CONTENTS" 2>&1 | tail -1
 
-# Write FFS image to partition
-echo "kali" | sudo -S dd if=/tmp/st-root.ffs of="${LOOP}p2" bs=1M conv=fsync status=progress 2>/dev/null
+sudo dd if="$FFS_IMG" of="${LOOP}p2" bs=1M conv=fsync status=progress 2>/dev/null
 success "FFSv2 root written"
 
-# ── Cleanup ────────────────────────────────────────────────────────────
+# ── 6. Cleanup ─────────────────────────────────────────────────────────
 cleanup; trap - EXIT
 
 IMAGE_SIZE=$(du -h "$IMAGE" | cut -f1)
 success "Image: $IMAGE ($IMAGE_SIZE)"
-echo ""
-info "Boot: qemu-system-x86_64 -bios /usr/share/edk2/x64/OVMF.4m.fd -drive file=$IMAGE,format=raw -m 2G -nographic -serial mon:stdio"

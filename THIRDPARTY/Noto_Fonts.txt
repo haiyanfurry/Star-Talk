@@ -1,0 +1,6 @@
+Noto Sans CJK Fonts
+====================
+Copyright (c) Google Inc.
+Licensed under SIL Open Font License 1.1 (OFL-1.1).
+
+See: https://scripts.sil.org/OFL

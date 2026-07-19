@@ -1,0 +1,6 @@
+KDE Plasma Desktop Environment
+===============================
+KDE Plasma is distributed under the terms of the GNU General Public License
+version 2 (GPL-2.0) and GNU Lesser General Public License (LGPL-2.0).
+
+See: https://develop.kde.org/policies/licensing/

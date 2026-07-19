@@ -1,0 +1,4 @@
+I2PD (I2P Daemon)
+==================
+Copyright (c) PurpleI2P Project.
+Licensed under BSD-3-Clause (see Tor.txt for similar terms).

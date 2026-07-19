@@ -1,0 +1,4 @@
+pkgsrc Package Management System
+=================================
+Copyright (c) The NetBSD Foundation, Inc. and contributors.
+Licensed under BSD-2-Clause (see NetBSD.txt).

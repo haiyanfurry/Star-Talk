@@ -1,0 +1,4 @@
+NetBSD UEFI Bootloader (bootx64.efi)
+=====================================
+Copyright (c) The NetBSD Foundation, Inc.
+Licensed under BSD-2-Clause (see NetBSD.txt).

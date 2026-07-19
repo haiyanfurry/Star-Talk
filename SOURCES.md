@@ -42,3 +42,6 @@ make kernel      # ✅ 编译 SWIMSTAR 内核
 make userland    # ✅ 构建 NetBSD 基础系统  
 make image       # ⚠️ 需手动修复分区 + /dev 节点
 ```
+
+## 第三方许可证
+详见 [THIRDPARTY/](THIRDPARTY/) 目录。Star-Talk 原代码为 GPL-3.0，各第三方组件保留原始许可证。

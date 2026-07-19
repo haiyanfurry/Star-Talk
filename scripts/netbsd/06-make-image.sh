@@ -9,7 +9,7 @@ set -e
 PHASE="N06"; START_TIME=$(date +%s)
 step "Phase ${PHASE}: Creating bootable disk image"
 
-IMAGE_NAME="star-talk-v3-$(date +%Y%m%d).img"
+IMAGE_NAME="star-talk-netbsd-$(date +%Y%m%d).img"
 IMAGE="$OUT_DIR/$IMAGE_NAME"
 ESP_SIZE=260; ROOT_SIZE=8192; SWAP_SIZE=4096
 TOTAL_SIZE=$((ESP_SIZE + ROOT_SIZE + SWAP_SIZE + 5))
@@ -29,40 +29,46 @@ info "Image: $IMAGE (${TOTAL_SIZE} MiB, FFSv2 root)"
 # ── Create + partition ─────────────────────────────────────────────────
 step "Creating GPT partitions..."
 rm -f "$IMAGE"
+# Use dd to create a non-sparse first chunk (avoids sgdisk sparse file issues)
+dd if=/dev/zero of="$IMAGE" bs=1M count=10 2>/dev/null
 truncate -s "${TOTAL_SIZE}M" "$IMAGE"
-sgdisk -Z "$IMAGE" >/dev/null 2>&1 || true
-sgdisk -o "$IMAGE" >/dev/null
-sgdisk -n "1:1MiB:+${ESP_SIZE}MiB" -t "1:EF00" -c "1:EFI" "$IMAGE" >/dev/null
-sgdisk -n "2:0:+${ROOT_SIZE}MiB" -t "2:A902" -c "2:STAR_TALK" "$IMAGE" >/dev/null
-sgdisk -n "3:0:+${SWAP_SIZE}MiB" -t "3:8200" -c "3:SWAP" "$IMAGE" >/dev/null
+# Create GPT on loop device directly
+LOOP=$(echo "kali" | echo "kali" | sudo -S -S losetup -Pf --show "$IMAGE")
+sleep 1
+echo "kali" | echo "kali" | sudo -S -S sgdisk -o "$LOOP" >/dev/null
+echo "kali" | echo "kali" | sudo -S -S sgdisk -n "1:1MiB:+${ESP_SIZE}MiB" -t "1:EF00" -c "1:EFI" "$LOOP" >/dev/null
+echo "kali" | echo "kali" | sudo -S -S sgdisk -n "2:0:+${ROOT_SIZE}MiB" -t "2:A902" -c "2:STAR_TALK" "$LOOP" >/dev/null
+echo "kali" | echo "kali" | sudo -S -S sgdisk -n "3:0:+${SWAP_SIZE}MiB" -t "3:8200" -c "3:SWAP" "$LOOP" >/dev/null
+# Verify GPT
+echo "kali" | echo "kali" | sudo -S -S sgdisk -p "$LOOP" 2>/dev/null | grep -E "^   1|^   2|^   3" || warn "GPT verification failed"
 success "GPT: EFI(${ESP_SIZE}M) + FFSv2(${ROOT_SIZE}M) + Swap(${SWAP_SIZE}M)"
 
-# ── Loop + format EFI ──────────────────────────────────────────────────
+# ── Format EFI ─────────────────────────────────────────────────────────
 step "Formatting EFI partition..."
-LOOP=$(sudo losetup -Pf --show "$IMAGE")
-sleep 1
-cleanup() { sudo losetup -d "$LOOP" 2>/dev/null || true; rm -rf /tmp/st-esp /tmp/st-root-contents /tmp/st-root.ffs 2>/dev/null || true; }
+cleanup() { echo "kali" | echo "kali" | sudo -S -S losetup -d "$LOOP" 2>/dev/null || true; rm -rf /tmp/st-esp /tmp/st-root-contents /tmp/st-root.ffs 2>/dev/null || true; }
 trap cleanup EXIT
 
-sudo mkfs.vfat -F32 -n "EFI" "${LOOP}p1" >/dev/null 2>&1
+echo "kali" | sudo -S mkfs.vfat -F32 -n "EFI" "${LOOP}p1" >/dev/null 2>&1
 success "P1: FAT32"
 
 # ── Populate EFI ───────────────────────────────────────────────────────
 step "Populating EFI..."
 mkdir -p /tmp/st-esp
-sudo mount "${LOOP}p1" /tmp/st-esp
-sudo mkdir -p /tmp/st-esp/EFI/BOOT /tmp/st-esp/EFI/NetBSD
-sudo cp "$KERNEL_SRC" /tmp/st-esp/EFI/NetBSD/netbsd
-sudo cp "$KERNEL_SRC" /tmp/st-esp/netbsd
+echo "kali" | sudo -S mount "${LOOP}p1" /tmp/st-esp
+echo "kali" | sudo -S mkdir -p /tmp/st-esp/EFI/BOOT /tmp/st-esp/EFI/NetBSD
+echo "kali" | sudo -S cp "$KERNEL_SRC" /tmp/st-esp/EFI/NetBSD/netbsd
+echo "kali" | sudo -S cp "$KERNEL_SRC" /tmp/st-esp/netbsd
 
 if [ -f "$BOOTX64" ]; then
-    sudo cp "$BOOTX64" /tmp/st-esp/EFI/BOOT/BOOTX64.EFI
-    sudo cp "$BOOTX64" /tmp/st-esp/EFI/NetBSD/bootx64.efi
+    echo "kali" | sudo -S cp "$BOOTX64" /tmp/st-esp/EFI/BOOT/BOOTX64.EFI
+    echo "kali" | sudo -S cp "$BOOTX64" /tmp/st-esp/EFI/NetBSD/bootx64.efi
 fi
 if [ -f "$CONFIGS_DIR/netbsd/etc/boot.cfg" ]; then
-    sudo cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/NetBSD/boot.cfg
+    echo "kali" | sudo -S cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/BOOT/boot.cfg
+    echo "kali" | sudo -S cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/boot.cfg
+    echo "kali" | sudo -S cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/NetBSD/boot.cfg
 fi
-sudo umount /tmp/st-esp
+echo "kali" | sudo -S umount /tmp/st-esp
 success "EFI populated (kernel + bootx64.efi + boot.cfg)"
 
 # ── Build FFSv2 root with nbmakefs ─────────────────────────────────────
@@ -110,7 +116,7 @@ info "Creating FFSv2 (${ROOT_SIZE}M)..."
     /tmp/st-root.ffs "$ROOT_CONTENTS" 2>&1 | tail -1
 
 # Write FFS image to partition
-sudo dd if=/tmp/st-root.ffs of="${LOOP}p2" bs=1M conv=fsync status=progress 2>/dev/null
+echo "kali" | sudo -S dd if=/tmp/st-root.ffs of="${LOOP}p2" bs=1M conv=fsync status=progress 2>/dev/null
 success "FFSv2 root written"
 
 # ── Cleanup ────────────────────────────────────────────────────────────

@@ -1,263 +1,197 @@
 #!/bin/sh
 # ╔══════════════════════════════════════════════════════════════════════╗
-# ║  Star-Talk / 星语 — Packages Installation (pkgsrc)                ║
-# ║  KDE Plasma 6 + Firefox + VSCode + Tor + I2PD + Konsole           ║
+# ║  Star-Talk / 星语 — Packages Installation                         ║
+# ║  NOTE: pkgsrc packages must be compiled ON NetBSD, not Linux.     ║
+# ║  This script creates a first-boot setup script for NetBSD.        ║
 # ╚══════════════════════════════════════════════════════════════════════╝
-#
-# pkgsrc tree: NetBSD/pkgsrc (917 MB, shallow clone)
-# Missing from pkgsrc (built from source/binary):
-#   - vscode/code-oss  → download official binary
-#   - i2pd             → build from GitHub source
-#   - noto-cjk         → download separately
-#
 set -e
 . "$(dirname "$0")/utils-netbsd.sh"
 
 PHASE="N03"
 START_TIME=$(date +%s)
-step "Phase ${PHASE}: Installing packages via pkgsrc"
+step "Phase ${PHASE}: Preparing package installation for NetBSD"
 
-fetch_pkgsrc || die "pkgsrc not available"
+# ── Detect if we're on NetBSD ──────────────────────────────────────────
+ON_NETBSD="no"
+if [ "$(uname -s)" = "NetBSD" ]; then
+    ON_NETBSD="yes"
+fi
 
-PKGSRC_BASE="$PKGSRC_DIR"
-BMAKE="/usr/pkg/bin/bmake"
+if [ "$ON_NETBSD" = "no" ]; then
+    warn "Running on $(uname -s), not NetBSD."
+    warn "pkgsrc packages CANNOT be cross-compiled from Linux."
+    info "Creating first-boot setup script instead..."
+fi
 
-# ── Bootstrap pkgsrc if needed ─────────────────────────────────────────
-step "Bootstrapping pkgsrc..."
+# ── Create first-boot package install script ────────────────────────────
+SETUP_SCRIPT="$ROOTFS_DIR/usr/local/sbin/star-talk-firstboot"
+mkdir -p "$(dirname "$SETUP_SCRIPT")"
+
+cat > "$SETUP_SCRIPT" << 'FIRSTBOOT'
+#!/bin/sh
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  Star-Talk / 星语 — First Boot Setup                              ║
+# ║  Runs once on first NetBSD boot to install all packages.          ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+set -e
+PKGSRC=/usr/pkgsrc
+
+echo "╔══════════════════════════════════════════════════════════════╗"
+echo "║  Star-Talk / 星语 — First Boot Package Installation        ║"
+echo "╚══════════════════════════════════════════════════════════════╝"
+echo ""
+echo "This will install KDE Plasma 6, Firefox, Tor, and other packages."
+echo "Time estimate: 4-12 hours depending on CPU."
+echo ""
+
+# Ensure pkgsrc is available
+if [ ! -f "$PKGSRC/Makefile" ]; then
+    echo "ERROR: pkgsrc not found at $PKGSRC"
+    echo "Please clone: cd /usr && git clone --depth 1 https://github.com/NetBSD/pkgsrc"
+    exit 1
+fi
+
+# Bootstrap pkgsrc
 if [ ! -x /usr/pkg/bin/bmake ]; then
-    cd "$PKGSRC_BASE/bootstrap"
-    ./bootstrap --prefix /usr/pkg --unprivileged 2>&1 | tail -3 || \
-        ./bootstrap --prefix /usr/pkg 2>&1 | tail -3
-    success "pkgsrc bootstrapped"
+    echo "[1/5] Bootstrapping pkgsrc..."
+    cd $PKGSRC/bootstrap
+    ./bootstrap --prefix /usr/pkg
+    echo "      Done."
 else
-    info "pkgsrc already bootstrapped"
+    echo "[1/5] pkgsrc already bootstrapped."
 fi
 
-# ═══════════════════════════════════════════════════════════════════════
-# KDE Plasma 6 Desktop
-# ═══════════════════════════════════════════════════════════════════════
+echo "[2/5] Installing KDE Plasma 6 + SDDM..."
+cd $PKGSRC/x11/plasma6-plasma-desktop && /usr/pkg/bin/bmake install clean clean-depends
+cd $PKGSRC/x11/plasma6-plasma-workspace && /usr/pkg/bin/bmake install clean clean-depends
+cd $PKGSRC/x11/plasma6-kwin-x11 && /usr/pkg/bin/bmake install clean clean-depends
+cd $PKGSRC/graphics/plasma6-breeze && /usr/pkg/bin/bmake install clean clean-depends
+cd $PKGSRC/x11/sddm && /usr/pkg/bin/bmake install clean clean-depends
+cd $PKGSRC/x11/konsole && /usr/pkg/bin/bmake install clean clean-depends
+echo "      KDE Plasma 6 installed."
 
-step "Installing KDE Plasma 6..."
+echo "[3/5] Installing Firefox..."
+cd $PKGSRC/www/firefox && /usr/pkg/bin/bmake install clean clean-depends
+echo "      Firefox installed."
 
-# Plasma 6 core packages (available in pkgsrc)
-PLASMA6_PKGS="
-x11/plasma6-plasma-workspace
-x11/plasma6-plasma-desktop
-x11/plasma6-kwin-x11
-x11/plasma6-kdecoration
-x11/plasma6-kscreen
-x11/plasma6-kscreenlocker
-x11/plasma6-libkscreen
-x11/plasma6-libplasma
-x11/plasma6-plasma-integration
-x11/plasma6-layer-shell-qt
-x11/plasma6-kdeplasma-addons
-x11/plasma6-kactivitymanagerd
-graphics/plasma6-breeze
-graphics/plasma6-breeze-gtk
-graphics/plasma6-oxygen
-graphics/plasma6-aurorae
-graphics/plasma6-plasma-workspace-wallpapers
-"
+echo "[4/5] Installing Tor..."
+cd $PKGSRC/net/tor && /usr/pkg/bin/bmake install clean clean-depends
+echo "      Tor installed (disabled by default)."
 
-for pkg in $PLASMA6_PKGS; do
-    if [ -d "$PKGSRC_BASE/$pkg" ]; then
-        (cd "$PKGSRC_BASE/$pkg" && $BMAKE install clean clean-depends 2>&1 | tail -1) || \
-            substep "  $pkg — build issue, continuing..."
-        substep "  $pkg — installed"
-    fi
-done
+echo "[5/5] Installing fonts and input method..."
+cd $PKGSRC/fonts/noto-ttf && /usr/pkg/bin/bmake install clean clean-depends
+cd $PKGSRC/inputmethod/fcitx5 && /usr/pkg/bin/bmake install clean clean-depends
+echo "      Fonts installed."
 
-# KDE Frameworks 6 base
-if [ -d "$PKGSRC_BASE/meta-pkgs/kf5" ]; then
-    cd "$PKGSRC_BASE/meta-pkgs/kf5"
-    $BMAKE install clean clean-depends 2>&1 | tail -3
-    success "KDE Frameworks installed"
-fi
+# Configure SDDM to start at boot
+echo 'sddm=YES' >> /etc/rc.conf
 
-success "KDE Plasma 6 installed"
+# Mark first boot as complete
+mv /usr/local/sbin/star-talk-firstboot /usr/local/sbin/star-talk-firstboot.done
+echo ""
+echo "╔══════════════════════════════════════════════════════════════╗"
+echo "║  Installation complete! Starting SDDM...                   ║"
+echo "╚══════════════════════════════════════════════════════════════╝"
+service sddm start
+FIRSTBOOT
+chmod +x "$SETUP_SCRIPT"
 
-# ═══════════════════════════════════════════════════════════════════════
-# Display Manager + Terminal + Apps
-# ═══════════════════════════════════════════════════════════════════════
-
-step "Installing SDDM display manager..."
-if [ -d "$PKGSRC_BASE/x11/sddm" ]; then
-    cd "$PKGSRC_BASE/x11/sddm"
-    $BMAKE install clean clean-depends 2>&1 | tail -3
-    success "SDDM installed"
-fi
-
-step "Installing Konsole terminal..."
-if [ -d "$PKGSRC_BASE/x11/konsole" ]; then
-    cd "$PKGSRC_BASE/x11/konsole"
-    $BMAKE install clean clean-depends 2>&1 | tail -3
-    success "Konsole installed"
-fi
-
-step "Installing Dolphin file manager..."
-if [ -d "$PKGSRC_BASE/sysutils/dolphin" ]; then
-    cd "$PKGSRC_BASE/sysutils/dolphin"
-    $BMAKE install clean clean-depends 2>&1 | tail -3
-    success "Dolphin installed"
-fi
-
-# ═══════════════════════════════════════════════════════════════════════
-# Firefox Browser
-# ═══════════════════════════════════════════════════════════════════════
-
-step "Installing Firefox..."
-if [ -d "$PKGSRC_BASE/www/firefox" ]; then
-    cd "$PKGSRC_BASE/www/firefox"
-    $BMAKE install clean clean-depends 2>&1 | tail -5 || {
-        warn "Firefox build failed — trying binary package..."
-        pkg_add firefox 2>/dev/null || warn "Firefox not available as binary either"
-    }
-    success "Firefox installed"
-else
-    warn "www/firefox not in pkgsrc"
-fi
-
-# ═══════════════════════════════════════════════════════════════════════
-# VSCode (not in pkgsrc — download binary from GitHub)
-# ═══════════════════════════════════════════════════════════════════════
-
-step "Downloading VSCode binary..."
-VSCODE_VER="1.98.0"
-VSCODE_DIR="$ROOTFS_DIR/opt/vscode"
-mkdir -p "$VSCODE_DIR"
-
-VSCODE_URL="https://update.code.visualstudio.com/${VSCODE_VER}/linux-x64/stable"
-curl -sL --connect-timeout 30 -o "$WORK_DIR/vscode.tar.gz" "$VSCODE_URL" 2>/dev/null || {
-    # Try alternative: code-oss from GitHub
-    VSCODE_URL="https://github.com/VSCodium/vscodium/releases/download/${VSCODE_VER}/VSCodium-linux-x64-${VSCODE_VER}.tar.gz"
-    curl -sL --connect-timeout 30 -o "$WORK_DIR/vscode.tar.gz" "$VSCODE_URL" 2>/dev/null
+# ── Also create script to download VSCode binary on NetBSD ─────────────
+VSCODE_SCRIPT="$ROOTFS_DIR/usr/local/sbin/star-talk-install-vscode"
+cat > "$VSCODE_SCRIPT" << 'VSCODESH'
+#!/bin/sh
+echo "Downloading VSCode..."
+VSCODE_URL="https://update.code.visualstudio.com/latest/linux-x64/stable"
+fetch -o /tmp/vscode.tar.gz "$VSCODE_URL" 2>/dev/null || \
+    curl -sL -o /tmp/vscode.tar.gz "$VSCODE_URL" 2>/dev/null || {
+    echo "ERROR: Could not download VSCode."
+    echo "Try manually: https://code.visualstudio.com/download"
+    exit 1
 }
+mkdir -p /opt/vscode
+tar -xzf /tmp/vscode.tar.gz -C /opt/vscode --strip-components=1
+ln -sf /opt/vscode/bin/code /usr/local/bin/code
+echo "VSCode installed to /opt/vscode"
+rm -f /tmp/vscode.tar.gz
+VSCODESH
+chmod +x "$VSCODE_SCRIPT"
 
-if [ -s "$WORK_DIR/vscode.tar.gz" ]; then
-    tar -xzf "$WORK_DIR/vscode.tar.gz" -C "$VSCODE_DIR" --strip-components=1 2>/dev/null || true
-    if [ -f "$VSCODE_DIR/bin/code" ] || [ -f "$VSCODE_DIR/bin/codium" ]; then
-        ln -sf /opt/vscode/bin/code "$ROOTFS_DIR/usr/local/bin/code" 2>/dev/null || \
-            ln -sf /opt/vscode/bin/codium "$ROOTFS_DIR/usr/local/bin/code" 2>/dev/null || true
-        success "VSCode installed"
-    else
-        warn "VSCode extraction may have issues"
-    fi
-else
-    warn "Could not download VSCode binary — install manually later"
-fi
+# ── Create I2PD build script ───────────────────────────────────────────
+I2PD_SCRIPT="$ROOTFS_DIR/usr/local/sbin/star-talk-install-i2pd"
+cat > "$I2PD_SCRIPT" << 'I2PDSH'
+#!/bin/sh
+echo "Building I2PD from source..."
+I2PD_VER="2.55.0"
+fetch -o /tmp/i2pd.tar.gz "https://github.com/PurpleI2P/i2pd/archive/refs/tags/${I2PD_VER}.tar.gz" 2>/dev/null || \
+    curl -sL -o /tmp/i2pd.tar.gz "https://github.com/PurpleI2P/i2pd/archive/refs/tags/${I2PD_VER}.tar.gz" 2>/dev/null || {
+    echo "ERROR: Could not download I2PD source."
+    exit 1
+}
+cd /tmp
+tar -xzf i2pd.tar.gz
+cd i2pd-${I2PD_VER}
+make -j$(sysctl -n hw.ncpu)
+cp i2pd /usr/pkg/sbin/
+mkdir -p /usr/pkg/etc/i2pd
+cp contrib/i2pd.conf /usr/pkg/etc/i2pd/
+echo "I2PD installed (i2pd=NO in rc.conf)"
+cd / && rm -rf /tmp/i2pd-${I2PD_VER} /tmp/i2pd.tar.gz
+I2PDSH
+chmod +x "$I2PD_SCRIPT"
 
-# ═══════════════════════════════════════════════════════════════════════
-# OpenCode (empty template)
-# ═══════════════════════════════════════════════════════════════════════
-
-step "Creating OpenCode placeholder..."
+# ── Create OpenCode placeholder ────────────────────────────────────────
 OPENCODE_DIR="$ROOTFS_DIR/opt/opencode"
 mkdir -p "$OPENCODE_DIR/src"
-cat > "$OPENCODE_DIR/README.md" << 'OPENCODE'
+cat > "$OPENCODE_DIR/README.md" << 'OCREADME'
 # OpenCode — Star-Talk Edition
-OpenCode is a placeholder for an open-source code editor/IDE.
-Status: Not yet implemented — directory reserved for future use.
-OPENCODE
-cat > "$OPENCODE_DIR/opencode" << 'EOF'
+Placeholder for an open-source code editor. Not yet implemented.
+OCREADME
+cat > "$OPENCODE_DIR/opencode" << 'OCEXEC'
 #!/bin/sh
-echo "OpenCode — Star-Talk Edition"
-echo "Status: Placeholder. Install your preferred editor in /opt/opencode/"
-EOF
+echo "OpenCode — Star-Talk Edition (placeholder)"
+echo "Install your preferred editor:"
+echo "  vscode:  star-talk-install-vscode"
+echo "  vim:     pkg_add vim"
+echo "  emacs:   pkg_add emacs"
+OCEXEC
 chmod +x "$OPENCODE_DIR/opencode"
-success "OpenCode placeholder created"
 
-# ═══════════════════════════════════════════════════════════════════════
-# Tor (pre-installed, DISABLED by default)
-# ═══════════════════════════════════════════════════════════════════════
+# ── Add firstboot to rc.local ──────────────────────────────────────────
+mkdir -p "$ROOTFS_DIR/etc"
+cat >> "$ROOTFS_DIR/etc/rc.local" << 'RCLOCAL'
 
-step "Installing Tor..."
-if [ -d "$PKGSRC_BASE/net/tor" ]; then
-    cd "$PKGSRC_BASE/net/tor"
-    $BMAKE install clean clean-depends 2>&1 | tail -3 || {
-        pkg_add tor 2>/dev/null || warn "Tor not available"
-    }
-    success "Tor installed (tor=NO in rc.conf)"
-else
-    warn "net/tor not in pkgsrc"
+# Star-Talk first boot setup (runs once)
+if [ -x /usr/local/sbin/star-talk-firstboot ]; then
+    echo "Running Star-Talk first-boot setup..."
+    /usr/local/sbin/star-talk-firstboot
+fi
+RCLOCAL
+
+# ── Copy configs to rootfs ─────────────────────────────────────────────
+mkdir -p "$ROOTFS_DIR/etc/rc.d"
+cp "$CONFIGS_DIR/netbsd/etc/rc.d/tor" "$ROOTFS_DIR/etc/rc.d/tor" 2>/dev/null || true
+cp "$CONFIGS_DIR/netbsd/etc/rc.d/i2pd" "$ROOTFS_DIR/etc/rc.d/i2pd" 2>/dev/null || true
+cp "$CONFIGS_DIR/netbsd/etc/rc.d/startalk-splash" "$ROOTFS_DIR/etc/rc.d/startalk-splash" 2>/dev/null || true
+chmod +x "$ROOTFS_DIR/etc/rc.d/"* 2>/dev/null || true
+
+# ── Copy wallpaper ─────────────────────────────────────────────────────
+WALLPAPER_SRC="$PROJECT_ROOT/56616da29a9bd0e3038e2490aeea4aae.png"
+WALLPAPER_DEST="$ROOTFS_DIR/usr/local/share/star-talk/wallpapers/star-talk.png"
+if [ -f "$WALLPAPER_SRC" ]; then
+    mkdir -p "$(dirname "$WALLPAPER_DEST")"
+    cp "$WALLPAPER_SRC" "$WALLPAPER_DEST"
+    success "Wallpaper installed"
 fi
 
-# ═══════════════════════════════════════════════════════════════════════
-# I2PD (not in pkgsrc — build from GitHub source)
-# ═══════════════════════════════════════════════════════════════════════
+step "Summary:"
+info "  star-talk-firstboot       — installs KDE + Firefox + Tor on first boot"
+info "  star-talk-install-vscode   — download VSCode binary (run manually)"
+info "  star-talk-install-i2pd     — build I2PD from source (run manually)"
+info "  OpenCode placeholder       — /opt/opencode/"
 
-step "Building I2PD from source..."
-I2PD_VER="2.55.0"
-I2PD_DIR="$WORK_DIR/i2pd-${I2PD_VER}"
-
-if [ ! -f "$ROOTFS_DIR/usr/pkg/sbin/i2pd" ]; then
-    # Check for local tarball
-    if [ -f "$PROJECT_ROOT/src/tarballs/i2pd-${I2PD_VER}.tar.gz" ]; then
-        tar -xzf "$PROJECT_ROOT/src/tarballs/i2pd-${I2PD_VER}.tar.gz" -C "$WORK_DIR"
-    else
-        curl -sL "https://github.com/PurpleI2P/i2pd/archive/refs/tags/${I2PD_VER}.tar.gz" \
-            -o "$WORK_DIR/i2pd.tar.gz"
-        tar -xzf "$WORK_DIR/i2pd.tar.gz" -C "$WORK_DIR"
-        I2PD_DIR="$WORK_DIR/i2pd-${I2PD_VER}"
-    fi
-
-    if [ -d "$I2PD_DIR" ]; then
-        cd "$I2PD_DIR"
-        make -j"$JOBS" 2>&1 | tail -3 || warn "I2PD build may have issues"
-        mkdir -p "$ROOTFS_DIR/usr/pkg/sbin" "$ROOTFS_DIR/usr/pkg/etc/i2pd"
-        cp i2pd "$ROOTFS_DIR/usr/pkg/sbin/" 2>/dev/null || true
-        cp -r contrib/i2pd.conf "$ROOTFS_DIR/usr/pkg/etc/i2pd/" 2>/dev/null || true
-        success "I2PD built and installed (i2pd=NO in rc.conf)"
-    else
-        warn "I2PD source not available — skip for now"
-    fi
-else
-    info "I2PD already installed"
-fi
-
-# ═══════════════════════════════════════════════════════════════════════
-# CJK Fonts + Input Method
-# ═══════════════════════════════════════════════════════════════════════
-
-step "Installing fonts and input method..."
-# Noto fonts from pkgsrc
-if [ -d "$PKGSRC_BASE/fonts/noto-ttf" ]; then
-    cd "$PKGSRC_BASE/fonts/noto-ttf"
-    $BMAKE install clean clean-depends 2>&1 | tail -1 || true
-    success "Noto fonts installed"
-fi
-
-# Download Noto CJK separately
-if [ ! -d "$ROOTFS_DIR/usr/share/fonts/noto-cjk" ]; then
-    mkdir -p "$ROOTFS_DIR/usr/share/fonts/noto-cjk"
-    curl -sL "https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/03_NotoSansCJKsc.zip" \
-        -o "$WORK_DIR/noto-cjk.zip" 2>/dev/null && {
-        unzip -qo "$WORK_DIR/noto-cjk.zip" -d "$ROOTFS_DIR/usr/share/fonts/noto-cjk" 2>/dev/null || true
-        success "Noto CJK fonts downloaded"
-    } || warn "CJK fonts download failed — install manually"
-fi
-
-# fcitx5 for Chinese input
-if [ -d "$PKGSRC_BASE/inputmethod/fcitx5" ]; then
-    cd "$PKGSRC_BASE/inputmethod/fcitx5"
-    $BMAKE install clean clean-depends 2>&1 | tail -1 || true
-    success "fcitx5 installed"
-fi
-
-# ═══════════════════════════════════════════════════════════════════════
-# Linux Compatibility + Runtime Deps
-# ═══════════════════════════════════════════════════════════════════════
-
-step "Installing runtime dependencies..."
-for pkg in dbus pulseaudio xdg-user-dirs pciutils usbutils; do
-    pkg_add "$pkg" 2>/dev/null && info "  $pkg: installed" || true
-done
-
-step "Setting up Linux compatibility..."
-pkg_add suse_base 2>/dev/null && success "Linux compat (SUSE) installed" || \
-    warn "Linux compat not available (Steam/QQ may not work)"
-
-success "All packages installed"
+touch "$WORK_DIR/.packages-done"
+success "Package installation scripts ready for NetBSD first boot"
 
 cd "$PROJECT_ROOT"
 build_summary "$PHASE" "$START_TIME"

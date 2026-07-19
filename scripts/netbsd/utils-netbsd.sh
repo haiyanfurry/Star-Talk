@@ -35,9 +35,9 @@ NETBSD_TOOLDIR="$WORK_DIR/netbsd-tools"
 ROOTFS_DIR="$WORK_DIR/rootfs-staging"
 
 # pkgsrc — check local NetBSD dir first
-if [ -d "$PROJECT_ROOT/NetBSD/pkgsrc/Makefile" ]; then
+if [ -f "$PROJECT_ROOT/NetBSD/pkgsrc/Makefile" ]; then
     PKGSRC_DIR="$PROJECT_ROOT/NetBSD/pkgsrc"
-elif [ -d "$WORK_DIR/pkgsrc" ]; then
+elif [ -f "$WORK_DIR/pkgsrc/Makefile" ]; then
     PKGSRC_DIR="$WORK_DIR/pkgsrc"
 else
     PKGSRC_DIR="$WORK_DIR/pkgsrc"

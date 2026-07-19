@@ -1,190 +1,122 @@
 #!/bin/sh
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║  Star-Talk / 星语 — Disk Image Creation                           ║
-# ║  Creates bootable GPT/UEFI disk image with FFSv2 rootfs           ║
+# ║  Uses nbmakefs for FFSv2 root (NetBSD native filesystem)           ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 set -e
 . "$(dirname "$0")/utils-netbsd.sh"
 
-PHASE="N06"
-START_TIME=$(date +%s)
+PHASE="N06"; START_TIME=$(date +%s)
 step "Phase ${PHASE}: Creating bootable disk image"
 
 IMAGE_NAME="star-talk-netbsd-$(date +%Y%m%d).img"
 IMAGE="$OUT_DIR/$IMAGE_NAME"
-
-ESP_SIZE=260      # MiB — EFI System Partition
-ROOT_SIZE=8192    # MiB — Root filesystem (8GB default)
-SWAP_SIZE=4096    # MiB — Swap
-
+ESP_SIZE=260; ROOT_SIZE=8192; SWAP_SIZE=4096
 TOTAL_SIZE=$((ESP_SIZE + ROOT_SIZE + SWAP_SIZE + 5))
+KERNEL_SRC="$OUT_DIR/netbsd"
+BOOTX64="$OUT_DIR/bootx64.efi"
+MAKEFS="$NETBSD_TOOLDIR/bin/nbmakefs"
 
-info "Image: $IMAGE"
-info "Total size: ${TOTAL_SIZE} MiB"
-info "  P1: EFI System — ${ESP_SIZE} MiB"
-info "  P2: NetBSD FFSv2 — ${ROOT_SIZE} MiB"
-info "  P3: Swap — ${SWAP_SIZE} MiB"
+# ── Prerequisites ──────────────────────────────────────────────────────
+for tool in sgdisk mkfs.vfat losetup; do
+    command -v "$tool" >/dev/null 2>&1 || die "$tool not found"
+done
+[ -f "$KERNEL_SRC" ] || die "Kernel not found: $KERNEL_SRC"
+[ -x "$MAKEFS" ] || die "nbmakefs not found: $MAKEFS (run make kernel first)"
 
-# ── Check prerequisites ───────────────────────────────────────────────
-for tool in gpt vnconfig newfs newfs_msdos; do
-    if ! command -v "$tool" >/dev/null 2>&1; then
-        warn "$tool not found — cross-building from Linux may lack these"
-        warn "Continuing with Linux-compatible tools..."
-    fi
+info "Image: $IMAGE (${TOTAL_SIZE} MiB, FFSv2 root)"
+
+# ── Create + partition ─────────────────────────────────────────────────
+step "Creating GPT partitions..."
+rm -f "$IMAGE"
+truncate -s "${TOTAL_SIZE}M" "$IMAGE"
+sgdisk -Z "$IMAGE" >/dev/null 2>&1 || true
+sgdisk -o "$IMAGE" >/dev/null
+sgdisk -n "1:1MiB:+${ESP_SIZE}MiB" -t "1:EF00" -c "1:EFI" "$IMAGE" >/dev/null
+sgdisk -n "2:0:+${ROOT_SIZE}MiB" -t "2:A902" -c "2:STAR_TALK" "$IMAGE" >/dev/null
+sgdisk -n "3:0:+${SWAP_SIZE}MiB" -t "3:8200" -c "3:SWAP" "$IMAGE" >/dev/null
+success "GPT: EFI(${ESP_SIZE}M) + FFSv2(${ROOT_SIZE}M) + Swap(${SWAP_SIZE}M)"
+
+# ── Loop + format EFI ──────────────────────────────────────────────────
+step "Formatting EFI partition..."
+LOOP=$(sudo losetup -Pf --show "$IMAGE")
+sleep 1
+cleanup() { sudo losetup -d "$LOOP" 2>/dev/null || true; rm -rf /tmp/st-esp /tmp/st-root-contents /tmp/st-root.ffs 2>/dev/null || true; }
+trap cleanup EXIT
+
+sudo mkfs.vfat -F32 -n "EFI" "${LOOP}p1" >/dev/null 2>&1
+success "P1: FAT32"
+
+# ── Populate EFI ───────────────────────────────────────────────────────
+step "Populating EFI..."
+mkdir -p /tmp/st-esp
+sudo mount "${LOOP}p1" /tmp/st-esp
+sudo mkdir -p /tmp/st-esp/EFI/BOOT /tmp/st-esp/EFI/NetBSD
+sudo cp "$KERNEL_SRC" /tmp/st-esp/EFI/NetBSD/netbsd
+sudo cp "$KERNEL_SRC" /tmp/st-esp/netbsd
+
+if [ -f "$BOOTX64" ]; then
+    sudo cp "$BOOTX64" /tmp/st-esp/EFI/BOOT/BOOTX64.EFI
+    sudo cp "$BOOTX64" /tmp/st-esp/EFI/NetBSD/bootx64.efi
+fi
+if [ -f "$CONFIGS_DIR/netbsd/etc/boot.cfg" ]; then
+    sudo cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/NetBSD/boot.cfg
+fi
+sudo umount /tmp/st-esp
+success "EFI populated (kernel + bootx64.efi + boot.cfg)"
+
+# ── Build FFSv2 root with nbmakefs ─────────────────────────────────────
+step "Assembling FFSv2 root filesystem..."
+ROOT_CONTENTS=/tmp/st-root-contents
+rm -rf "$ROOT_CONTENTS"
+mkdir -p "$ROOT_CONTENTS"
+
+# Copy NetBSD userland
+if [ -d "$NETBSD_DESTDIR" ] && [ "$(ls -A "$NETBSD_DESTDIR" 2>/dev/null)" ]; then
+    info "Copying userland..."
+    cp -a "$NETBSD_DESTDIR"/* "$ROOT_CONTENTS/" 2>/dev/null || \
+        (cd "$NETBSD_DESTDIR" && tar -cf - .) | (cd "$ROOT_CONTENTS" && tar -xf -)
+fi
+
+# Copy Star-Talk configs
+if [ -d "$ROOTFS_DIR" ] && [ "$(ls -A "$ROOTFS_DIR" 2>/dev/null)" ]; then
+    cp -a "$ROOTFS_DIR"/* "$ROOT_CONTENTS/" 2>/dev/null || true
+fi
+
+# Essential directories
+for d in dev proc sys tmp var/log var/run mnt media home boot; do
+    mkdir -p "$ROOT_CONTENTS/$d"
 done
 
-KERNEL_SRC=""
-[ -f "$OUT_DIR/netbsd" ] && KERNEL_SRC="$OUT_DIR/netbsd"
-[ -z "$KERNEL_SRC" ] && [ -f "$ROOTFS_DIR/netbsd" ] && KERNEL_SRC="$ROOTFS_DIR/netbsd"
-
-# ── Create sparse image file ──────────────────────────────────────────
-step "Creating sparse disk image..."
-rm -f "$IMAGE"
-# Use truncate or dd to create sparse file
-truncate -s "${TOTAL_SIZE}M" "$IMAGE" 2>/dev/null || \
-    dd if=/dev/zero of="$IMAGE" bs=1M count=1 seek=$((TOTAL_SIZE - 1)) 2>/dev/null
-
-# ── Create GPT partitions ────────────────────────────────────────────
-step "Creating GPT partition table..."
-if command -v gpt >/dev/null 2>&1; then
-    gpt destroy "$IMAGE" 2>/dev/null || true
-    gpt create -f "$IMAGE"
-    gpt add -t efi -s "$((ESP_SIZE * 2048))" -l "EFI" "$IMAGE"
-    gpt add -t ffs -l "STAR_TALK" "$IMAGE"
-    gpt add -t swap -l "SWAP" "$IMAGE"
-    success "GPT partitions created (NetBSD gpt)"
-elif command -v sgdisk >/dev/null 2>&1; then
-    # Linux fallback (sgdisk)
-    sgdisk -Z "$IMAGE" 2>/dev/null
-    sgdisk -o "$IMAGE"
-    sgdisk -n "1:1MiB:+${ESP_SIZE}MiB" -t "1:EF00" -c "1:EFI" "$IMAGE"
-    sgdisk -n "2:0:+${ROOT_SIZE}MiB" -t "2:8300" -c "2:STAR_TALK" "$IMAGE"
-    sgdisk -n "3:0:+${SWAP_SIZE}MiB" -t "3:8200" -c "3:SWAP" "$IMAGE"
-    success "GPT partitions created (Linux sgdisk)"
-else
-    die "No partitioning tool found (need gpt or sgdisk)"
+# Copy boot.cfg to root too
+if [ -f "$CONFIGS_DIR/netbsd/etc/boot.cfg" ]; then
+    cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" "$ROOT_CONTENTS/boot.cfg"
 fi
 
-# ── Format partitions ─────────────────────────────────────────────────
-step "Formatting partitions..."
-
-# Determine partition paths based on OS
-setup_loop() {
-    if command -v vnconfig >/dev/null 2>&1; then
-        # NetBSD: vnode disk
-        VND=$(vnconfig -l | grep "not in use" | head -1 | awk '{print $1}')
-        [ -z "$VND" ] && VND="vnd0"
-        vnconfig "$VND" "$IMAGE"
-        echo "$VND"
-    elif command -v losetup >/dev/null 2>&1; then
-        # Linux: loop device
-        LOOP=$(losetup -Pf --show "$IMAGE")
-        echo "$LOOP"
-    else
-        die "No loop/vnode device tool found"
-    fi
-}
-
-cleanup_loop() {
-    if [ -n "${VND:-}" ]; then
-        vnconfig -u "$VND" 2>/dev/null || true
-    fi
-    if [ -n "${LOOP:-}" ]; then
-        losetup -d "$LOOP" 2>/dev/null || true
-    fi
-    rm -rf /tmp/st-esp /tmp/st-root 2>/dev/null || true
-}
-
-DEV=$(setup_loop)
-trap cleanup_loop EXIT
-info "Device: $DEV"
-
-# Determine partition naming
-case "$DEV" in
-    vnd*) P1="/dev/${DEV}a" P2="/dev/${DEV}b" P3="/dev/${DEV}c" ;;
-    /dev/loop*) P1="${DEV}p1" P2="${DEV}p2" P3="${DEV}p3" ;;
-    *) P1="${DEV}1" P2="${DEV}2" P3="${DEV}3" ;;
-esac
-
-sleep 1  # Wait for partition device nodes
-
-# Format EFI partition
-newfs_msdos -F 32 -L "EFI" "$P1" 2>/dev/null || \
-    mkfs.vfat -F 32 -n "EFI" "$P1" 2>/dev/null || \
-    warn "Could not format EFI partition (may need manual formatting)"
-
-# Format FFSv2 root partition
-newfs -O 2 -V 2 "$P2" 2>/dev/null || \
-    mkfs.ext2 -L "STAR_TALK" "$P2" 2>/dev/null || \
-    warn "Could not format root partition (using ext2 fallback)"
-
-# Format swap
-# (swap doesn't need formatting, just used as-is)
-
-success "Partitions formatted"
-
-# ── Mount and populate ────────────────────────────────────────────────
-step "Populating disk image..."
-
-mkdir -p /tmp/st-esp /tmp/st-root
-
-# Mount EFI partition
-if mount -t msdos "$P1" /tmp/st-esp 2>/dev/null || mount "$P1" /tmp/st-esp 2>/dev/null; then
-    mkdir -p /tmp/st-esp/EFI/BOOT /tmp/st-esp/EFI/NetBSD
-    
-    # Copy kernel
-    if [ -f "$KERNEL_SRC" ]; then
-        cp "$KERNEL_SRC" /tmp/st-esp/EFI/NetBSD/netbsd
-        cp "$KERNEL_SRC" /tmp/st-esp/netbsd 2>/dev/null || true
-    fi
-    
-    # Install bootloader config
-    if [ -f "$CONFIGS_DIR/netbsd/etc/boot.cfg" ]; then
-        cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/EFI/NetBSD/boot.cfg
-        cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-esp/boot.cfg 2>/dev/null || true
-    fi
-    
-    success "ESP populated"
-    umount /tmp/st-esp
+# Copy pkgsrc tree (if available) for first-boot package installation
+if [ -d "$PKGSRC_DIR" ] && [ -f "$PKGSRC_DIR/Makefile" ]; then
+    info "Copying pkgsrc tree..."
+    PKGSRC_TARGET="$ROOT_CONTENTS/usr/pkgsrc"
+    mkdir -p "$PKGSRC_TARGET"
+    cp -a "$PKGSRC_DIR"/* "$PKGSRC_TARGET/" 2>/dev/null || \
+        (cd "$PKGSRC_DIR" && tar --exclude='.git' --exclude='distfiles' --exclude='packages' -cf - .) | \
+        (cd "$PKGSRC_TARGET" && tar -xf -)
+    success "pkgsrc tree copied"
 fi
 
-# Mount Root partition
-if mount "$P2" /tmp/st-root 2>/dev/null; then
-    # Copy root filesystem
-    if [ -d "$ROOTFS_DIR" ] && [ "$(ls -A "$ROOTFS_DIR" 2>/dev/null)" ]; then
-        (cd "$ROOTFS_DIR" && find . -print0 | cpio -pdm0 /tmp/st-root/ 2>/dev/null) || \
-            tar -cf - -C "$ROOTFS_DIR" . | tar -xf - -C /tmp/st-root/ || \
-            cp -a "$ROOTFS_DIR"/* /tmp/st-root/
-        success "Root filesystem copied"
-    else
-        info "Rootfs staging is empty — creating minimal structure"
-        for d in bin sbin lib libexec usr etc var home root opt dev proc sys tmp; do
-            mkdir -p "/tmp/st-root/$d"
-        done
-    fi
-    
-    # Copy boot.cfg to root
-    mkdir -p /tmp/st-root/boot /tmp/st-root/etc
-    cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-root/boot.cfg 2>/dev/null || true
-    cp "$CONFIGS_DIR/netbsd/etc/boot.cfg" /tmp/st-root/etc/boot.cfg 2>/dev/null || true
-    
-    umount /tmp/st-root
-fi
+# Create FFSv2 image with nbmakefs
+info "Creating FFSv2 (${ROOT_SIZE}M)..."
+"$MAKEFS" -t ffs -o version=2,label=STAR_TALK -s "${ROOT_SIZE}m" \
+    /tmp/st-root.ffs "$ROOT_CONTENTS" 2>&1 | tail -1
 
-# ── Cleanup ───────────────────────────────────────────────────────────
-cleanup_loop
-trap - EXIT
+# Write FFS image to partition
+sudo dd if=/tmp/st-root.ffs of="${LOOP}p2" bs=1M conv=fsync status=progress 2>/dev/null
+success "FFSv2 root written"
 
-# ── Final output ─────────────────────────────────────────────────────
+# ── Cleanup ────────────────────────────────────────────────────────────
+cleanup; trap - EXIT
+
 IMAGE_SIZE=$(du -h "$IMAGE" | cut -f1)
-success "Disk image created: $IMAGE ($IMAGE_SIZE)"
+success "Image: $IMAGE ($IMAGE_SIZE)"
 echo ""
-info "To write to USB:"
-info "  dd if=$IMAGE of=/dev/sdX bs=1M conv=fsync status=progress"
-echo ""
-info "To test with QEMU:"
-info "  make test-qemu"
-echo ""
-
-cd "$PROJECT_ROOT"
-build_summary "$PHASE" "$START_TIME"
+info "Boot: qemu-system-x86_64 -bios /usr/share/edk2/x64/OVMF.4m.fd -drive file=$IMAGE,format=raw -m 2G -nographic -serial mon:stdio"

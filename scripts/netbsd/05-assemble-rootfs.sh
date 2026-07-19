@@ -42,6 +42,18 @@ success "Device nodes created"
 # ── Create /etc files ─────────────────────────────────────────────────
 step "Creating system configuration files..."
 
+# fstab
+cat > "$ROOTFS_DIR/etc/fstab" << 'FSTAB'
+/dev/dk1    /           ffs     rw,log     0 1
+/dev/dk2    none        swap    sw         0 0
+tmpfs       /tmp        tmpfs   rw,-s256M  0 0
+tmpfs       /run        tmpfs   rw,-s32M   0 0
+procfs      /proc       procfs  rw         0 0
+ptyfs       /dev/pts    ptyfs   rw         0 0
+kernfs      /kern       kernfs  rw         0 0
+FSTAB
+success "fstab created"
+
 # hostname
 echo "startalk" > "$ROOTFS_DIR/etc/myname"
 echo "startalk" > "$ROOTFS_DIR/etc/hostname"

@@ -9,7 +9,7 @@ set -e
 PHASE="N06"; START_TIME=$(date +%s)
 step "Phase ${PHASE}: Creating bootable disk image"
 
-IMAGE_NAME="star-talk-netbsd-$(date +%Y%m%d).img"
+IMAGE_NAME="star-talk-v3-$(date +%Y%m%d).img"
 IMAGE="$OUT_DIR/$IMAGE_NAME"
 ESP_SIZE=260; ROOT_SIZE=8192; SWAP_SIZE=4096
 TOTAL_SIZE=$((ESP_SIZE + ROOT_SIZE + SWAP_SIZE + 5))

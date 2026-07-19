@@ -1,14 +1,14 @@
 #!/bin/sh
 # ╔══════════════════════════════════════════════════════════════════════╗
 # ║  Star-Talk / 星语 — /etc/rc.d/startalk-splash                     ║
-# ║  AIX-style boot splash with hardware detection + ASCII art        ║
+# ║   boot splash with hardware detection + ASCII art        ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 #
 # Runs early in the boot sequence (BEFORE LOGIN).
 # Displays:
 #   1. ASCII art "Star-Talk / 星语" logo
 #   2. Hardware detection panel (CPU, RAM, GPU, disks, network)
-#   3. Color-coded boot phase LEDs (AIX diagnostic style)
+#   3. Color-coded boot phase LEDs (diagnostic style)
 #   4. Kernel and system version info
 #
 # Controlled by: rc.conf → startalk_splash=YES|NO
@@ -106,7 +106,7 @@ detect_audio() {
     echo "$audio_dev"
 }
 
-# ── LED code display (AIX diagnostic style) ─────────────────────────────
+# ── LED code display (diagnostic style) ─────────────────────────────
 print_led() {
     local code="$1" status="$2" desc="$3"
     printf "${C_LED}  [${B}%-4s${C_LED}]${C_RESET} ${status} ${C_DIM}— %s${C_RESET}\n" "$code" "$desc"

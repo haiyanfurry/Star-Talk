@@ -4,7 +4,7 @@
 # ╚══════════════════════════════════════════════════════════════════════╝
 #
 # This ASCII art is displayed during early boot by /etc/rc.d/startalk-splash.
-# Inspired by AIX boot diagnostic panels — each "LED code" represents
+# Inspired by boot diagnostic panels — each "LED code" represents
 # a boot phase, printed in color-coded format.
 #
 # Format: L[CODE] [STATUS] — Description
@@ -45,7 +45,7 @@ STARTALK_LOGO_COMPACT='
   ╚══════════════════════════════════════════╝'
 
 # ── Phase-specific LED codes ───────────────────────────────────────────
-# These mimic AIX front-panel LED diagnostic codes
+# These mimic front-panel LED diagnostic codes
 STARTALK_LED_CODES="
 L200:IPL ROM scan
 L201:Firmware handoff

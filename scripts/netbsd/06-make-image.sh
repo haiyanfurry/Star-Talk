@@ -83,6 +83,7 @@ mkdir -p "$ROOT_CONTENTS"
 if [ -d "$NETBSD_DESTDIR" ] && [ "$(ls -A "$NETBSD_DESTDIR" 2>/dev/null)" ]; then
     info "Copying userland..."
     cp -a "$NETBSD_DESTDIR"/* "$ROOT_CONTENTS/" 2>/dev/null || \
+# SKIP device nodes in tar — created with sudo below
         (cd "$NETBSD_DESTDIR" && tar -cf - .) | (cd "$ROOT_CONTENTS" && tar -xf -)
 fi
 if [ -d "$ROOTFS_DIR" ] && [ "$(ls -A "$ROOTFS_DIR" 2>/dev/null)" ]; then

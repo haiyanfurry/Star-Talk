@@ -1,5 +1,7 @@
 # Star-Talk / 星語
 
+
+> **最新发布**: [Data V0.0.1](https://github.com/haiyanfurry/Star-Talk/releases/tag/Data-V0.0.1) — 系统可启动到 root shell
 > 基于 NetBSD 内核的桌面操作系统项目，搭载 KDE Plasma 6 桌面环境。
 > **当前状态：开发中 — 内核 + 基础系统已可在 QEMU 启动到 login 提示符。**
 
